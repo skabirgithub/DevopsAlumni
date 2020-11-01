@@ -2,6 +2,7 @@
 
 // *****************************Frontend **************************
 
+use App\Models\Scholarship;
 
 Route::namespace('Frontend')->group(function () {
     Route::get('/', 'IndexController@index')->name('index');
@@ -16,6 +17,16 @@ Route::namespace('Frontend')->group(function () {
     Route::get('blog/{id}-{slug}', 'BlogController@blogSingle')->name('blog.single');
     Route::get('about', 'IndexController@about')->name('about');
     Route::get('galleries', 'IndexController@galleries')->name('galleries');
+
+    Route::get('students/{category}', 'AllController@students')->name('students');
+    Route::get('student-profile', 'AllController@studentProfile')->name('student.profile');
+
+
+    Route::get('seminars', 'IndexController@seminars')->name('seminars');
+    Route::get('seminar/{id}', 'IndexController@seminar')->name('seminar');
+    
+    Route::get('jobs', 'IndexController@jobs')->name('jobs');
+    Route::get('job/{id}', 'IndexController@job')->name('job');
 });
 
 // Ckeditor Image Upload
@@ -98,6 +109,7 @@ Route::prefix('rt-admin')->group(function () {
                         'checkLasts' => 'CheckLastController',
                         'jobDetails' => 'JobDetailsController',
                         'seminars' => 'SeminarController',
+                        'scholarships' => 'ScholarshipController',
                     ]
                 );
                 Route::get('users-requests', 'UserController@requests')->name('users.requests');
@@ -117,8 +129,10 @@ Route::prefix('rt-admin')->group(function () {
                 Route::get('jobDetails-requests', 'JobDetailsController@requests')->name('jobDetails.requests');
                 Route::get('jobDetails-accept/{jobDetails}', 'JobDetailsController@accept')->name('jobDetails.accept');
                 Route::get('jobDetails-applicants/{id}', 'JobDetailsController@applicants')->name('jobDetails.applicants');
+                // Scholarship
+                Route::get('scholarship-status/{id}', 'ScholarshipController@status')->name('scholarships.status');
+
             });
         });
     });
 });
-

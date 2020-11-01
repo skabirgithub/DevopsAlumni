@@ -20,7 +20,7 @@ class SeminarController extends AppBaseController
             return $seminarDataTable->dataTableValue();
         }
         $dataTable = $seminarDataTable->html();
-        return  view('admin.seminars.index', compact('dataTable'));
+        return  view('admin.seminars.index',compact('dataTable'));
     }
 
 
@@ -33,10 +33,12 @@ class SeminarController extends AppBaseController
     public function store(SeminarCreateRequest $request)
     {
         $input = $request->all();
-        $imageName = FileHelper::uploadImage($request);
-        Seminar::create(array_merge($request->all(), ['image' => $imageName]));
 
-        return back()->with('success', 'Seminar saved successfully.');
+        // Seminar::create($input);  
+        $imageName = FileHelper::uploadImage($request);      
+        Seminar::create(array_merge($request->all(), ['image' => $imageName]));
+        
+        return back()->with('success','Seminar saved successfully.');
     }
 
 
@@ -45,7 +47,7 @@ class SeminarController extends AppBaseController
         $seminar = Seminar::find($id);
 
         if (empty($seminar)) {
-            Session::flash('error', 'Seminar not found');
+            Session::flash('error','Seminar not found');
 
             return redirect(route('admin.seminars.index'));
         }
@@ -59,7 +61,7 @@ class SeminarController extends AppBaseController
         $seminar = Seminar::find($id);
 
         if (empty($seminar)) {
-            Session::flash('error', 'Seminar not found');
+            Session::flash('error','Seminar not found');
 
             return redirect(route('admin.seminars.index'));
         }
@@ -73,16 +75,18 @@ class SeminarController extends AppBaseController
         $seminar = Seminar::find($id);
 
         if (empty($seminar)) {
-            Session::flash('error', 'Seminar not found');
+           Session::flash('error','Seminar not found');
 
             return redirect(route('admin.seminars.index'));
         }
 
         $imageName = FileHelper::uploadImage($request, $seminar);
         $seminar->fill(array_merge($request->all(), ['image' => $imageName]));
+
+        // $seminar->fill($request->all());
         $seminar->save();
 
-        Session::flash('success', 'Seminar updated successfully.');
+        Session::flash('success','Seminar updated successfully.');
 
         return redirect(route('admin.seminars.index'));
     }
@@ -91,7 +95,7 @@ class SeminarController extends AppBaseController
     public function destroy($id)
     {
         $seminar = Seminar::findOrFail($id);
-        FileHelper::deleteImage($seminar);
+        //FileHelper::deleteImage($seminar);
         $seminar->delete();
     }
 }

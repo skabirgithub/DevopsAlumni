@@ -22,4 +22,9 @@ class Profile extends Model
         'file',
         'image',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -7,19 +7,19 @@
 <!-- Details Field -->
 <div class="form-group">
     <b>{!! Form::label('details', 'Details:') !!}</b>
-    <p>{{ $seminar->details }}</p>
+    <p>{!! $seminar->details !!}</p>
 </div>
 
-<!-- Seminal Date Field -->
+<!-- Seminar Date Field -->
 <div class="form-group">
-    <b>{!! Form::label('seminal_date', 'Seminal Date:') !!}</b>
-    <p>{{ $seminar->seminal_date }}</p>
+    <b>{!! Form::label('seminar_date', 'Seminar Date:') !!}</b>
+    <p>{{ $seminar->seminar_date }}</p>
 </div>
 
-<!-- Seminal Time Field -->
+<!-- Seminar Time Field -->
 <div class="form-group">
-    <b>{!! Form::label('seminal_time', 'Seminal Time:') !!}</b>
-    <p>{{ $seminar->seminal_time }}</p>
+    <b>{!! Form::label('seminar_time', 'Seminar Time:') !!}</b>
+    <p>{{ $seminar->seminar_time }}</p>
 </div>
 
 <!-- Place Field -->
@@ -31,18 +31,13 @@
 <!-- Image Field -->
 <div class="form-group">
     <b>{!! Form::label('image', 'Image:') !!}</b>
-    <p>{{ $seminar->image }}</p>
+    <img src="{{asset('images/'.$seminar->image)}}" alt="" srcset="">
 </div>
 
 <!-- Created At Field -->
 <div class="form-group">
     <b>{!! Form::label('created_at', 'Created At:') !!}</b>
-    <p>{{ $seminar->created_at }}</p>
+    <p>{{ $seminar->created_at->toFormattedDateString() }}</p>
 </div>
 
-<!-- Updated At Field -->
-<div class="form-group">
-    <b>{!! Form::label('updated_at', 'Updated At:') !!}</b>
-    <p>{{ $seminar->updated_at }}</p>
-</div>
 

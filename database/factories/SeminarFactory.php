@@ -10,8 +10,8 @@ $factory->define(Seminar::class, function (Faker $faker) {
     return [
         'title' => $faker->word,
         'details' => $faker->word,
-        'seminal_date' => $faker->word,
-        'seminal_time' => $faker->word,
+        'seminar_date' => $faker->word,
+        'seminar_time' => $faker->word,
         'place' => $faker->word,
         'image' => $faker->word,
         'created_at' => $faker->date('Y-m-d H:i:s'),

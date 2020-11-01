@@ -16,7 +16,7 @@ class SeminarDataTable extends DataTable
      * @param mixed $query Results from query() method.
      * @return \Yajra\DataTables\DataTableAbstract
      */
-     public function dataTableValue()
+    public function dataTableValue()
     {
         $rows = Seminar::latest()->get();
         return DataTables::of($rows)
@@ -24,17 +24,23 @@ class SeminarDataTable extends DataTable
             // ->addColumn('file',function(TwentyFive $row){
             //     return "<a download href='".asset('files/'.$row->file)."'>Download</a>";
             // })
-            // ->addColumn('image',function(Seminar $row){
-            //     return "<img height='50px' width='50px' src='".asset('images/'.$row->image)."'/>";
+            // ->addColumn('image', function (Seminar $row) {
+            //     return "<img height='50px' width='50px' src='" . asset('images/' . $row->image) . "'/>";
             // })
-            // ->addColumn('details',function(Seminar $row){
-            //     return Str::limit($row->details,100);
-            // })
-            // ->rawColumns(['details','action','image','file'])
+            ->addColumn('seminar_date', function (Seminar $row) {
+                return $row->seminar_date->toFormattedDateString();
+            })
+            ->addColumn('seminar_time', function (Seminar $row) {
+                return date('h:i A',strtotime($row->seminar_time));
+            })
+            ->addColumn('details', function (Seminar $row) {
+                return Str::limit($row->details, 100);
+            })
+            ->rawColumns(['details', 'action', 'image', 'file'])
             ->addColumn('action', 'admin.seminars.datatables_actions')
             ->make(true);
     }
-    
+
     public function dataTable($query)
     {
         $dataTable = new EloquentDataTable($query);
@@ -85,12 +91,11 @@ class SeminarDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'Sl','title',
+            'Sl', 'title',
             'details',
-            'seminal_date',
-            'seminal_time',
+            'seminar_date',
+            'seminar_time',
             'place',
-            'image'
         ];
     }
 

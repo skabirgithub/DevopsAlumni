@@ -180,15 +180,6 @@
 </li> --}}
 
 
-{{-- Contacts --}}
-@if(Route::has('admin.contacts'))
-<li class="">
-    <a href="{{route('admin.contacts')}}" class="{{ Request::is('rt-admin/contact*') ? 'mm-active' : '' }}">
-        <i class="metismenu-icon pe-7s-network"></i>
-        Contacts
-    </a>
-</li>
-@endif
 {{-- Feedbacks --}}
 @if(Route::has('admin.feedbacks'))
 <li class="">
@@ -202,7 +193,7 @@
 <li class="{{ Request::is('rt-admin/jobDetails**') ? 'mm-active' : '' }}">
         <a href="#">
             <i class="metismenu-icon pe-7s-menu"></i>
-            Job Details
+            Jobs
             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
         </a>
         <ul class="{{ Request::is('rt-admin/jobDetails*') ? 'mm-show' : '' }}">
@@ -230,10 +221,11 @@
 </li>
 
 
+
 <li class="{{ Request::is('rt-admin/seminars**') ? 'mm-active' : '' }}">
         <a href="#">
             <i class="metismenu-icon pe-7s-menu"></i>
-            Seminars
+            Seminar Or Events
             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
         </a>
         <ul class="{{ Request::is('rt-admin/seminars*') ? 'mm-show' : '' }}">
@@ -253,3 +245,36 @@
         </ul>
 </li>
 
+
+<li class="{{ Request::is('rt-admin/scholarships**') ? 'mm-active' : '' }}">
+        <a href="#">
+            <i class="metismenu-icon pe-7s-menu"></i>
+            Scholarships
+            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+        </a>
+        <ul class="{{ Request::is('rt-admin/scholarships*') ? 'mm-show' : '' }}">
+            <li>
+                <a class="{{ Request::is('rt-admin/scholarships/create') ? 'mm-active' : '' }}"
+                    href="{{route('admin.scholarships.create')}}">
+                    <i class="metismenu-icon"></i>
+                    Create
+                </a>
+            <li>
+                <a class="{{ Request::is('rt-admin/scholarships') ? 'mm-active' : '' }}"
+                    href="{{route('admin.scholarships.index')}}">
+                    <i class="metismenu-icon">
+                    </i>Manage
+                </a>
+            </li>
+        </ul>
+</li>
+
+{{-- Contacts --}}
+@if(Route::has('admin.contacts'))
+<li class="">
+    <a href="{{route('admin.contacts')}}" class="{{ Request::is('rt-admin/contact*') ? 'mm-active' : '' }}">
+        <i class="metismenu-icon pe-7s-network"></i>
+        Contacts
+    </a>
+</li>
+@endif

@@ -15,16 +15,13 @@ class CreateSeminarsTable extends Migration
     public function up()
     {
         Schema::create('seminars', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id')->nullable();
+            $table->increments('id');
             $table->string('title');
             $table->string('details');
-            $table->date('seminal_date');
-            $table->time('seminal_time');
+            $table->date('seminar_date');
+            $table->time('seminar_time');
             $table->string('place');
             $table->string('image');
-            $table->boolean('status')->default(0);
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

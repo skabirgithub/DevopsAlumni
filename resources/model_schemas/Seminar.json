@@ -2,8 +2,8 @@
     {
         "name": "id",
         "dbType": "increments",
-        "htmlType": null,
-        "validations": null,
+        "htmlType": "",
+        "validations": "",
         "searchable": false,
         "fillable": false,
         "primary": true,
@@ -36,7 +36,7 @@
         "inView": true
     },
     {
-        "name": "seminal_date",
+        "name": "seminar_date",
         "dbType": "date",
         "htmlType": "date",
         "validations": "required|date",
@@ -48,7 +48,7 @@
         "inView": true
     },
     {
-        "name": "seminal_time",
+        "name": "seminar_time",
         "dbType": "time",
         "htmlType": "time",
         "validations": "required|time",
@@ -86,8 +86,8 @@
     {
         "name": "created_at",
         "dbType": "timestamp",
-        "htmlType": null,
-        "validations": null,
+        "htmlType": "",
+        "validations": "",
         "searchable": false,
         "fillable": false,
         "primary": false,
@@ -98,8 +98,8 @@
     {
         "name": "updated_at",
         "dbType": "timestamp",
-        "htmlType": null,
-        "validations": null,
+        "htmlType": "",
+        "validations": "",
         "searchable": false,
         "fillable": false,
         "primary": false,

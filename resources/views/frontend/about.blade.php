@@ -1,68 +1,218 @@
 @extends('layouts.frontend')
 @section('title','About')
 @section('content')
-{{-- @include('includes.banner',['programName'=>'About']) --}}
-<!-- WHO WE ARE -->
-<section class="padding-top-70 padding-bottom-70">
-    <div class="container">
-        <div class="who-we">
+@include('includes.banner',['title'=>'About','details'=>'This is a page. This is a demo paragraph.This is a demo senten.'])
+<!--== Committee Page Content Start ==-->
+<section id="page-content-wrap">
+    <div class="about-page-content-wrap section-padding">
+        <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h3 class="font-normal">Shataphool Bangladesh: At a glance</h3>
-                    <h6>Where We Started</h6>
-                    <p class="text-justify">Shataphool Bangladesh is a non-government, not-for-profit, non-sectarian, and non-political organization working for social development of vulnerable people who haven’t progressed as they should have.
-                        In 2000, the organization came into being when Mr. M. Shafiqul Islam (UNO of Mohanpur Upazila) founded it with a group of young and energetic people, who were highly motivated and committed to contributing their time, skills and energies for the development and empowerment of socially disadvantaged and vulnerable communities in Mohanpur, addressing poverty issues and eliminating gender based discriminations. By 2001, Shataphool Bangladesh evolved into a formal institution offering micro-credit to poor rural women in Jahanabad Union of Mohanpur Upazila.
-                        Over the next decade the micro credit program diversified, and the organization began providing a variety of micro-credit products for its heterogeneous group of family entrepreneurs, alongside various types of social development programs.
-                    </p>
-
-                </div>
-                <div class="col-md-6">
-
-                    <!-- SERVICES -->
-                    <ul class="row">
-
-                        <!-- SERVICES -->
-                        <li class="col-sm-12"> <i class="fa fa-eye"></i>
-                            <h5>our vision</h5>
-                            <p class="text-justify">To ensure the sustainable economic development which provides human rights, mainstreams gender equality, ensures social justice, assures good governance by active participation of multi-tier people of society through poor friendly microfinance services.
-
-                            </p>
-
-                        </li>
-
-                        <!-- SERVICES -->
-                        <li class="col-sm-12"> <i class="fa fa-rocket"></i>
-                            <h5>our mission</h5>
-                            <p class="text-justify">To establish an apolitical, cosmopolitan, not-for-profit, socioeconomic and philanthropic private voluntary organization which will work with the mission of making people self-dependent of all the religions and color, especially regenerating those who are impoverished and underprivileged.
-
-                            </p>
-
-                        </li>
-                    </ul>
-
-                    <hr>
-
-                    <div class="col-md-6">
-                        <div class="broc">
-                            <img class="img-responsive" src="images/q4.png" alt="">
-                            <a href="#." class="icon-down"><i class="fa fa-download"></i></a>
-                            <a href="#." class="icon-file">Get Portfolio</a>
-                        </div>
+                <div class="col-lg-11 m-auto">
+                    <!-- Single about text start -->
+                    <div class="single-about-text">
+                        <span class="year">1834</span>
+                        <img src="assets/img/about-page/about-img-1.jpg" alt="About" class="img-fluid img-left">
+                        <h2 class="h3">ESTD of This Alumni Assotitation</h2>
+                        <p>Aenean viverra rhoncus sspede. Phasellssus leo dolor, tempus non, auctor endrerit
+                            quis, nisi. Fusce neque. Donec vitae orci sed dolor rutrum ausssctor. Sed
+                            fringilla mauris sit amet nibh.</p>
+                        <p>Etiam rhoncus. Ut lddffdfqwqeo. Morbi mollis tellus ac sapien. Fusce fermentum oo
+                            nec arcu. Quisque manisl idUt leo. Morbi mollis tellus ac sapien. Fusce
+                            fermentum oo nec ante tempus hendrerit. Curabitur at lacus ac velit ornare
+                            lobortis. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
+                            turpis. Quisque id mi.Aenean viverra rhoncus pede. Phasellus leo dolor, tempus non, auctor
+                            endrerit quis, nisi.
+                            Fusce neque. Donec vitae orci sed dolor rutrum auctor. Sed fringilla mauris sit amet
+                            nibh.Etiam rhoncus. Ut leo. Morbi mollis tellus ac sapien. Fusce fermentum oo nec arcu.
+                            Quisque malesuada placerat nisl. Etiam sit amet orci eget faucitincidunt. Quisque
+                            rutrum. Pellentesque posuere. Praesent ac massa at ligula laoureet iaculis. Cras risus
+                            ipsum, faucibus ut, ullamcorper id, varius ac, leo.</p>
                     </div>
+                    <!-- Single about text End -->
 
-                    <div class="col-md-6">
-                        <div class="broc">
-                            <img class="img-responsive" src="images/q1.png" alt="">
-                            <a href="#." class="icon-down"><i class="fa fa-download"></i></a>
-                            <a href="#." class="icon-file">Get Portfolio</a>
-                        </div>
+                    <!-- Single about text start -->
+                    <div class="single-about-text">
+                        <span class="year">1920</span>
+                        <img src="assets/img/about-page/about-img-2.jpg" alt="About" class="img-fluid img-right">
+                        <h2 class="h3">Our First Achivement in History</h2>
+                        <p>Aenean viverra rhoncus sspede. Phasellssus leo dolor, tempus non, auctor endrerit
+                            quis, nisi. Fusce neque. Donec vitae orci sed dolor rutrum ausssctor. Sed
+                            fringilla mauris sit amet nibh.</p>
+                        <p>Etiam rhoncus. Ut lddffdfqwqeo. Morbi mollis tellus ac sapien. Fusce fermentum oo
+                            nec arcu. Quisque manisl idUt leo. Morbi mollis tellus ac sapien. Fusce
+                            fermentum oo nec ante tempus hendrerit. Curabitur at lacus ac velit ornare
+                            lobortis. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
+                            turpis. Quisque id mi.Aenean viverra rhoncus pede. Phasellus leo dolor, tempus non, auctor
+                            endrerit quis, nisi.
+                            Fusce neque. Donec vitae orci sed dolor rutrum auctor. Sed fringilla mauris sit amet
+                            nibh.Etiam rhoncus. Ut leo. Morbi mollis tellus ac sapien. Fusce fermentum oo nec arcu.
+                            Quisque malesuada placerat nisl. Etiam sit amet orci eget faucitincidunt. Quisque
+                            rutrum. Pellentesque posuere. Praesent ac massa at ligula laoureet iaculis. Cras risus
+                            ipsum, faucibus ut, ullamcorper id, varius ac, leo.</p>
                     </div>
+                    <!-- Single about text End -->
 
+                    <!-- Single about text start -->
+                    <div class="single-about-text">
+                        <span class="year">2006</span>
+                        <img src="assets/img/about-page/about-img-3.jpg" alt="About" class="img-fluid img-left">
+                        <h2 class="h3">Our New Genaretion</h2>
+                        <p>Aenean viverra rhoncus sspede. Phasellssus leo dolor, tempus non, auctor endrerit
+                            quis, nisi. Fusce neque. Donec vitae orci sed dolor rutrum ausssctor. Sed
+                            fringilla mauris sit amet nibh.</p>
+                        <p>Etiam rhoncus. Ut lddffdfqwqeo. Morbi mollis tellus ac sapien. Fusce fermentum oo
+                            nec arcu. Quisque manisl idUt leo. Morbi mollis tellus ac sapien. Fusce
+                            fermentum oo nec ante tempus hendrerit. Curabitur at lacus ac velit ornare
+                            lobortis. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
+                            turpis. Quisque id mi.Aenean viverra rhoncus pede. Phasellus leo dolor, tempus non, auctor
+                            endrerit quis, nisi.
+                            Fusce neque. Donec vitae orci sed dolor rutrum auctor. Sed fringilla mauris sit amet
+                            nibh.Etiam rhoncus. Ut leo. Morbi mollis tellus ac sapien. Fusce fermentum oo nec arcu.
+                            Quisque malesuada placerat nisl. Etiam sit amet orci eget faucitincidunt. Quisque
+                            rutrum. Pellentesque posuere. Praesent ac massa at ligula laoureet iaculis. Cras risus
+                            ipsum, faucibus ut, ullamcorper id, varius ac, leo.</p>
+                    </div>
+                    <!-- Single about text End -->
                 </div>
             </div>
         </div>
+    </div>
+
+    <!--== FunFact Area Start ==-->
+    <section id="funfact-area">
+        <div class="container-fluid">
+            <div class="row text-center">
+                <!--== Single FunFact Start ==-->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-funfact-wrap">
+                        <div class="funfact-icon">
+                            <img src="assets/img/fun-fact/user.svg" alt="Funfact">
+                        </div>
+                        <div class="funfact-info">
+                            <h5 class="funfact-count">4025</h5>
+                            <p>Members</p>
+                        </div>
+                    </div>
+                </div>
+                <!--== Single FunFact End ==-->
+
+                <!--== Single FunFact Start ==-->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-funfact-wrap">
+                        <div class="funfact-icon">
+                            <img src="assets/img/fun-fact/picture.svg" alt="Funfact">
+                        </div>
+                        <div class="funfact-info">
+                            <h5 class="funfact-count">8725</h5>
+                            <p>Photos</p>
+                        </div>
+                    </div>
+                </div>
+                <!--== Single FunFact End ==-->
+
+                <!--== Single FunFact Start ==-->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-funfact-wrap">
+                        <div class="funfact-icon">
+                            <img src="assets/img/fun-fact/event.svg" alt="Funfact">
+                        </div>
+                        <div class="funfact-info">
+                            <h5><span class="funfact-count">231</span>+</h5>
+                            <p>Events</p>
+                        </div>
+                    </div>
+                </div>
+                <!--== Single FunFact End ==-->
+
+                <!--== Single FunFact Start ==-->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-funfact-wrap">
+                        <div class="funfact-icon">
+                            <img src="assets/img/fun-fact/medal.svg" alt="Funfact">
+                        </div>
+                        <div class="funfact-info">
+                            <h5><span class="funfact-count">32</span>+</h5>
+                            <p>Awards</p>
+                        </div>
+                    </div>
+                </div>
+                <!--== Single FunFact End ==-->
+            </div>
+        </div>
+    </section>
+    <!--== FunFact Area End ==-->
 
 
+
+    <div class="people-to-say section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="about-page-area-title">
+                        <h2>Some Speech About Us</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="people-to-say-wrapper owl-carousel">
+                        <!-- Single People Testimonial -->
+                        <div class="single-testimonial-wrap">
+                            <div class="people-thumb">
+                                <img src="assets/img/testimonial/testi-3.png" alt="Alumni" class="img-fluid" />
+                            </div>
+                            <i class="quote-icon"></i>
+                            <p>Exxcellent Lorem ipsum dolor sit amet, ectetur adipisicing elit, sed do eimod tempor
+                                inciidunt ut
+                                labore et dolorgna aliqua. Ut enim ad minim ostrud. </p>
+                            <h4>Robert Albert <span class="people-deg">Founder at Boxr</span></h4>
+                        </div>
+                        <!-- Single People Testimonial -->
+
+                        <!-- Single People Testimonial -->
+                        <div class="single-testimonial-wrap">
+                            <div class="people-thumb">
+                                <img src="assets/img/testimonial/testi-1.png" alt="" class="img-fluid">
+                            </div>
+                            <i class="quote-icon"></i>
+                            <p>Exxcellent Lorem ipsum dolor sit amet, ectetur adipisicing elit, sed do eimod tempor
+                                inciidunt ut
+                                labore et dolorgna aliqua. Ut enim ad minim ostrud. </p>
+                            <h4>Akamla Albert <span class="people-deg">Founder at Kamlakana</span></h4>
+                        </div>
+                        <!-- Single People Testimonial -->
+
+                        <!-- Single People Testimonial -->
+                        <div class="single-testimonial-wrap">
+                            <div class="people-thumb">
+                                <img src="assets/img/testimonial/testi-2.png" alt="" class="img-fluid" />
+                            </div>
+                            <i class="quote-icon"></i>
+                            <p>Exxcellent Lorem ipsum dolor sit amet, ectetur adipisicing elit, sed do eimod tempor
+                                inciidunt ut
+                                labore et dolorgna aliqua. Ut enim ad minim ostrud. </p>
+                            <h4>Taklo Nahid <span class="people-deg">Minister at Nara</span></h4>
+                        </div>
+                        <!-- Single People Testimonial -->
+
+                        <!-- Single People Testimonial -->
+                        <div class="single-testimonial-wrap">
+                            <div class="people-thumb">
+                                <img src="assets/img/testimonial/testi-2.png" alt="" class="img-fluid" />
+                            </div>
+                            <i class="quote-icon"></i>
+                            <p>Exxcellent Lorem ipsum dolor sit amet, ectetur adipisicing elit, sed do eimod tempor
+                                inciidunt ut
+                                labore et dolorgna aliqua. Ut enim ad minim ostrud. </p>
+                            <h4>Mal Muhit<span class="people-deg">Founder at Kamlagiri</span></h4>
+                        </div>
+                        <!-- Single People Testimonial -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+<!--== Committee Page Content End ==-->
 @endsection

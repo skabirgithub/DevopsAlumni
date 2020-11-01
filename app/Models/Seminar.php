@@ -7,12 +7,12 @@ use Eloquent as Model;
 /**
  * Class Seminar
  * @package App\Models
- * @version October 31, 2020, 3:46 pm +06
+ * @version November 1, 2020, 11:40 am +06
  *
  * @property string $title
  * @property string $details
- * @property string $seminal_date
- * @property time $seminal_time
+ * @property string $seminar_date
+ * @property time $seminar_time
  * @property string $place
  * @property string $image
  */
@@ -20,16 +20,15 @@ class Seminar extends Model
 {
 
     public $table = 'seminars';
-    
+
 
 
 
     public $fillable = [
-        'user_id',
         'title',
         'details',
-        'seminal_date',
-        'seminal_time',
+        'seminar_date',
+        'seminar_time',
         'place',
         'image'
     ];
@@ -41,10 +40,9 @@ class Seminar extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'user_id' => 'integer',
         'title' => 'string',
         'details' => 'string',
-        'seminal_date' => 'date',
+        'seminar_date' => 'date',
         'place' => 'string',
         'image' => 'string'
     ];
@@ -57,11 +55,9 @@ class Seminar extends Model
     public static $rules = [
         'title' => 'required|string|max:191',
         'details' => 'required|string|max:65530',
-        'seminal_date' => 'required|date',
-        'seminal_time' => 'required|time',
+        'seminar_date' => 'required|date',
+        'seminar_time' => 'required',
         'place' => 'required|string|max:191',
         'image' => 'required|image|max:10000'
     ];
-
-    
 }

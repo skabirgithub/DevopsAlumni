@@ -10,15 +10,20 @@
     {!! Form::textarea('details', null, ['class' => 'form-control','maxlength' => 65530,'required']) !!}
 </div>
 
-<!-- Seminal Date Field -->
+<!-- Seminar Date Field -->
 <div class="form-group ">
-    {!! Form::label('seminal_date', 'Seminal Date:') !!}
-    {!! Form::date('seminal_date', null, ['class' => 'form-control','id'=>'seminal_date','required']) !!}
+    {!! Form::label('seminar_date', 'Seminar Date:') !!}
+    {!! Form::date('seminar_date', null, ['class' => 'form-control','id'=>'seminar_date','required']) !!}
+</div>
+<!-- Seminar Date Field -->
+<div class="form-group ">
+    {!! Form::label('seminar_time', 'Seminar Time:') !!}
+    {!! Form::time('seminar_time', null, ['class' => 'form-control','id'=>'seminar_time','required']) !!}
 </div>
 
 @push('scripts')
     <script type="text/javascript">
-        $('#seminal_date').datetimepicker({
+        $('#seminar_date').datetimepicker({
             format: 'YYYY-MM-DD HH:mm:ss',
             useCurrent: false
         })
@@ -28,7 +33,7 @@
 <!-- Place Field -->
 <div class="form-group">
     {!! Form::label('place', 'Place:') !!}
-    {!! Form::text('place', null, ['class' => 'form-control','maxlength' => 191]) !!}
+    {!! Form::text('place', null, ['class' => 'form-control','maxlength' => 191,'required']) !!}
 </div>
 
 <!-- Image Field -->
@@ -47,3 +52,4 @@
     {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
     <a href="{{ route('admin.seminars.index') }}" class="border-0 btn-transition btn btn-outline-info">Cancel</a>
 </div>
+@include('includes.ckeditor')
