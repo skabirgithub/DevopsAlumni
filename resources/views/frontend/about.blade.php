@@ -11,7 +11,7 @@
                     <!-- Single about text start -->
                     <div class="single-about-text">
                         <span class="year">1834</span>
-                        <img src="assets/img/about-page/about-img-1.jpg" alt="About" class="img-fluid img-left">
+                        <img src="{{asset('frontend/assets/img/about-page/about-img-1.jpg')}}" alt="About" class="img-fluid img-left">
                         <h2 class="h3">ESTD of This Alumni Assotitation</h2>
                         <p>Aenean viverra rhoncus sspede. Phasellssus leo dolor, tempus non, auctor endrerit
                             quis, nisi. Fusce neque. Donec vitae orci sed dolor rutrum ausssctor. Sed
@@ -33,7 +33,7 @@
                     <!-- Single about text start -->
                     <div class="single-about-text">
                         <span class="year">1920</span>
-                        <img src="assets/img/about-page/about-img-2.jpg" alt="About" class="img-fluid img-right">
+                        <img src="{{asset('frontend/assets/img/about-page/about-img-2.jpg')}}" alt="About" class="img-fluid img-right">
                         <h2 class="h3">Our First Achivement in History</h2>
                         <p>Aenean viverra rhoncus sspede. Phasellssus leo dolor, tempus non, auctor endrerit
                             quis, nisi. Fusce neque. Donec vitae orci sed dolor rutrum ausssctor. Sed
@@ -55,7 +55,7 @@
                     <!-- Single about text start -->
                     <div class="single-about-text">
                         <span class="year">2006</span>
-                        <img src="assets/img/about-page/about-img-3.jpg" alt="About" class="img-fluid img-left">
+                        <img src="{{asset('frontend/assets/img/about-page/about-img-3.jpg')}}" alt="About" class="img-fluid img-left">
                         <h2 class="h3">Our New Genaretion</h2>
                         <p>Aenean viverra rhoncus sspede. Phasellssus leo dolor, tempus non, auctor endrerit
                             quis, nisi. Fusce neque. Donec vitae orci sed dolor rutrum ausssctor. Sed
@@ -86,7 +86,7 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-funfact-wrap">
                         <div class="funfact-icon">
-                            <img src="assets/img/fun-fact/user.svg" alt="Funfact">
+                            <img src="{{asset('frontend/assets/img/fun-fact/user.svg')}}" alt="Funfact">
                         </div>
                         <div class="funfact-info">
                             <h5 class="funfact-count">4025</h5>
@@ -100,7 +100,7 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-funfact-wrap">
                         <div class="funfact-icon">
-                            <img src="assets/img/fun-fact/picture.svg" alt="Funfact">
+                            <img src="{{asset('frontend/assets/img/fun-fact/picture.svg')}}" alt="Funfact">
                         </div>
                         <div class="funfact-info">
                             <h5 class="funfact-count">8725</h5>
@@ -114,7 +114,7 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-funfact-wrap">
                         <div class="funfact-icon">
-                            <img src="assets/img/fun-fact/event.svg" alt="Funfact">
+                            <img src="{{asset('frontend/assets/img/fun-fact/event.svg')}}" alt="Funfact">
                         </div>
                         <div class="funfact-info">
                             <h5><span class="funfact-count">231</span>+</h5>
@@ -128,7 +128,7 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-funfact-wrap">
                         <div class="funfact-icon">
-                            <img src="assets/img/fun-fact/medal.svg" alt="Funfact">
+                            <img src="{{asset('frontend/assets/img/fun-fact/medal.svg')}}" alt="Funfact">
                         </div>
                         <div class="funfact-info">
                             <h5><span class="funfact-count">32</span>+</h5>
@@ -160,52 +160,52 @@
                         <!-- Single People Testimonial -->
                         <div class="single-testimonial-wrap">
                             <div class="people-thumb">
-                                <img src="assets/img/testimonial/testi-3.png" alt="Alumni" class="img-fluid" />
+                                <img src="{{asset('frontend/assets/img/testimonial/testi-3.png')}}" alt="Alumni" class="img-fluid" />
                             </div>
                             <i class="quote-icon"></i>
                             <p>Exxcellent Lorem ipsum dolor sit amet, ectetur adipisicing elit, sed do eimod tempor
                                 inciidunt ut
                                 labore et dolorgna aliqua. Ut enim ad minim ostrud. </p>
-                            <h4>Robert Albert <span class="people-deg">Founder at Boxr</span></h4>
+                            <h4>Touhedul Islam <span class="people-deg">Founder at Boxr</span></h4>
                         </div>
                         <!-- Single People Testimonial -->
 
                         <!-- Single People Testimonial -->
                         <div class="single-testimonial-wrap">
                             <div class="people-thumb">
-                                <img src="assets/img/testimonial/testi-1.png" alt="" class="img-fluid">
+                                <img src="{{asset('frontend/assets/img/testimonial/testi-3.png')}}" alt="" class="img-fluid">
                             </div>
                             <i class="quote-icon"></i>
                             <p>Exxcellent Lorem ipsum dolor sit amet, ectetur adipisicing elit, sed do eimod tempor
                                 inciidunt ut
                                 labore et dolorgna aliqua. Ut enim ad minim ostrud. </p>
-                            <h4>Akamla Albert <span class="people-deg">Founder at Kamlakana</span></h4>
+                            <h4>Faizur Rahman <span class="people-deg">Founder at BUP</span></h4>
                         </div>
                         <!-- Single People Testimonial -->
 
                         <!-- Single People Testimonial -->
                         <div class="single-testimonial-wrap">
                             <div class="people-thumb">
-                                <img src="assets/img/testimonial/testi-2.png" alt="" class="img-fluid" />
+                                <img src="{{asset('frontend/assets/img/testimonial/testi-3.png')}}" alt="" class="img-fluid" />
                             </div>
                             <i class="quote-icon"></i>
                             <p>Exxcellent Lorem ipsum dolor sit amet, ectetur adipisicing elit, sed do eimod tempor
                                 inciidunt ut
                                 labore et dolorgna aliqua. Ut enim ad minim ostrud. </p>
-                            <h4>Taklo Nahid <span class="people-deg">Minister at Nara</span></h4>
+                            <h4>Taklo Nahid <span class="people-deg">Minister at BUP</span></h4>
                         </div>
                         <!-- Single People Testimonial -->
 
                         <!-- Single People Testimonial -->
                         <div class="single-testimonial-wrap">
                             <div class="people-thumb">
-                                <img src="assets/img/testimonial/testi-2.png" alt="" class="img-fluid" />
+                                <img src="{{asset('frontend/assets/img/testimonial/testi-2.png')}}" alt="" class="img-fluid" />
                             </div>
                             <i class="quote-icon"></i>
                             <p>Exxcellent Lorem ipsum dolor sit amet, ectetur adipisicing elit, sed do eimod tempor
                                 inciidunt ut
                                 labore et dolorgna aliqua. Ut enim ad minim ostrud. </p>
-                            <h4>Mal Muhit<span class="people-deg">Founder at Kamlagiri</span></h4>
+                            <h4>Noushin Akhter<span class="people-deg">Founder at BUP</span></h4>
                         </div>
                         <!-- Single People Testimonial -->
                     </div>

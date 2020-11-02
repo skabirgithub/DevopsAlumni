@@ -10,12 +10,12 @@ class BlogController extends Controller
 {
     public function blogs()
     {
-        $blogs = Blog::latest()->get();
+        $blogs = Blog::latest()->paginate(15);
         return view('frontend.blogs', compact('blogs'));
     }
     public function blogSingle($id)
     {
-        return $blog = Blog::findOrFail($id);
-        return view('frontend.blog_single', compact('blog'));
+         $blog = Blog::findOrFail($id);
+        return view('frontend.blog', compact('blog'));
     }
 }

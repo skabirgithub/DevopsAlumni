@@ -35,7 +35,7 @@ senten.'])
             <div class="form-group">
                 Message* <textarea name="message" required class="form-control" id="exampleFormControlTextarea1" rows="3">{{old('message')}}</textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-reg">Submit</button>
         </form>
     </div>
 </div>

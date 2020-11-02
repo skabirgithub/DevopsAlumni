@@ -22,11 +22,11 @@ Route::namespace('Frontend')->group(function () {
     Route::get('student-profile', 'AllController@studentProfile')->name('student.profile');
 
 
-    Route::get('seminars', 'IndexController@seminars')->name('seminars');
-    Route::get('seminar/{id}', 'IndexController@seminar')->name('seminar');
-    
-    Route::get('jobs', 'IndexController@jobs')->name('jobs');
-    Route::get('job/{id}', 'IndexController@job')->name('job');
+    Route::get('seminars', 'AllController@seminars')->name('seminars');
+    Route::get('seminar/{id}', 'AllController@seminar')->name('seminar');
+
+    Route::get('jobs', 'AllController@jobs')->name('jobs');
+    Route::get('job/{id}', 'AllController@job')->name('job');
 });
 
 // Ckeditor Image Upload
@@ -131,7 +131,6 @@ Route::prefix('rt-admin')->group(function () {
                 Route::get('jobDetails-applicants/{id}', 'JobDetailsController@applicants')->name('jobDetails.applicants');
                 // Scholarship
                 Route::get('scholarship-status/{id}', 'ScholarshipController@status')->name('scholarships.status');
-
             });
         });
     });

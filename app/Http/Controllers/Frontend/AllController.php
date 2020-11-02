@@ -19,7 +19,7 @@ class AllController extends Controller
 
     public function seminars()
     {
-        $seminars = Seminar::where('status', 1)->paginate(1);
+        $seminars = Seminar::orderBy('seminar_date','desc')->paginate(10);
         return view('frontend.seminars', compact('seminars'));
     }
 
@@ -30,7 +30,7 @@ class AllController extends Controller
     }
     public function jobs()
     {
-        $jobs = JobDetails::where('status', 1)->paginate(1);
+        $jobs = JobDetails::latest()->where('status', 'Open')->paginate();
         return view('frontend.jobs', compact('jobs'));
     }
 

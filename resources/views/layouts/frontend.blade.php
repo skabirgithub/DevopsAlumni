@@ -128,8 +128,9 @@
                             @else
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle btn-auth" href="#" role="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle btn-auth" href="#"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        v-pre>
                                         {{Auth::user()->name}} <span class="caret"></span>
                                     </a>
 
@@ -164,7 +165,7 @@
                     <div class="col-lg-12">
                         <nav class="main-menu navbar navbar-expand-lg navbar-light">
                             <a class="navbar-brand" href="{{route('index')}}">
-                                <img src="{{asset('frontend/assets/img/logo.png')}}" alt="Logo" />
+                                <img  src="{{asset('frontend/assets/img/logo1.png')}}" alt="Logo" />
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#menucontent" aria-controls="menucontent" aria-expanded="false">
@@ -173,25 +174,27 @@
 
                             <div class="collapse navbar-collapse" id="menucontent">
                                 <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item active"><a class="nav-link" href="{{route('index')}}">Home</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('index')}}">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('about')}}">About</a></li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
                                             role="button">Students</a>
                                         <ul class="dropdown-menu">
 
-                                            <li class="nav-item"><a class="nav-link" href="{{route('students','Current Student')}}">Current
+                                            <li class="nav-item"><a class="nav-link"
+                                                    href="{{route('students','Current Student')}}">Current
                                                     Students</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="{{route('students','Alumni')}}">Alumni</a>
+                                            <li class="nav-item"><a class="nav-link"
+                                                    href="{{route('students','Alumni')}}">Alumni</a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="nav-item"><a class="nav-link" href="event.html">Seminars</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="career.html">Career</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('seminars')}}">Seminars</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('jobs')}}">Career</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('blogs')}}">Blog</a></li>
 
 
-                                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">Contact</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -213,7 +216,7 @@
                         <div class="single-widget-wrap">
                             <div class="widgei-body">
                                 <div class="footer-about">
-                                    <img src="{{asset('frontend/assets/img/footer-logo.png')}}" alt="Logo"
+                                    <img src="{{asset('frontend/assets/img/buplogo-resize.png')}}" alt="Logo"
                                         class="img-fluid" />
                                     <p>We are legend Lorem ipsum dolor sitmet, nsecte ipisicing eit, sed do eiusmod
                                         tempor incidunt ut et do maga aliqua enim ad minim.</p>

@@ -11,3 +11,4 @@
         </div>
     </div>
 </section>
+@include('includes.message')
