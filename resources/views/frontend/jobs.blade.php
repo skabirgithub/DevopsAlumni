@@ -63,7 +63,7 @@ demo senten.'])
                                     <h3><a href="{{route('job',$job->id)}}">{{$job->title}}</a></h3>
                                     <p>{!!Str::limit($job->details,100)!!}</p>
                                 </div>
-                                <a href="{{route('job',$job->id)}}" class="#">Apply now</a>
+                                <a href="{{route('job',$job->id)}}" class="btn btn-job">Apply now</a>
                             </div>
                         </div>
                         <!--== Single Job opportunity End ==-->

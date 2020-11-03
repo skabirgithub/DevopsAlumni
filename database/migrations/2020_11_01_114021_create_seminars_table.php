@@ -17,7 +17,7 @@ class CreateSeminarsTable extends Migration
         Schema::create('seminars', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('details');
+            $table->text('details');
             $table->date('seminar_date');
             $table->time('seminar_time');
             $table->string('place');

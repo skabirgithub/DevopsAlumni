@@ -619,6 +619,7 @@
     {{-- <script type="text/javascript" src="{{asset('dropzone/dropzone.min.js')}}"></script> --}}
 
     @yield('script')
+    @stack('scripts')
     <script>
         // Ajax Loading
         $body = $("body");

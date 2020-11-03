@@ -17,7 +17,7 @@ class CreateUserJobsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('job_details_id');
-            $table->string('cover_letter');
+            $table->text('cover_letter');
             $table->string('file')->nullable();
             $table->string('type')->default('Comment');
             $table->boolean('requrite_status')->default(0);

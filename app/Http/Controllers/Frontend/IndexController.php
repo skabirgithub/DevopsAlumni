@@ -3,15 +3,37 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
 use App\Models\ContactFeedback;
 use App\Models\Gallery;
+use App\Models\JobDetails;
+use App\Models\Profile;
+use App\Models\Scholarship;
+use App\Models\Seminar;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        $seminars = Seminar::where('seminar_date', '>=', today())->get();
+        $jobs = JobDetails::latest()->where('status', 'Open')->take(6)->get();
+        $scholarship = Scholarship::latest()->first();
+        $blogs = Blog::latest()->take(3)->get();
+        $countAlumni = Profile::where('student_type', 'Alumni')->count();
+        $countGallery = Gallery::count();
+        $countSeminar = Seminar::count();
+        $countJobDetails = JobDetails::count();
+        return view('frontend.index', compact(
+            'seminars',
+            'jobs',
+            'countAlumni',
+            'countGallery',
+            'countSeminar',
+            'countJobDetails',
+            'scholarship',
+            'blogs'
+        ));
     }
 
     // public function termsAndConditions()
@@ -39,7 +61,7 @@ class IndexController extends Controller
     public function galleries()
     {
         $galleries = Gallery::latest();
-        return view('frontend.galleries',compact('galleries'));
+        return view('frontend.galleries', compact('galleries'));
     }
     public function submitFeedback(Request $request)
     {

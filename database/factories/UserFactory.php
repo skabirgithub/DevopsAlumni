@@ -38,11 +38,11 @@ $factory->define(User::class, function (Faker $faker) {
 
     // return [
     //     'name' => $faker->name,
-    //     'about' => $faker->paragraph,
+    //     // 'about' => $faker->paragraph,
     //     'email' => $faker->unique()->safeEmail,
-    //     'phone' => $faker->phoneNumber,
-    //     'address' => $faker->address,
-    //     'image' => "15956534045f1bbd1ca2f7b.jpg",
+    //     // 'phone' => $faker->phoneNumber,
+    //     // 'address' => $faker->address,
+    //     // 'image' => "15956534045f1bbd1ca2f7b.jpg",
     //     'email_verified_at' => now(),
     //     'password' => bcrypt('12345678'), // 12345678
     //     'remember_token' => Str::random(10),

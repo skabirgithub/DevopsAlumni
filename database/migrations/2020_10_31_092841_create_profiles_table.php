@@ -25,7 +25,7 @@ class CreateProfilesTable extends Migration
             $table->string('facebook')->nullable();
             $table->string('linkedin')->nullable();
             $table->string('job_type');
-            $table->string('job_details');
+            $table->text('job_details');
             $table->string('student_type');
             $table->string('file')->nullable();
             $table->string('image');

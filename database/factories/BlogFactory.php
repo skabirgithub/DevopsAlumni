@@ -9,7 +9,7 @@ $factory->define(Blog::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence,
         'details' => $faker->paragraph,
-        'image' => "15956534045f1bbd1ca2f7b.jpg",
+        'image' => "myimage.jpg",
         'tags' => $faker->word,
         'posted_by' => $faker->name,
     ];

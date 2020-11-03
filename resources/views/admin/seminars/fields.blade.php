@@ -9,26 +9,24 @@
     {!! Form::label('details', 'Details:') !!}
     {!! Form::textarea('details', null, ['class' => 'form-control','maxlength' => 65530,'required']) !!}
 </div>
-
+@isset($seminar)
 <!-- Seminar Date Field -->
+<div class="form-group ">
+    {!! Form::label('seminar_date', 'Seminar Date:') !!}
+    {!! Form::date('seminar_date', $seminar->seminar_date, ['class' => 'form-control','id'=>'seminar_date','required']) !!}
+</div>
+@else
 <div class="form-group ">
     {!! Form::label('seminar_date', 'Seminar Date:') !!}
     {!! Form::date('seminar_date', null, ['class' => 'form-control','id'=>'seminar_date','required']) !!}
 </div>
+@endisset
 <!-- Seminar Date Field -->
 <div class="form-group ">
     {!! Form::label('seminar_time', 'Seminar Time:') !!}
     {!! Form::time('seminar_time', null, ['class' => 'form-control','id'=>'seminar_time','required']) !!}
 </div>
 
-@push('scripts')
-    <script type="text/javascript">
-        $('#seminar_date').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
-            useCurrent: false
-        })
-    </script>
-@endpush
 
 <!-- Place Field -->
 <div class="form-group">

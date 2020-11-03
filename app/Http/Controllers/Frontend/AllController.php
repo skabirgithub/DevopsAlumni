@@ -13,13 +13,13 @@ class AllController extends Controller
     public function students($category)
     {
         // return Profile::all();
-        $students = Profile::where('student_type', $category)->with('user')->paginate(10);
+        $students = Profile::where('student_type', $category)->with('user')->paginate(9);
         return view('frontend.students', compact('students'));
     }
 
     public function seminars()
     {
-        $seminars = Seminar::orderBy('seminar_date','desc')->paginate(10);
+        $seminars = Seminar::orderBy('seminar_date', 'desc')->paginate(9);
         return view('frontend.seminars', compact('seminars'));
     }
 
@@ -30,7 +30,7 @@ class AllController extends Controller
     }
     public function jobs()
     {
-        $jobs = JobDetails::latest()->where('status', 'Open')->paginate();
+        $jobs = JobDetails::latest()->where('status', 'Open')->paginate(9);
         return view('frontend.jobs', compact('jobs'));
     }
 

@@ -18,7 +18,7 @@ class CreateTrainingsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('institute');
             $table->string('subject');
-            $table->string('details');
+            $table->text('details');
             $table->date('from');
             $table->date('to');
             $table->string('file')->nullable();

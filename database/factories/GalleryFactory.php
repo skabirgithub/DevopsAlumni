@@ -10,6 +10,6 @@ $factory->define(Gallery::class, function (Faker $faker) {
     $categories = ["Slider", "Gallery"];
     return [
         'category' => $faker->randomElement($categories),
-        'image' => "15956514755f1bb593a761d.jpg",
+        'image' => "myimage.jpg",
     ];
 });

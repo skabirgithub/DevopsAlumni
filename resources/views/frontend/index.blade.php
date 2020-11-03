@@ -17,7 +17,7 @@
                                 community and get responses in three.</p>
                             <div class="slider-btn">
                                 <a href="#about-area" class="btn btn-brand smooth-scroll">our mission</a>
-                                <a href="about.html" class="btn btn-brand-rev">our story</a>
+                                <a href="{{route('about')}}" class="btn btn-brand-rev">our story</a>
                             </div>
                         </div>
                     </div>
@@ -94,14 +94,16 @@
                         <h3>Upcoming event</h3>
                     </div>
                     <div class="upcoming-event-content owl-carousel">
+                        @foreach ($seminars as $seminar)
                         <!-- No 1 Event -->
                         <div class="single-upcoming-event">
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="up-event-thumb">
-                                        <img src="{{asset('frontend/assets/img/event/event-img-1.jpg')}}"
-                                            class="img-fluid" alt="Upcoming Event">
-                                        <h4 class="up-event-date">24 December, 2020</h4>
+                                        <img src="{{asset('images/'.$seminar->image)}}" class="img-fluid"
+                                            alt="Upcoming Event">
+                                        <h4 class="up-event-date">{{$seminar->seminar_date->toFormattedDateString()}} at
+                                            {{date('h:i a',strtotime($seminar->seminar_time))}}</h4>
                                     </div>
                                 </div>
 
@@ -110,18 +112,16 @@
                                         <div class="display-table-cell">
                                             <div class="up-event-text">
                                                 <div class="event-countdown">
-                                                    <div class="event-countdown-counter" data-date="2018/9/10">
+                                                    {{-- <div class="event-countdown-counter" data-date="2018/9/10">
                                                     </div>
-                                                    <p>Remaining</p>
+                                                    <p>Remaining</p> --}}
                                                 </div>
-                                                <h3><a href="single-event.html">The Power of Artificial Intelligence
-                                                        - Online Seminar </a></h3>
-                                                <p>Hello everybody Lorem ipsum dolor sit amet, consectetur
-                                                    adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                                    dolore magna aliqua. Ut enim and minim veniam, quis nostrud
-                                                    exercitation ullamco laboris nisi ut aliquipv ex ea.</p>
-                                                <a href="single-event.html" class="btn btn-brand btn-brand-dark">join
-                                                    with us</a>
+                                                <h3><a href="{{route('seminar',$seminar->id)}}">{{$seminar->title}}</a>
+                                                </h3>
+                                                <p>{!!Str::limit($seminar->details,100)!!}</p>
+                                                <p>Place : {{$seminar->place}}</p>
+                                                <a href="{{route('seminar',$seminar->id)}}"
+                                                    class="btn btn-brand btn-brand-dark">View Details</a>
                                             </div>
                                         </div>
                                     </div>
@@ -129,79 +129,7 @@
                             </div>
                         </div>
                         <!-- partial -->
-
-
-                        <!-- No 2 Event -->
-                        <div class="single-upcoming-event">
-                            <div class="row">
-                                <div class="col-lg-5">
-                                    <div class="up-event-thumb">
-                                        <img src="{{asset('frontend/assets/img/event/event-img-2.jpg')}}"
-                                            class="img-fluid" alt="Upcoming Event">
-                                        <h4 class="up-event-date">21 November, 2020</h4>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-7">
-                                    <div class="display-table">
-                                        <div class="display-table-cell">
-                                            <div class="up-event-text">
-                                                <div class="event-countdown">
-                                                    <div class="event-countdown-counter" data-date="2018/9/10">
-                                                    </div>
-                                                    <p>Remaining</p>
-                                                </div>
-                                                <h3><a href="single-event.html">Alumni Meet 2020</a></h3>
-                                                <p>Hello everybody Lorem ipsum dolor sit amet, consectetur
-                                                    adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                                    dolore magna aliqua. Ut enim and minim veniam, quis nostrud
-                                                    exercitation ullamco laboris nisi ut aliquipv ex ea.</p>
-                                                <a href="single-event.html" class="btn btn-brand btn-brand-dark">join
-                                                    with us</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- partial -->
-
-
-                        <!-- No 3 Event -->
-                        <div class="single-upcoming-event">
-                            <div class="row">
-                                <div class="col-lg-5">
-                                    <div class="up-event-thumb">
-                                        <img src="{{asset('frontend/assets/img/event/event-img-3.jpg')}}"
-                                            class="img-fluid" alt="Upcoming Event">
-                                        <h4 class="up-event-date">02 December, 2020</h4>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-7">
-                                    <div class="display-table">
-                                        <div class="display-table-cell">
-                                            <div class="up-event-text">
-                                                <div class="event-countdown">
-                                                    <div class="event-countdown-counter" data-date="2018/9/10">
-                                                    </div>
-                                                    <p>Remaining</p>
-                                                </div>
-                                                <h3><a href="single-event.html">Networking Career path - Seminar
-                                                    </a></h3>
-                                                <p>Hello everybody Lorem ipsum dolor sit amet, consectetur
-                                                    adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                                    dolore magna aliqua. Ut enim and minim veniam, quis nostrud
-                                                    exercitation ullamco laboris nisi ut aliquipv ex ea.</p>
-                                                <a href="single-event.html" class="btn btn-brand btn-brand-dark">join
-                                                    with us</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- partial -->
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -232,7 +160,7 @@
                         <p>There are many company Lorem ipsm dolor sitg amet, csetur adipicing elit, sed do eiusmod
                             tempor dncint ut labore et dolore magna alis enim ad minim veniam, quis nostrud
                             exercitation ullamco.</p>
-                        <a href="about.html" class="btn btn-brand about-btn">know more</a>
+                        <a href="{{route('about')}}" class="btn btn-brand about-btn">know more</a>
                     </div>
                 </div>
             </div>
@@ -325,6 +253,7 @@
         <!--== Job opportunity Wrapper ==-->
         <div class="job-opportunity-wrapper">
             <div class="row">
+                @foreach ($jobs as $job)
                 <!--== Single Job opportunity Start ==-->
                 <div class="col-lg-4 col-sm-6 text-center">
                     <div class="single-job-opportunity">
@@ -332,123 +261,23 @@
                             <div class="job-oppor-logo">
                                 <div class="display-table">
                                     <div class="display-table-cell">
-                                        <img src="{{asset('frontend/assets/img/job/compnay-logo-1.png')}}" alt="Job">
+                                        <img src="{{asset('images/'.$job->image)}}" alt="Job">
                                     </div>
                                 </div>
                             </div>
-                            <h3><a href="#">Urgently Need Five Data Center Specialist</a></h3>
-                            <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est etiam
-                                procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
+                           <h3><a href="{{route('job',$job->id)}}">{{$job->title}}</a></h3>
+                            <p>{!!Str::limit($job->details,100)!!}</p>
                         </div>
-                        <a href="#" class="btn btn-job">Apply now</a>
+                        <a href="{{route('job',$job->id)}}" class="btn btn-job">Apply now</a>
                     </div>
                 </div>
                 <!--== Single Job opportunity End ==-->
-
-                <!--== Single Job opportunity Start ==-->
-                <div class="col-lg-4 col-sm-6 text-center">
-                    <div class="single-job-opportunity">
-                        <div class="job-opportunity-text">
-                            <div class="job-oppor-logo">
-                                <div class="display-table">
-                                    <div class="display-table-cell">
-                                        <img src="{{asset('frontend/assets/img/job/compnay-logo-2.png')}}" alt="Job">
-                                    </div>
-                                </div>
-                            </div>
-                            <h3><a href="#">Product Owner (m/f) for our Charter Business</a></h3>
-                            <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est etiam
-                                procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                        </div>
-                        <a href="#" class="btn btn-job">Apply now</a>
-                    </div>
-                </div>
-                <!--== Single Job opportunity End ==-->
-
-                <!--== Single Job opportunity Start ==-->
-                <div class="col-lg-4 col-sm-6 text-center">
-                    <div class="single-job-opportunity">
-                        <div class="job-opportunity-text">
-                            <div class="job-oppor-logo">
-                                <div class="display-table">
-                                    <div class="display-table-cell">
-                                        <img src="{{asset('frontend/assets/img/job/compnay-logo-1.png')}}" alt="Job">
-                                    </div>
-                                </div>
-                            </div>
-                            <h3><a href="#">Backend Developer (Java) (m/f) wanted for leading</a></h3>
-                            <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est etiam
-                                procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                        </div>
-                        <a href="#" class="btn btn-job btn-expired disabled">Expired</a>
-                    </div>
-                </div>
-                <!--== Single Job opportunity End ==-->
-
-                <!--== Single Job opportunity Start ==-->
-                <div class="col-lg-4 col-sm-6 text-center">
-                    <div class="single-job-opportunity">
-                        <div class="job-opportunity-text">
-                            <div class="job-oppor-logo">
-                                <div class="display-table">
-                                    <div class="display-table-cell">
-                                        <img src="{{asset('frontend/assets/img/job/compnay-logo-2.png')}}" alt="Job">
-                                    </div>
-                                </div>
-                            </div>
-                            <h3><a href="#">API Architect and Lead - Python, SQLAlchemy, GraphQL</a></h3>
-                            <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est etiam
-                                procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                        </div>
-                        <a href="#" class="btn btn-job">Apply now</a>
-                    </div>
-                </div>
-                <!--== Single Job opportunity End ==-->
-
-                <!--== Single Job opportunity Start ==-->
-                <div class="col-lg-4 col-sm-6 text-center">
-                    <div class="single-job-opportunity">
-                        <div class="job-opportunity-text">
-                            <div class="job-oppor-logo">
-                                <div class="display-table">
-                                    <div class="display-table-cell">
-                                        <img src="{{asset('frontend/assets/img/job/compnay-logo-3.png')}}" alt="Job">
-                                    </div>
-                                </div>
-                            </div>
-                            <h3><a href="#">Remotely - Javascript Developer Node.js</a></h3>
-                            <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est etiam
-                                procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                        </div>
-                        <a href="#" class="btn btn-job btn-expired disabled">Expired</a>
-                    </div>
-                </div>
-                <!--== Single Job opportunity End ==-->
-
-                <!--== Single Job opportunity Start ==-->
-                <div class="col-lg-4 col-sm-6 text-center">
-                    <div class="single-job-opportunity">
-                        <div class="job-opportunity-text">
-                            <div class="job-oppor-logo">
-                                <div class="display-table">
-                                    <div class="display-table-cell">
-                                        <img src="{{asset('frontend/assets/img/job/compnay-logo-4.png')}}" alt="Job">
-                                    </div>
-                                </div>
-                            </div>
-                            <h3><a href="#">Five Years Experience Data Center Specialist Needed</a></h3>
-                            <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est etiam
-                                procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                        </div>
-                        <a href="#" class="btn btn-job">Apply now</a>
-                    </div>
-                </div>
-                <!--== Single Job opportunity End ==-->
+                @endforeach
             </div>
 
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <a href="career.html" class="btn btn-brand btn-loadmore">All job list</a>
+                    <a href="{{route('jobs')}}" class="btn btn-brand btn-loadmore">All job list</a>
                 </div>
             </div>
         </div>
@@ -466,7 +295,7 @@
                         <img src="{{asset('frontend/assets/img/fun-fact/user.svg')}}" alt="Funfact">
                     </div>
                     <div class="funfact-info">
-                        <h5 class="funfact-count">4025</h5>
+                        <h5 class="funfact-count">{{$countAlumni}}</h5>
                         <p>Alumni</p>
                     </div>
                 </div>
@@ -480,7 +309,7 @@
                         <img src="{{asset('frontend/assets/img/fun-fact/picture.svg')}}" alt="Funfact">
                     </div>
                     <div class="funfact-info">
-                        <h5 class="funfact-count">5725</h5>
+                        <h5 class="funfact-count">{{$countGallery}}</h5>
                         <p>Photos</p>
                     </div>
                 </div>
@@ -494,7 +323,7 @@
                         <img src="{{asset('frontend/assets/img/fun-fact/event.svg')}}" alt="Funfact">
                     </div>
                     <div class="funfact-info">
-                        <h5><span class="funfact-count">21</span>+</h5>
+                        <h5><span class="funfact-count">{{$countSeminar}}</span>+</h5>
                         <p>Events</p>
                     </div>
                 </div>
@@ -508,8 +337,8 @@
                         <img src="{{asset('frontend/assets/img/fun-fact/medal.svg')}}" alt="Funfact">
                     </div>
                     <div class="funfact-info">
-                        <h5><span class="funfact-count">15</span>+</h5>
-                        <p>Awards</p>
+                        <h5><span class="funfact-count">{{$countJobDetails}}</span>+</h5>
+                        <p>Jobs</p>
                     </div>
                 </div>
             </div>
@@ -530,9 +359,8 @@
             <div class="col-lg-12 text-center">
                 <div class="scholership-promo-text">
                     <h2>BUP Alumni Society provides <span>scholarship</span> for Talented Students!</h2>
-                    <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be the
-                        need academic, relocation, career, projects, mentorship, etc you can ask the community and
-                        get </p>
+                    <p>{{$scholarship->title}} </p>
+                    <p>{!!$scholarship->details!!} </p>
                     <a href="#" class="btn btn-brand">Apply Now</a>
                 </div>
             </div>
@@ -548,7 +376,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="section-title">
-                    <h2>Blog & Announcements</h2>
+                    <h2>Campus & Blog</h2>
                 </div>
             </div>
         </div>
@@ -556,104 +384,39 @@
 
         <!--== Blog Content Wrapper ==-->
         <div class="row">
+            @foreach ($blogs as $blog)
             <!--== Single Blog Post start ==-->
-            <div class="col-lg-4 col-md-6">
-                <article class="single-blog-post">
-                    <figure class="blog-thumb">
-                        <div class="blog-thumbnail">
-                            <img src="{{asset('frontend/assets/img/blog/blog-1.jpg')}}" alt="Blog" class="img-fluid" />
-                        </div>
-                        <figcaption class="blog-meta clearfix">
-                            <a href="single-blog.html" class="author">
-                                <div class="author-pic">
-                                    <img src="{{asset('frontend/assets/img/blog/author.jpg')}}" alt="Author">
-                                </div>
-                                <div class="author-info">
-                                    <h5>Daney williams</h5>
-                                    <p>2 hours Ago</p>
-                                </div>
-                            </a>
-
-                        </figcaption>
-                    </figure>
-
-                    <div class="blog-content">
-                        <h3><a href="single-blog.html">Recently we create a maassive project that</a></h3>
-                        <p>This is a big project of our company, we are happy to completed this type projec which
-                            are
-                            get world famous award</p>
-                        <a href="single-blog.html" class="btn btn-brand">More</a>
+           <div class="col-lg-4 col-md-4">
+            <article class="single-blog-post">
+                <figure class="blog-thumb">
+                    <div class="blog-thumbnail">
+                        <img src="{{asset('images/'.$blog->image)}}" alt="Blog" class="img-fluid" />
                     </div>
-                </article>
-            </div>
+                    <figcaption class="blog-meta clearfix">
+                        <a href="{{$blog->url()}}" class="author">
+                            <div class="author-pic">
+                                {{-- <img src="assets/img/blog/author.jpg" alt="Author"> --}}
+                            </div>
+                            <div class="author-info">
+                                <h5>{{$blog->posted_by}}</h5>
+                                <p>{{$blog->created_at->toFormattedDateString()}}</p>
+                            </div>
+                        </a>
+        
+                    </figcaption>
+                </figure>
+        
+                <div class="blog-content">
+                    <h3><a href="{{$blog->url()}}">{{$blog->title}}</a></h3>
+                    <p>{!!Str::limit($blog->details,100)!!}</p>
+                    <a href="{{$blog->url()}}" class="btn btn-brand">Read More</a>
+                </div>
+            </article>
+        </div>
             <!--== Single Blog Post End ==-->
-
-            <!--== Single Blog Post start ==-->
-            <div class="col-lg-4 col-md-6">
-                <article class="single-blog-post">
-                    <figure class="blog-thumb">
-                        <div class="blog-thumbnail">
-                            <img src="{{asset('frontend/assets/img/blog/blog-2.jpg')}}" alt="Blog" class="img-fluid" />
-                        </div>
-                        <figcaption class="blog-meta clearfix">
-                            <a href="single-blog.html" class="author">
-                                <div class="author-pic">
-                                    <img src="{{asset('frontend/assets/img/blog/author.jpg')}}" alt="Author">
-                                </div>
-                                <div class="author-info">
-                                    <h5>Myra Hindley</h5>
-                                    <p>1 Day Ago</p>
-                                </div>
-                            </a>
-
-                        </figcaption>
-                    </figure>
-
-                    <div class="blog-content">
-                        <h3><a href="single-blog.html">Myra Hindley and her lover, Ian Brady, plotted and</a></h3>
-                        <p>This is a big project of our company, we are happy to completed this type projec which
-                            are
-                            get world famous award</p>
-                        <a href="single-blog.html" class="btn btn-brand">More</a>
-                    </div>
-                </article>
-            </div>
-            <!--== Single Blog Post End ==-->
-
-            <!--== Single Blog Post start ==-->
-            <div class="col-lg-4 col-md-6">
-                <article class="single-blog-post">
-                    <figure class="blog-thumb">
-                        <div class="blog-thumbnail">
-                            <img src="{{asset('frontend/assets/img/blog/blog-3.jpg')}}" alt="Blog" class="img-fluid" />
-                        </div>
-                        <figcaption class="blog-meta clearfix">
-                            <a href="single-blog.html" class="author">
-                                <div class="author-pic">
-                                    <img src="{{asset('frontend/assets/img/blog/author.jpg')}}" alt="Author">
-                                </div>
-                                <div class="author-info">
-                                    <h5>Aileen Wuornos</h5>
-                                    <p>3 mins Ago</p>
-                                </div>
-                            </a>
-
-                        </figcaption>
-                    </figure>
-
-                    <div class="blog-content">
-                        <h3><a href="single-blog.html">Nurse with a private practice, racked up dozens of
-                                victims</a></h3>
-                        <p>This is a big project of our company, we are happy to completed this type projec which
-                            are
-                            get world famous award</p>
-                        <a href="single-blog.html" class="btn btn-brand">More</a>
-                    </div>
-                </article>
-            </div>
-
+            @endforeach
             <div class="col-lg-12 text-center">
-                <a href="career.html" class="btn btn-brand btn-loadmore">See more</a>
+                <a href="{{route('blogs')}}" class="btn btn-brand btn-loadmore">See more</a>
             </div>
 
             <!--== Single Blog Post End ==-->

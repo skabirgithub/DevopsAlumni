@@ -17,7 +17,7 @@ class CreateClubsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('name');
-            $table->string('details');
+            $table->text('details');
             $table->string('designation');
             $table->date('member_since');
             $table->string('file');
