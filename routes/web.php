@@ -48,6 +48,8 @@ Route::prefix('user')->group(function () {
                 Route::post('change-password', 'ProfileController@changePassword')->name('change.password');
                 Route::get('profile', 'ProfileController@profileView')->name('profile.view');
                 Route::post('profile', 'ProfileController@profileChange')->name('profile.change');
+                // Zoom
+                Route::resource('zoom', 'ZoomController');
             });
         });
     });
