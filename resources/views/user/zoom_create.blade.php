@@ -20,7 +20,7 @@ senten.'])
                                                 <div class="signin-area-wrap">
                                                     <h4>Create Zoom Meeting Here</h4>
                                                     <div class="sign-form">
-                                                        <form method="POST" action="{{ route('user.zoom.store') }}">
+                                                        <form method="POST" action="{{ route('user.zooms.store') }}">
                                                             @csrf
                                                             <input value="{{ old('title') }}" required name="title"
                                                                 type="text" placeholder="Enter Meeting Title">

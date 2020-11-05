@@ -27,7 +27,8 @@ class ZoomController extends Controller
      */
     public function index()
     {
-        return Zoom::all();
+        $zooms = Zoom::latest()->with('user')->get();
+        return view('user.zooms', compact('zooms'));
     }
 
     /**
@@ -125,6 +126,15 @@ class ZoomController extends Controller
      */
     public function destroy(Zoom $zoom)
     {
-        //
+        $client = new Client(['base_uri' => 'https://api.zoom.us']);
+        $accessToken = $this->generateZoomToken();
+        $meetingId = $zoom->meeting_id;
+        $response = $client->request('DELETE', '/v2/meetings/' . $meetingId, [
+            "headers" => [
+                "Authorization" => "Bearer $accessToken"
+            ]
+        ]);
+        $zoom->delete();
+        return back()->with('success', 'Delete Successful.');
     }
 }

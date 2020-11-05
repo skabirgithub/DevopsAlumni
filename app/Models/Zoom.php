@@ -14,4 +14,9 @@ class Zoom extends Model
         'meeting_password',
         'meeting_url',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

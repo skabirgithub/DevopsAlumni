@@ -49,7 +49,7 @@ Route::prefix('user')->group(function () {
                 Route::get('profile', 'ProfileController@profileView')->name('profile.view');
                 Route::post('profile', 'ProfileController@profileChange')->name('profile.change');
                 // Zoom
-                Route::resource('zoom', 'ZoomController');
+                Route::resource('zooms', 'ZoomController');
             });
         });
     });
