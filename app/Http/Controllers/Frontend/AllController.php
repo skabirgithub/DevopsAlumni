@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\JobDetails;
+use App\Models\Activity;
+use App\Models\Club;
 use App\Models\Profile;
+use App\Models\Training;
 use App\Models\Seminar;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -22,7 +25,11 @@ class AllController extends Controller
     {
         $user = User::where('id', $userId)->where('status', 1)->with('profile')->first();
         if ($user) {
-            return view('frontend.student_profile', compact('user'));
+            $activities = Activity::where('user_id', $user->id)->latest()->get();
+            $trainings = Training::where('user_id', $user->id)->latest()->get();
+
+            $clubs = Club::where('user_id', $user->id)->latest()->get();
+            return view('frontend.student_profile', compact('user', 'activities', 'trainings', 'clubs'));
         } else {
             abort(404);
         }
