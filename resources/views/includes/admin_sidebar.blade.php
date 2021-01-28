@@ -90,6 +90,12 @@
                 </i>Manage
             </a>
         </li>
+        <li>
+            <a class="{{ Request::is('rt-admin/requests') ? 'mm-active' : '' }}" href="{{route('admin.blogs.requests')}}">
+                <i class="metismenu-icon">
+                </i>Requests
+            </a>
+        </li>
     </ul>
 </li>
 @endif

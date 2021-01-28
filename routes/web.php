@@ -54,6 +54,7 @@ Route::prefix('user')->group(function () {
                 Route::get('applicants/{jobDetailsId}', 'JobDetailsController@applicants')->name('jobs.applicants');
                 Route::get('scholarship-apply/{id}', 'ScholarshipController@applyView')->name('scholarship.apply.view');
                 Route::post('scholarship-apply/{id}', 'ScholarshipController@apply')->name('scholarship.apply');
+                Route::post('comment', 'BlogController@comment')->name('blogs.comment');
                 Route::resources([
                     'zooms' => 'ZoomController',
                     'profiles' => 'ProfileController',
@@ -144,6 +145,9 @@ Route::prefix('rt-admin')->group(function () {
                 Route::get('jobDetails-requests', 'JobDetailsController@requests')->name('jobDetails.requests');
                 Route::get('jobDetails-accept/{jobDetails}', 'JobDetailsController@accept')->name('jobDetails.accept');
                 Route::get('jobDetails-applicants/{id}', 'JobDetailsController@applicants')->name('jobDetails.applicants');
+                //blog
+                Route::get('blogs-requests', 'BlogController@requests')->name('blogs.requests');
+                Route::get('blogs-accept/{blogs}', 'BlogController@accept')->name('blogs.accept');
                 // Scholarship
                 Route::get('scholarship-status/{id}', 'ScholarshipController@status')->name('scholarships.status');
                 Route::get('scholarship-applicants/{id}', 'ScholarshipController@applicants')->name('scholarships.applicants');

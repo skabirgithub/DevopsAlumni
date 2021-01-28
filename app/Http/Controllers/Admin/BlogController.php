@@ -22,7 +22,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-         $blog = Blog::all();
+        $blog = Blog::where('status', 1)->latest()->get();
         if (request()->ajax()) {
             return DataTables::of($blog)
                 ->addIndexColumn()
@@ -38,7 +38,7 @@ class BlogController extends Controller
                         "<a class='border-0 btn-sm btn-transition btn btn-outline-info' href='" . route('admin.blogs.edit', $blog->id) . "'>Edit</a>  <br> " .
                         ' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="' . $blog->id . '" data-original-title="Delete" class="border-0 btn-sm btn-transition btn btn-outline-danger delete">Delete</a>';
                 })
-                ->rawColumns(['action', 'image','details'])
+                ->rawColumns(['action', 'image', 'details'])
                 ->make(true);
         }
         return view('admin.blogs.index');
@@ -115,5 +115,40 @@ class BlogController extends Controller
         FileHelper::deleteImage($blog);
         $blog->delete();
         // return back()->with('success', 'Delete Successful.');
+    }
+
+    public function requests()
+    {
+        $blogs = Blog::where('status', 0)->with('user')->get();
+        if (request()->ajax()) {
+            return DataTables::of($blogs)
+                ->addIndexColumn()
+                ->addColumn('image', function (Blog $blog) {
+                    return "<img height='100px' width = '100px' alt='No image found.'  src='" . asset('images/' . $blog->image) . "' />";
+                })
+                ->addColumn('details', function (Blog $blog) {
+                    return Str::limit($blog->details, 100);
+                })
+                ->addColumn('post_by', function (Blog $blog) {
+                    return  $blog->user->name;
+                })
+                ->addColumn('action', function (Blog $blog) {
+                    return
+                        "<a class='border-0 btn-sm btn-transition btn btn-outline-success' href='" . route('admin.blogs.accept', $blog->id) . "'>Accept</a> <br> " .
+                        "<a class='border-0 btn-sm btn-transition btn btn-outline-primary' href='" . route('admin.blogs.show', $blog->id) . "'>View</a> <br> " .
+                        "<a class='border-0 btn-sm btn-transition btn btn-outline-info' href='" . route('admin.blogs.edit', $blog->id) . "'>Edit</a>  <br> " .
+                        ' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="' . $blog->id . '" data-original-title="Delete" class="border-0 btn-sm btn-transition btn btn-outline-danger delete">Delete</a>';
+                })
+                ->rawColumns(['action', 'image', 'details'])
+                ->make(true);
+        }
+        return view('admin.blogs.requests');
+    }
+
+    public function accept(Blog $blogs)
+    {
+        $blogs->status = 1;
+        $blogs->save();
+        return back()->with('success', 'Blog Accepted');
     }
 }

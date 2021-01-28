@@ -28,19 +28,35 @@ demo senten.'])
 
                         <footer class="post-share">
 
-
                             <div class="row no-gutters ">
                                 <div class="col-8">
                                     <div class="shareonsocial">
-                                        <span>Comment:</span>
-                                        <input type="text">
-
+                                        <span>Comments:</span>
                                     </div>
                                 </div>
-
                             </div>
-
+                            
                         </footer>
+                        <br>
+                        <ul style="margin-left: 10px" >
+
+                            @foreach ($blog->comments as $comment)
+                                
+                            <li><span style="color: green">{{$comment->user->name}} : </span> {{$comment->comment}} </li>
+                            @endforeach
+                        </ul>
+                        <br>
+                        <form class="" action="{{route('user.blogs.comment')}}"
+                            method="POST">
+                            @csrf
+                            <input type="hidden" name="blog_id" value="{{$blog->id}}">
+                            <textarea style="margin-left: 10px" rows="3" class="form-control" name="comment" placeholder="Write Comment"></textarea>
+                            <div class="form-footer pt-4 pt-2 mt-4 border-top">
+                                <button type="submit" class="btn btn-reg">
+                                    <i class=" mdi mdi-checkbox-marked-outline mr-1"></i> Add Comment
+                                </button>
+                            </div>
+                        </form>
                     </article>
                 </div>
                 <!-- Blog content Area End -->

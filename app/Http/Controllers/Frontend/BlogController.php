@@ -10,12 +10,12 @@ class BlogController extends Controller
 {
     public function blogs()
     {
-        $blogs = Blog::latest()->paginate(15);
+        $blogs = Blog::where('status', 1)->latest()->paginate(15);
         return view('frontend.blogs', compact('blogs'));
     }
     public function blogSingle($id)
     {
-         $blog = Blog::findOrFail($id);
+        $blog = Blog::where('status', 1)->where('id', $id)->with('comments')->first();
         return view('frontend.blog', compact('blog'));
     }
 }

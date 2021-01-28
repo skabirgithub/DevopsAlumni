@@ -11,7 +11,7 @@
                     <!-- Single about text start -->
                     <div class="single-about-text">
                         <span class="year">1834</span>
-                        <img src="{{asset('frontend/assets/img/about-page/about-img-1.jpg')}}" alt="About" class="img-fluid img-left">
+                        <img src="{{asset('frontend/assets/img/about-bg.jpg')}}"alt="About" class="img-fluid img-left">
                         <h2 class="h3">ESTD of This Alumni Assotitation</h2>
                         <p>Aenean viverra rhoncus sspede. Phasellssus leo dolor, tempus non, auctor endrerit
                             quis, nisi. Fusce neque. Donec vitae orci sed dolor rutrum ausssctor. Sed
@@ -33,7 +33,7 @@
                     <!-- Single about text start -->
                     <div class="single-about-text">
                         <span class="year">1920</span>
-                        <img src="{{asset('frontend/assets/img/about-page/about-img-2.jpg')}}" alt="About" class="img-fluid img-right">
+                        <img src="{{asset('frontend/assets/img/bup.jpg')}}"alt="About" class="img-fluid img-right">
                         <h2 class="h3">Our First Achivement in History</h2>
                         <p>Aenean viverra rhoncus sspede. Phasellssus leo dolor, tempus non, auctor endrerit
                             quis, nisi. Fusce neque. Donec vitae orci sed dolor rutrum ausssctor. Sed
@@ -55,7 +55,7 @@
                     <!-- Single about text start -->
                     <div class="single-about-text">
                         <span class="year">2006</span>
-                        <img src="{{asset('frontend/assets/img/about-page/about-img-3.jpg')}}" alt="About" class="img-fluid img-left">
+                        <img src="{{asset('frontend/assets/img/about-bg.jpg')}}"alt="About" class="img-fluid img-left">
                         <h2 class="h3">Our New Genaretion</h2>
                         <p>Aenean viverra rhoncus sspede. Phasellssus leo dolor, tempus non, auctor endrerit
                             quis, nisi. Fusce neque. Donec vitae orci sed dolor rutrum ausssctor. Sed
