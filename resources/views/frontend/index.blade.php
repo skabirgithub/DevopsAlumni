@@ -265,7 +265,7 @@
                                     </div>
                                 </div>
                             </div>
-                           <h3><a href="{{route('job',$job->id)}}">{{$job->title}}</a></h3>
+                            <h3><a href="{{route('job',$job->id)}}">{{$job->title}}</a></h3>
                             <p>{!!Str::limit($job->details,100)!!}</p>
                         </div>
                         <a href="{{route('job',$job->id)}}" class="btn btn-job">Apply now</a>
@@ -361,7 +361,42 @@
                     <h2>BUP Alumni Society provides <span>scholarship</span> for Talented Students!</h2>
                     <p>{{$scholarship->title}} </p>
                     <p>{!!$scholarship->details!!} </p>
-                    <a href="#" class="btn btn-brand">Apply Now</a>
+                    {{-- <a href="#" class="btn btn-brand">Apply Now</a> --}}
+                    <a class="btn btn-brand" href="{{route('user.scholarship.apply.view',$scholarship->id)}}">
+                        Apply Now
+                    </a>
+
+
+                    <!-- Modal -->
+                    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Apply For Scholarship</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Email address</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                                aria-describedby="emailHelp" placeholder="Enter email">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control"></textarea>
+                                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                                placeholder="Password">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -386,33 +421,33 @@
         <div class="row">
             @foreach ($blogs as $blog)
             <!--== Single Blog Post start ==-->
-           <div class="col-lg-4 col-md-4">
-            <article class="single-blog-post">
-                <figure class="blog-thumb">
-                    <div class="blog-thumbnail">
-                        <img src="{{asset('images/'.$blog->image)}}" alt="Blog" class="img-fluid" />
+            <div class="col-lg-4 col-md-4">
+                <article class="single-blog-post">
+                    <figure class="blog-thumb">
+                        <div class="blog-thumbnail">
+                            <img src="{{asset('images/'.$blog->image)}}" alt="Blog" class="img-fluid" />
+                        </div>
+                        <figcaption class="blog-meta clearfix">
+                            <a href="{{$blog->url()}}" class="author">
+                                <div class="author-pic">
+                                    {{-- <img src="assets/img/blog/author.jpg" alt="Author"> --}}
+                                </div>
+                                <div class="author-info">
+                                    <h5>{{$blog->posted_by}}</h5>
+                                    <p>{{$blog->created_at->toFormattedDateString()}}</p>
+                                </div>
+                            </a>
+
+                        </figcaption>
+                    </figure>
+
+                    <div class="blog-content">
+                        <h3><a href="{{$blog->url()}}">{{$blog->title}}</a></h3>
+                        <p>{!!Str::limit($blog->details,100)!!}</p>
+                        <a href="{{$blog->url()}}" class="btn btn-brand">Read More</a>
                     </div>
-                    <figcaption class="blog-meta clearfix">
-                        <a href="{{$blog->url()}}" class="author">
-                            <div class="author-pic">
-                                {{-- <img src="assets/img/blog/author.jpg" alt="Author"> --}}
-                            </div>
-                            <div class="author-info">
-                                <h5>{{$blog->posted_by}}</h5>
-                                <p>{{$blog->created_at->toFormattedDateString()}}</p>
-                            </div>
-                        </a>
-        
-                    </figcaption>
-                </figure>
-        
-                <div class="blog-content">
-                    <h3><a href="{{$blog->url()}}">{{$blog->title}}</a></h3>
-                    <p>{!!Str::limit($blog->details,100)!!}</p>
-                    <a href="{{$blog->url()}}" class="btn btn-brand">Read More</a>
-                </div>
-            </article>
-        </div>
+                </article>
+            </div>
             <!--== Single Blog Post End ==-->
             @endforeach
             <div class="col-lg-12 text-center">

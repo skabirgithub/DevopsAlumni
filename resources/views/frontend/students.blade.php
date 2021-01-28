@@ -41,15 +41,17 @@
                                 <tbody>
                                     @foreach ($students as $student)
                                         
+                                    @if($student->activeUser)
                                     <tr>
-                                        <td><img src="{{asset('images/'.$student->image)}}" alt="table">{{$student->user->name}}</td>
-                                        <td>{{$student->user->email}}</td>
+                                        <td><img src="{{asset('images/'.$student->image)}}" alt="table">{{$student->activeUser->name}}</td>
+                                        <td>{{$student->activeUser->email}}</td>
                                         <td>{{$student->faculty}}</td>
                                         <td>{{$student->department}}</td>
                                         <td>{{$student->batch}}</td>
                                         <td>{{$student->student_id}}</td>
-                                        <td><a href="#">View Full Profile</a></td>
+                                        <td><a href="{{route('student.profile',$student->user_id)}}">View Full Profile</a></td>
                                     </tr>
+                                    @endif
                                     @endforeach
 
                                   

@@ -10,6 +10,7 @@ class Zoom extends Model
         'title',
         'details',
         'start_time',
+        'user_id',
         'meeting_id',
         'meeting_password',
         'meeting_url',

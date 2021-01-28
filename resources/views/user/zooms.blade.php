@@ -8,6 +8,11 @@ senten.'])
     <div class="register-page-wrapper section-padding">
         <div class="container">
             <div class="row">
+                <div class="col-lg-3">
+                    <a href="{{route('user.zooms.create')}}" class="btn btn-brand about-btn ">Create Zoom Meeting</a>
+                </div>
+            </div><br>
+            <div class="row">
                 <div class="col-lg-12">
                     <div class="main-card mb-3 card">
                         <div class="card-body">

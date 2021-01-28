@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\JobDetails;
 use App\Models\Profile;
 use App\Models\Seminar;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AllController extends Controller
@@ -13,8 +14,18 @@ class AllController extends Controller
     public function students($category)
     {
         // return Profile::all();
-        $students = Profile::where('student_type', $category)->with('user')->paginate(9);
+        $students = Profile::where('student_type', $category)->with('activeUser')->paginate(9);
         return view('frontend.students', compact('students'));
+    }
+
+    public function studentProfile($userId)
+    {
+        $user = User::where('id', $userId)->where('status', 1)->with('profile')->first();
+        if ($user) {
+            return view('frontend.student_profile', compact('user'));
+        } else {
+            abort(404);
+        }
     }
 
     public function seminars()

@@ -134,14 +134,37 @@
                                         {{Auth::user()->name}} <span class="caret"></span>
                                     </a>
 
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{route('user.profile.view')}}">Profile</a>
-                                        <a class="dropdown-item" href="{{route('user.change.password')}}">Change
-                                            Password</a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+
+                                        @if (Auth::user()->status == 0)
+                                        <a style="color:red">Profile is Not Active</a>
+                                        @endif
+                                        <a class="dropdown-item" href="{{route('user.profile.view')}}">
+                                            <span style="font-size: 15px">Profile</span>
+                                        </a>
+                                        @if (Auth::user()->status == 1)
+
+                                        <a class="dropdown-item" href="{{route('user.jobs.index')}}">
+                                            <span style="font-size: 15px">Jobs</span>
+                                        </a>
+                                        <a class="dropdown-item" href="{{route('user.blogs.index')}}">
+                                            <span style="font-size: 15px">Blog</span>
+                                        </a>
+                                        <a class="dropdown-item" href="{{route('user.zooms.index')}}">
+                                            <span style="font-size: 15px">Zoom Meetings</span>
+                                        </a>
+                                        <a class="dropdown-item" href="/chatify">
+                                            <span style="font-size: 15px">Messanger</span>
+                                        </a>
+                                        @endif
+                                        <a class="dropdown-item" href="{{route('user.change.password')}}">
+                                            <span style="font-size: 15px">Change
+                                                Password</span>
+                                        </a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                                                      document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            <span style="font-size: 15px">{{ __('Logout') }}</span>
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
@@ -165,7 +188,7 @@
                     <div class="col-lg-12">
                         <nav class="main-menu navbar navbar-expand-lg navbar-light">
                             <a class="navbar-brand" href="{{route('index')}}">
-                                <img  src="{{asset('frontend/assets/img/logo1.png')}}" alt="Logo" />
+                                <img src="{{asset('frontend/assets/img/logo1.png')}}" alt="Logo" />
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#menucontent" aria-controls="menucontent" aria-expanded="false">
@@ -189,12 +212,14 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="nav-item"><a class="nav-link" href="{{route('seminars')}}">Seminars</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('seminars')}}">Seminars</a>
+                                    </li>
                                     <li class="nav-item"><a class="nav-link" href="{{route('jobs')}}">Career</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{route('blogs')}}">Blog</a></li>
 
 
-                                    <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">Contact</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">Contact</a>
+                                    </li>
                                 </ul>
                             </div>
                         </nav>
@@ -334,7 +359,7 @@
     <!-- custom js: custom scripts for theme style switcher for demo purpose  -->
     <script id="switcherhandle" src="{{asset('frontend/assets/switcher/switcher.js')}}"></script>
 
-
+    @yield('script')
 </body>
 
 <!-- Mirrored from codeboxr.net/themedemo/unialumni/html/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Oct 2020 12:33:32 GMT -->

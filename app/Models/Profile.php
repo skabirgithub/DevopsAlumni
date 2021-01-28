@@ -27,4 +27,8 @@ class Profile extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function activeUser()
+    {
+        return $this->belongsTo(User::class,'user_id')->where('status',1);
+    }
 }

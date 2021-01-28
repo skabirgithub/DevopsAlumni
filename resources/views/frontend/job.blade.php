@@ -64,29 +64,38 @@ demo senten.'])
                             <div class="register-form-content">
                                 <div class="row justify-content-center">
                                     <!-- Signin Area Content Start -->
-                                    <div class="col-lg-6 col-md-6 text-center">
+                                    <div class="col-lg-10 col-md-10 text-center">
                                         <div class="display-table">
                                             <div class="display-table-cell">
                                                 <div class="signin-area-wrap">
-                                                    <h4>Apply Now</h4>
+                                                    <h4>Login to apply now</h4>
                                                     <div class="sign-form">
-                                                        <form method="POST" action="{{ route('register') }}">
+                                                        <form enctype="multipart/form-data" method="POST"
+                                                            action="{{ route('user.jobs.apply') }}">
                                                             @csrf
-                                                            <input value="{{ old('name') }}" required name="name"
-                                                                type="text" placeholder="Enter your Name">
-                                                            <input value="{{ old('email') }}" required name="email"
-                                                                type="email" placeholder="Enter your Email">
-                                                            <input required minlength="8" name="password"
-                                                                type="password" placeholder="Password">
-                                                            <input required name="password_confirmation" minlength="8"
-                                                                type="password" placeholder="Confirm Password">
-                                                            <button type="submit" class="btn btn-reg">Apply</button>
+                                                            <input value="{{ Auth::user()->name ?? '' }}" required
+                                                                name="name" type="text" placeholder="Enter your Name">
+                                                            <input value="{{ Auth::user()->email ?? ''}}" required
+                                                                name="email" type="email"
+                                                                placeholder="Enter your Email">
+                                                            <label><br>Cover Letter*</label>
+                                                            <textarea required rows="8" name="cover_letter" type="text"
+                                                                class="form-control"
+                                                                laceholder="Activity Details">{{old('cover_letter')}}</textarea>
+                                                            <br>
+                                                            Upload Your CV*
+                                                            <input type="hidden" name="job_details_id" value="{{ $job->id }}" />
+                                                            <input required type="file" name="file" />
+                                                            <button type="submit" class="btn btn-reg">
+                                                                <i class=" mdi mdi-checkbox-marked-outline mr-1"></i>
+                                                                Apply
+                                                            </button>
                                                         </form>
                                                     </div>
                                                     <br>
                                                 </div>
-                                                Already a Member? <a href="{{ route('login') }}">
-                                                    Login Here<br> </a>
+                                                {{-- Already a Member? <a href="{{ route('login') }}">
+                                                Login Here<br> </a> --}}
                                             </div>
                                         </div>
                                     </div>

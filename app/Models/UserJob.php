@@ -11,8 +11,7 @@ class UserJob extends Model
         'job_details_id',
         'cover_letter',
         'file',
-        'type',
-        'status'
+        'requrite_status'
     ];
 
     public function user()

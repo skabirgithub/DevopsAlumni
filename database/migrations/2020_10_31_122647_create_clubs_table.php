@@ -20,7 +20,7 @@ class CreateClubsTable extends Migration
             $table->text('details');
             $table->string('designation');
             $table->date('member_since');
-            $table->string('file');
+            $table->string('file')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

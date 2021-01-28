@@ -1,6 +1,9 @@
 @extends('layouts.frontend')
 @section('title','Dashboard')
 @section('content')
+@include('includes.banner',['title'=>'Dashboard','details'=>'This is a page. This is a demo paragraph.This is
+a demo
+senten.'])
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

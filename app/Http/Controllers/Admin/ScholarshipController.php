@@ -9,6 +9,7 @@ use App\Http\Requests\ScholarshipCreateRequest;
 use App\Http\Requests\ScholarshipUpdateRequest;
 use App\Models\Scholarship;
 use App\Http\Controllers\AppBaseController;
+use App\Models\UserScholarship;
 use Session;
 
 class ScholarshipController extends AppBaseController
@@ -108,5 +109,11 @@ class ScholarshipController extends AppBaseController
         }
         $scholarship->save();
         return back()->with('success', 'Status Changed');
+    }
+
+    public function applicants($id)
+    {
+         $userScholarships = UserScholarship::where('scholarship_id', $id)->with('user')->get();
+        return view('admin.scholarships.applicants', compact('userScholarships'));
     }
 }

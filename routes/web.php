@@ -19,7 +19,7 @@ Route::namespace('Frontend')->group(function () {
     Route::get('galleries', 'IndexController@galleries')->name('galleries');
 
     Route::get('students/{category}', 'AllController@students')->name('students');
-    Route::get('student-profile', 'AllController@studentProfile')->name('student.profile');
+    Route::get('student-profile/{userId}', 'AllController@studentProfile')->name('student.profile');
 
 
     Route::get('seminars', 'AllController@seminars')->name('seminars');
@@ -29,6 +29,7 @@ Route::namespace('Frontend')->group(function () {
     Route::get('job/{id}', 'AllController@job')->name('job');
 });
 
+Route::get('/home', 'Frontend\IndexController@index')->name('home');
 // Ckeditor Image Upload
 Route::post('ckeditor/image-upload', 'Common\CKEditorController@imageUpload')->name('ckeditor.image.upload');
 
@@ -48,8 +49,20 @@ Route::prefix('user')->group(function () {
                 Route::post('change-password', 'ProfileController@changePassword')->name('change.password');
                 Route::get('profile', 'ProfileController@profileView')->name('profile.view');
                 Route::post('profile', 'ProfileController@profileChange')->name('profile.change');
-                // Zoom
-                Route::resource('zooms', 'ZoomController');
+                Route::post('apply', 'JobDetailsController@apply')->name('jobs.apply');
+                Route::get('close/{jobDetails}', 'JobDetailsController@close')->name('jobs.close');
+                Route::get('applicants/{jobDetailsId}', 'JobDetailsController@applicants')->name('jobs.applicants');
+                Route::get('scholarship-apply/{id}', 'ScholarshipController@applyView')->name('scholarship.apply.view');
+                Route::post('scholarship-apply/{id}', 'ScholarshipController@apply')->name('scholarship.apply');
+                Route::resources([
+                    'zooms' => 'ZoomController',
+                    'profiles' => 'ProfileController',
+                    'activities' => 'ActivityController',
+                    'clubs' => 'ClubController',
+                    'trainings' => 'TrainingController',
+                    'jobs' => 'JobDetailsController',
+                    'blogs' => 'BlogController',
+                ]);
             });
         });
     });
@@ -133,6 +146,7 @@ Route::prefix('rt-admin')->group(function () {
                 Route::get('jobDetails-applicants/{id}', 'JobDetailsController@applicants')->name('jobDetails.applicants');
                 // Scholarship
                 Route::get('scholarship-status/{id}', 'ScholarshipController@status')->name('scholarships.status');
+                Route::get('scholarship-applicants/{id}', 'ScholarshipController@applicants')->name('scholarships.applicants');
             });
         });
     });

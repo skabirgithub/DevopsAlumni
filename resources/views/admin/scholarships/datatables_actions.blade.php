@@ -2,6 +2,10 @@
     <a href="{{ route('admin.scholarships.status', $id) }}" class='border-0 btn-sm btn-transition btn btn-outline-success'>
         Change Status
     </a>
+    <a href="{{ route('admin.scholarships.applicants', $id) }}"
+        class='border-0 btn-sm btn-transition btn btn-outline-success'>
+        Applicants
+    </a>
     <a href="{{ route('admin.scholarships.show', $id) }}" class='border-0 btn-sm btn-transition btn btn-outline-primary'>
         View
     </a>

@@ -43,7 +43,7 @@ class LoginController extends Controller
     //override
     public function showLoginForm()
     {
-        return view('auth.admin.login1');
+        return view('auth.admin.login2');
     }
 
     //override -

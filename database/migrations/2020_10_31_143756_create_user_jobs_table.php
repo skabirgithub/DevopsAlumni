@@ -19,7 +19,6 @@ class CreateUserJobsTable extends Migration
             $table->unsignedBigInteger('job_details_id');
             $table->text('cover_letter');
             $table->string('file')->nullable();
-            $table->string('type')->default('Comment');
             $table->boolean('requrite_status')->default(0);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('job_details_id')->references('id')->on('job_details')->onDelete('cascade');
