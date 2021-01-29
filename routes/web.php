@@ -19,6 +19,7 @@ Route::namespace('Frontend')->group(function () {
     Route::get('galleries', 'IndexController@galleries')->name('galleries');
 
     Route::get('students/{category}', 'AllController@students')->name('students');
+    Route::get('student-search', 'AllController@studentSearch')->name('student.search');
     Route::get('student-profile/{userId}', 'AllController@studentProfile')->name('student.profile');
 
 
@@ -121,11 +122,11 @@ Route::prefix('rt-admin')->group(function () {
                         'admins' => 'AdminController',
                         'blogs' => 'BlogController',
                         'galleries' => 'GalleryController',
-                        // 'programs' => 'ProgramController',
                         'checkLasts' => 'CheckLastController',
                         'jobDetails' => 'JobDetailsController',
                         'seminars' => 'SeminarController',
                         'scholarships' => 'ScholarshipController',
+                        'zooms' => 'ZoomController',
                     ]
                 );
                 Route::get('users-requests', 'UserController@requests')->name('users.requests');

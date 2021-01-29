@@ -1,26 +1,24 @@
 @extends('layouts.frontend')
 @section('title','Students')
 @section('content')
-@include('includes.banner',['title'=>'Students','details'=>'This is a page. This is a demo paragraph.This is a demo senten.'])
+@include('includes.banner',['title'=>'Students','details'=>'This is a page. This is a demo paragraph.This is a demo
+senten.'])
 <section id="page-content-wrap">
     <div class="directory-page-content-warp section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="directory-text-wrap">
-                    <h2>Now we have <strong class="funfact-count">{{count($students)}}</strong> member </h2>
+                        <h2>Now we have <strong class="funfact-count">{{count($students)}}</strong> member </h2>
                         <div class="table-search-area">
-                            <form action="https://codeboxr.net/themedemo/unialumni/html/index.html">
-                                <input type="search" placeholder="Type Your Keyword">
-                                <select name="dept">
+                            <form action="{{route('student.search')}}">
+                                <input type="hidden" name="category" value="{{$category}}">
+                                <select name="department">
                                     <option selected>Dept</option>
-                                    <option value="cmt">Computer</option>
-                                    <option value="cmt">Computer</option>
-                                    <option value="cmt">Computer</option>
-                                    <option value="cmt">Computer</option>
-                                    <option value="cmt">Computer</option>
+                                    <option value="ICE">ICE</option>
+                                    <option value="ES">ES</option>
                                 </select>
-                                <button class="btn btn-brand">Search</button>
+                                <button type="submit" class="btn btn-brand">Search</button>
                             </form>
                         </div>
 
@@ -40,28 +38,30 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($students as $student)
-                                        
+
                                     @if($student->activeUser)
                                     <tr>
-                                        <td><img src="{{asset('images/'.$student->image)}}" alt="table">{{$student->activeUser->name}}</td>
+                                        <td><img src="{{asset('images/'.$student->image)}}"
+                                                alt="table">{{$student->activeUser->name}}</td>
                                         <td>{{$student->activeUser->email}}</td>
                                         <td>{{$student->faculty}}</td>
                                         <td>{{$student->department}}</td>
                                         <td>{{$student->batch}}</td>
                                         <td>{{$student->student_id}}</td>
-                                        <td><a href="{{route('student.profile',$student->user_id)}}">View Full Profile</a></td>
+                                        <td><a href="{{route('student.profile',$student->user_id)}}">View Full
+                                                Profile</a></td>
                                     </tr>
                                     @endif
                                     @endforeach
 
-                                  
+
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
-<br>
+            <br>
             <div class="row justify-content-center">
                 <div class="col-lg-2">
                     {{$students->links()}}

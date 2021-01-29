@@ -18,7 +18,14 @@ class AllController extends Controller
     {
         // return Profile::all();
         $students = Profile::where('student_type', $category)->with('activeUser')->paginate(9);
-        return view('frontend.students', compact('students'));
+        return view('frontend.students', compact('students', 'category'));
+    }
+    public function studentSearch(Request $request)
+    {
+        // return Profile::all();
+        $category = $request->category;
+        $students = Profile::where('student_type', $request->category)->where('department', $request->department)->with('activeUser')->paginate(9);
+        return view('frontend.students', compact('students', 'category'));
     }
 
     public function studentProfile($userId)

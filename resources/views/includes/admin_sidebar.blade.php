@@ -274,6 +274,28 @@
             </li>
         </ul>
 </li>
+<li class="{{ Request::is('rt-admin/zooms**') ? 'mm-active' : '' }}">
+        <a href="#">
+            <i class="metismenu-icon pe-7s-menu"></i>
+            Zoom Meeting
+            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+        </a>
+        <ul class="{{ Request::is('rt-admin/zooms*') ? 'mm-show' : '' }}">
+            <li>
+                <a class="{{ Request::is('rt-admin/zooms/create') ? 'mm-active' : '' }}"
+                    href="{{route('admin.zooms.create')}}">
+                    <i class="metismenu-icon"></i>
+                    Create
+                </a>
+            <li>
+                <a class="{{ Request::is('rt-admin/zooms') ? 'mm-active' : '' }}"
+                    href="{{route('admin.zooms.index')}}">
+                    <i class="metismenu-icon">
+                    </i>Manage
+                </a>
+            </li>
+        </ul>
+</li>
 
 {{-- Contacts --}}
 @if(Route::has('admin.contacts'))
