@@ -156,8 +156,8 @@
                                         <a class="dropdown-item" href="{{route('user.zooms.index')}}">
                                             <span style="font-size: 15px">Zoom Meetings</span>
                                         </a>
-                                        <a class="dropdown-item" href="/chatify">
-                                            <span style="font-size: 15px">Messanger</span>
+                                        <a class="dropdown-item" href="/messenger">
+                                            <span style="font-size: 15px">Messenger</span>
                                         </a>
                                         @endif
                                         <a class="dropdown-item" href="{{route('user.change.password')}}">
