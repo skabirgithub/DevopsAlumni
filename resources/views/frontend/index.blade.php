@@ -2,6 +2,20 @@
 @section('title','Home')
 @section('content')
 <!--== Slider Area Start ==-->
+@if(count($seminars)>0)
+<meta name="title" content="{{$seminars[0]->title}}">
+<meta name="description" content="{{$seminars[0]->details}}">
+<meta name="image" content="{{asset('images/'.$seminars[0]->image)}}">
+
+<meta property="og:title" content="{{$seminars[0]->title}}">
+<meta property="og:description" content="{{$seminars[0]->details}}">
+<meta property="og:image" content="{{asset('images/'.$seminars[0]->image)}}">
+<meta property="og:url" content="{{Request::url()}}">
+
+<meta property="twitter:title" content="{{$seminars[0]->title}}">
+<meta property="twitter:description" content="{{$seminars[0]->details}}">
+<meta property="twitter:image" content="{{asset('images/'.$seminars[0]->image)}}">
+@endif
 <section id="slider-area">
     <div class="slider-active-wrap owl-carousel text-center text-md-left">
         <!-- Single Slide Item Start -->
@@ -121,7 +135,8 @@
                                                 <p>{!!Str::limit($seminar->details,100)!!}</p>
                                                 <p>Place : {{$seminar->place}}</p>
                                                 <a href="{{route('seminar',$seminar->id)}}"
-                                                    class="btn btn-brand btn-brand-dark">View Details</a>
+                                                    class="btn btn-brand btn-brand-dark">View Details</a><br><br>
+                                                <div class="sharethis-inline-share-buttons"></div>
                                             </div>
                                         </div>
                                     </div>

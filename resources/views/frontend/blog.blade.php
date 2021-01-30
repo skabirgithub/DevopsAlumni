@@ -3,6 +3,18 @@
 @section('content')
 @include('includes.banner',['title'=>'Blog','details'=>'This is a page. This is a demo paragraph.This is a
 demo senten.'])
+<meta name="title" content="{{$blog->title}}">
+<meta name="description" content="{{$blog->details}}">
+<meta name="image" content="{{asset('images/'.$blog->image)}}">
+
+<meta property="og:title" content="{{$blog->title}}">
+<meta property="og:description" content="{{$blog->details}}">
+<meta property="og:image" content="{{asset('images/'.$blog->image)}}">
+<meta property="og:url" content="{{Request::url()}}">
+
+<meta property="twitter:title" content="{{$blog->title}}">
+<meta property="twitter:description" content="{{$blog->details}}">
+<meta property="twitter:image" content="{{asset('images/'.$blog->image)}}">
 
 <div id="page-content-wrap">
     <div class="blog-page-content-wrap section-padding">
@@ -26,9 +38,9 @@ demo senten.'])
                         <section class="blog-details">
                             {!!$blog->details!!}
                             <br>
-                            <div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
+                            <br>
+                            <div class="sharethis-inline-share-buttons"></div>
                         </section>
-                        <!-- ShareThis BEGIN -->
 
                         <footer class="post-share">
 

@@ -3,6 +3,18 @@
 @section('content')
 @include('includes.banner',['title'=>'Job Opportunity','details'=>'This is a page. This is a demo paragraph.This is a
 demo senten.'])
+<meta name="title" content="{{$job->title}}">
+<meta name="description" content="{{$job->details}}">
+<meta name="image" content="{{asset('images/'.$job->image)}}">
+
+<meta property="og:title" content="{{$job->title}}">
+<meta property="og:description" content="{{$job->details}}">
+<meta property="og:image" content="{{asset('images/'.$job->image)}}">
+<meta property="og:url" content="{{Request::url()}}">
+
+<meta property="twitter:title" content="{{$job->title}}">
+<meta property="twitter:description" content="{{$job->details}}">
+<meta property="twitter:image" content="{{asset('images/'.$job->image)}}">
 <section id="page-content-wrap">
     <div class="single-event-page-content section-padding">
         <div class="container">
@@ -41,6 +53,7 @@ demo senten.'])
                                                 </div>
                                             </div>
                                             <br>
+                                            <div class="sharethis-inline-share-buttons"></div>
                                             <br>
                                             <!-- Single Event Schedule End -->
 

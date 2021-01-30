@@ -1,7 +1,20 @@
 @extends('layouts.frontend')
 @section('title','Seminar Details')
 @section('content')
-@include('includes.banner',['title'=>'Seminar Details','details'=>'This is a page. This is a demo paragraph.This is a demo senten.'])
+@include('includes.banner',['title'=>'Seminar Details','details'=>'This is a page. This is a demo paragraph.This is a
+demo senten.'])
+<meta name="title" content="{{$seminar->title}}">
+<meta name="description" content="{{$seminar->details}}">
+<meta name="image" content="{{asset('images/'.$seminar->image)}}">
+
+<meta property="og:title" content="{{$seminar->title}}">
+<meta property="og:description" content="{{$seminar->details}}">
+<meta property="og:image" content="{{asset('images/'.$seminar->image)}}">
+<meta property="og:url" content="{{Request::url()}}">
+
+<meta property="twitter:title" content="{{$seminar->title}}">
+<meta property="twitter:description" content="{{$seminar->details}}">
+<meta property="twitter:image" content="{{asset('images/'.$seminar->image)}}">
 <section id="page-content-wrap">
     <div class="single-event-page-content section-padding">
         <div class="container">
@@ -11,23 +24,27 @@
                         <div class="event-thumbnails">
                             <div class="event-thumbnail-carousel owl-carousel">
                                 <div class="event-thumb-item">
-                                    <img src="{{asset('images/'.$seminar->image)}}" class="img-fluid" alt="Upcoming Event">
+                                    <img src="{{asset('images/'.$seminar->image)}}" class="img-fluid"
+                                        alt="Upcoming Event">
                                     <div class="event-meta">
                                         <h3>Recently we are going to arrange a awesome get together!</h3>
                                         <a class="event-address" href="#"><i class="fa fa-map-marker"></i> at
-                                           {{$seminar->place}}</a>
+                                            {{$seminar->place}}</a>
                                         {{-- <a href="#" class="btn btn-brand btn-join">Join</a> --}}
                                     </div>
                                 </div>
                             </div>
                             <div class="event-countdown">
                                 {{-- <div class="event-countdown-counter" data-date="2020/10/10"></div> --}}
-                                <p>{{$seminar->seminar_date->toFormattedDateString()}} at {{date('h:i a',strtotime($seminar->seminar_time))}}</p>
+                                <p>{{$seminar->seminar_date->toFormattedDateString()}} at
+                                    {{date('h:i a',strtotime($seminar->seminar_time))}}</p>
                             </div>
                         </div>
                         <h2>{{$seminar->title}}</h2>
                         <p>{!!$seminar->details!!}</p>
-{{-- 
+                        <br>
+                        <div class="sharethis-inline-share-buttons"></div>
+                        {{-- 
                         <div class="event-schedul">
                             <h3>Event Schedule</h3>
                             <div class="row">
