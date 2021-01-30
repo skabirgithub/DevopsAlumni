@@ -9,6 +9,7 @@
             <div class="card-header">
                 <h3>{{ __('Change Password') }}</h3>
             </div><br><br>
+            @include('includes.message')
             <div class="card-body">
                 <div class="alert alert-danger" id="error" style="display: none"></div>
                 <form class="" method="POST" id="change-password-form" action="{{ route('user.change.password') }}">
@@ -50,7 +51,7 @@
 
                     <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-4">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-lg btn-primary">
                                 {{ __('Change Password') }}
                             </button>
 

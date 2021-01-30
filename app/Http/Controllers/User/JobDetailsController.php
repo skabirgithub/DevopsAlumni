@@ -113,7 +113,7 @@ class JobDetailsController extends Controller
         $this->validate($request, [
             'job_details_id' => 'required',
             'cover_letter' => 'required|string|max:65530',
-            'file' => 'required|mimes:pdf,docx|max:5000'
+            'file' => 'required|mimes:pdf,docx,jpg,png,jpeg|max:5000'
         ]);
          $job = JobDetails::findOrFail($request->job_details_id);
         if ($job->status != "Open") {

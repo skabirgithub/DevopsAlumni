@@ -18,9 +18,9 @@ demo senten.'])
                                     <div class="event-meta">
                                         <h3>{{$job->title}}</h3>
 
-                                        <a href="#" class="btn btn-brand btn-join"><input type="file"
+                                        {{-- <a href="#" class="btn btn-brand btn-join"><input type="file"
                                                 name="register_file" id="customfile" class="d-none" />
-                                        </a>
+                                        </a> --}}
                                     </div>
                                 </div>
 

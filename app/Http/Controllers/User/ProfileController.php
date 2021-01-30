@@ -29,7 +29,7 @@ class ProfileController extends Controller
 
     public function store(UserProfileCreateRequest $request)
     {
-        $imageName = FileHelper::uploadImage($request);
+        $imageName = FileHelper::uploadImage($request, NULL, array(), 270, 360);
         $fileName = FileHelper::uploadFile($request);
         Profile::create(array_merge($request->all(), ['user_id' => Auth::id(), 'image' => $imageName, 'file' => $fileName]));
         Session::flash('success', 'Your Profile has been created. Admin will review your profile');

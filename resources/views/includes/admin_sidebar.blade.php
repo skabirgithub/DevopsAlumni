@@ -198,7 +198,7 @@
 
 <li class="{{ Request::is('rt-admin/jobDetails**') ? 'mm-active' : '' }}">
         <a href="#">
-            <i class="metismenu-icon pe-7s-menu"></i>
+            <i class="metismenu-icon pe-7s-wallet"></i>
             Jobs
             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
         </a>
@@ -230,7 +230,7 @@
 
 <li class="{{ Request::is('rt-admin/seminars**') ? 'mm-active' : '' }}">
         <a href="#">
-            <i class="metismenu-icon pe-7s-menu"></i>
+            <i class="metismenu-icon pe-7s-wristwatch"></i>
             Seminar Or Events
             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
         </a>
@@ -254,7 +254,7 @@
 
 <li class="{{ Request::is('rt-admin/scholarships**') ? 'mm-active' : '' }}">
         <a href="#">
-            <i class="metismenu-icon pe-7s-menu"></i>
+            <i class="metismenu-icon pe-7s-magic-wand"></i>
             Scholarships
             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
         </a>

@@ -2,15 +2,12 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Models\Blog;
+use App\Models\Activity;
 use Faker\Generator as Faker;
 
-$factory->define(Blog::class, function (Faker $faker) {
+$factory->define(Activity::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence,
         'details' => $faker->paragraph,
-        'image' => "blog.jpg",
-        'tags' => $faker->word,
-        'posted_by' => $faker->name,
     ];
 });

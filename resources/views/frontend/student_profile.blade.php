@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Student Profile')
 @section('content')
-<link rel="stylesheet" href="{{asset('frontend/assets/css/plugins.min.css')}}">
+{{-- <link rel="stylesheet" href="{{asset('frontend/assets/css/plugins.min.css')}}"> --}}
 <link rel="stylesheet" href="{{asset('frontend/assets/css/style.min.css')}}">
 <section class="teacher-details">
     <div class="container">
@@ -33,7 +33,7 @@
                         @if ($user->profile->file)<br>
                         <li><strong>CV:</strong>
                             <a download href="{{asset('files/'.$user->profile->file)}}">Download
-                                 CV</a>
+                                CV</a>
                         </li>
                         @endif
                     </ul>
@@ -71,7 +71,7 @@
             </ul>
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="experience" role="tabpanel">
-                    
+
                     <div class="row">
                         @foreach ($activities as $activity)
                         <div class="col-lg-6 col-sm-6">
@@ -82,7 +82,7 @@
                                     <a download="" href="{{asset('files/'.$activity->file)}}">Download
                                         File</a><br><br>
                                     @endif</p><br>
-                                <a href="{{route('user.activities.edit',$activity->id)}}"
+                                {{-- <a href="{{route('user.activities.edit',$activity->id)}}"
                                     class="btn btn-lg btn-success">Edit</a>
                                 <a class="btn btn-lg btn-danger" href="#"
                                     onclick="if (confirm('Are you sure to delete?')){document.getElementById('delete-form-{{$activity->id}}').submit();}else{event.preventDefault()}">
@@ -92,15 +92,15 @@
                                     style="display: none;">
                                     @csrf
                                     @method('DELETE')
-                                </form>
+                                </form> --}}
                             </div>
                         </div>
                         @endforeach
-        
+
                     </div>
                 </div>
                 <div class="tab-pane fade" id="educational" role="tabpanel">
-                    
+
                     <div class="row">
                         @foreach ($trainings as $training)
                         <div class="col-lg-6 col-sm-6">
@@ -114,7 +114,8 @@
                                 <a download="" href="{{asset('files/'.$training->file)}}">Download File</a>
                                 @endif
                                 <br>
-                                <a href="{{route('user.trainings.edit',$training->id)}}" class="btn btn-lg btn-success">Edit</a>
+                                {{-- <a href="{{route('user.trainings.edit',$training->id)}}"
+                                    class="btn btn-lg btn-success">Edit</a>
                                 <a class="btn btn-lg btn-danger" href="#"
                                     onclick="if (confirm('Are you sure to delete?')){document.getElementById('delete-form-{{$training->id}}').submit();}else{event.preventDefault()}">
                                     Delete</a>
@@ -123,15 +124,15 @@
                                     style="display: none;">
                                     @csrf
                                     @method('DELETE')
-                                </form>
+                                </form> --}}
                             </div>
                         </div>
                         @endforeach
-        
+
                     </div>
                 </div>
                 <div class="tab-pane fade" id="achievements" role="tabpanel">
-                    
+
                     <div class="row">
                         @foreach ($clubs as $club)
                         <div class="col-lg-6 col-sm-6">
@@ -143,19 +144,20 @@
                                 @if($club->file)
                                 <a download="" href="{{asset('files/'.$club->file)}}">Download File</a>
                                 @endif<br>
-                                <a href="{{route('user.clubs.edit',$club->id)}}" class="btn btn-lg btn-success">Edit</a>
+                                {{-- <a href="{{route('user.clubs.edit',$club->id)}}" class="btn btn-lg btn-success">Edit</a>
                                 <a class="btn btn-lg btn-danger" href="#"
                                     onclick="if (confirm('Are you sure to delete?')){document.getElementById('delete-form-{{$club->id}}').submit();}else{event.preventDefault()}">
                                     Delete</a>
-                                <form id="delete-form-{{$club->id}}" action="{{ route('user.clubs.destroy',$club->id) }}"
-                                    method="POST" style="display: none;">
+                                <form id="delete-form-{{$club->id}}"
+                                    action="{{ route('user.clubs.destroy',$club->id) }}" method="POST"
+                                    style="display: none;">
                                     @csrf
                                     @method('DELETE')
-                                </form>
+                                </form> --}}
                             </div>
                         </div>
                         @endforeach
-        
+
                     </div>
                 </div>
             </div>

@@ -19,7 +19,7 @@ $factory->define(Profile::class, function (Faker $faker) {
         'job_type' => $faker->word,
         'job_details' => $faker->text,
         'student_type' => $faker->randomElement($studentType),
-        'file' => 'myimage.jpg',
-        'image' => 'myimage.jpg'
+        'file' => 'profile.jpg',
+        'image' => 'profile.jpg'
     ];
 });

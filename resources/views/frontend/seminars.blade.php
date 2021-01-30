@@ -6,7 +6,7 @@
 <section id="page-content-wrap">
     <div class="event-page-content-wrap section-padding">
         <div class="container">
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-lg-12">
                     <div class="event-filter-area">
                         <form action="https://codeboxr.net/themedemo/unialumni/html/index.html" class="form-inline">
@@ -39,7 +39,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="row">
                 <div class="col-lg-12">

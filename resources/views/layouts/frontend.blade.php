@@ -357,7 +357,7 @@
     <script src="{{asset('frontend/assets/js/custom.js')}}"></script>
 
     <!-- custom js: custom scripts for theme style switcher for demo purpose  -->
-    <script id="switcherhandle" src="{{asset('frontend/assets/switcher/switcher.js')}}"></script>
+    {{-- <script id="switcherhandle" src="{{asset('frontend/assets/switcher/switcher.js')}}"></script> --}}
 
     @yield('script')
 </body>

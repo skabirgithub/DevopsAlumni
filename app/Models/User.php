@@ -60,14 +60,14 @@ class User extends Authenticatable //implements MustVerifyEmail
 
 
     //override for sending the verification email using queue
-    public function sendEmailVerificationNotification()
-    {
-        $this->notify(new VerifyEmailQueue());
-    }
+    // public function sendEmailVerificationNotification()
+    // {
+    //     $this->notify(new VerifyEmailQueue());
+    // }
 
-    // override for sending the reset password using queue
-    public function sendPasswordResetNotification($token)
-    {
-        $this->notify(new ResetPasswordQueue($token));
-    }
+    // // override for sending the reset password using queue
+    // public function sendPasswordResetNotification($token)
+    // {
+    //     $this->notify(new ResetPasswordQueue($token));
+    // }
 }

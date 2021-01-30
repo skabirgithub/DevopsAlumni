@@ -11,7 +11,7 @@ demo senten.'])
         <div class="career-page-content-wrap section-padding">
             <div class="container">
 
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-lg-12">
                         <div class="event-filter-area">
                             <form action="https://codeboxr.net/themedemo/unialumni/html/index.html" class="form-inline">
@@ -44,7 +44,7 @@ demo senten.'])
                             </form>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="job-opportunity-wrapper">
                     <div class="row">

@@ -31,7 +31,6 @@ senten.'])
                                         <th scope="col">Faculty</th>
                                         <th scope="col">Department</th>
                                         <th scope="col">Batch</th>
-                                        <th scope="col">Student ID</th>
                                         <th scope="col">Action</th>
 
                                     </tr>
@@ -47,7 +46,6 @@ senten.'])
                                         <td>{{$student->faculty}}</td>
                                         <td>{{$student->department}}</td>
                                         <td>{{$student->batch}}</td>
-                                        <td>{{$student->student_id}}</td>
                                         <td><a href="{{route('student.profile',$student->user_id)}}">View Full
                                                 Profile</a></td>
                                     </tr>
