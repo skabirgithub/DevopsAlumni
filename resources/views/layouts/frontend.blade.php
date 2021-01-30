@@ -136,6 +136,9 @@
 
                                     <div class="dropdown-menu dropdown-menu-right">
 
+                                        <a class="dropdown-item" href="{{route('user.dashboard')}}">
+                                            <span style="font-size: 15px">Dashboard</span>
+                                        </a>
                                         @if (Auth::user()->status == 0)
                                         <a style="color:red">Profile is Not Active</a>
                                         @endif
