@@ -22,7 +22,7 @@ class DashboardController extends Controller
     {
         $users = User::count();
         $requestUsers = User::where('status', 0)->count();
-        $requestJobs = JobDetails::where('status', 0)->count();
+        $requestJobs = JobDetails::where('status', 'request')->count();
         $jobs = JobDetails::count();
         $seminars = Seminar::count();
         $requestBlogs = Blog::where('status', 0)->count();
