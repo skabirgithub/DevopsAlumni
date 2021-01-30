@@ -101,6 +101,9 @@
     <!-- Main Master Style  CSS  -->
     <link id="cbx-style" data-layout="1" rel="stylesheet" href="{{asset('frontend/assets/css/style-default.min.css')}}"
         media="all" />
+    <script type='text/javascript'
+        src='https://platform-api.sharethis.com/js/sharethis.js#property=60155a7be7f5c10011bd3474&product=sop'
+        async='async'></script>
 
 
 </head>

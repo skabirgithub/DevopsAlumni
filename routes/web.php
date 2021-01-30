@@ -2,7 +2,6 @@
 
 // *****************************Frontend **************************
 
-use App\Models\Scholarship;
 
 Route::namespace('Frontend')->group(function () {
     Route::get('/', 'IndexController@index')->name('index');
