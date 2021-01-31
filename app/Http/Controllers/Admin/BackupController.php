@@ -152,8 +152,8 @@ class BackupController extends Controller
         if ($disk->exists(config('backup.backup.name') . '/' . $file_name)) {
             $disk->delete(config('backup.backup.name') . '/' . $file_name);
         }
-        notify()->success('Backup Successfully Deleted.', 'Deleted');
-        return back();
+       
+        return back()->with('success','Delete Successful.');
     }
 
     /**
