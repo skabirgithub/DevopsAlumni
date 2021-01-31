@@ -65,7 +65,7 @@
                             <td class="text-center">{{ $backup['created_at'] }}</td>
                             <td class="text-center">
                                 <a class="btn btn-info btn-sm"
-                                    href="{{ route('app.backups.download',$backup['file_name']) }}"><i
+                                    href="{{ route('admin.backups.download',$backup['file_name']) }}"><i
                                         class="fas fa-download"></i>
                                     <span>Download</span>
                                 </a>
@@ -74,7 +74,7 @@
                                     <span>Delete</span>
                                 </button>
                                 <form id="delete-form-{{ $key }}"
-                                    action="{{ route('app.backups.destroy',$backup['file_name']) }}" method="POST"
+                                    action="{{ route('admin.backups.destroy',$backup['file_name']) }}" method="POST"
                                     style="display: none;">
                                     @csrf()
                                     @method('DELETE')
