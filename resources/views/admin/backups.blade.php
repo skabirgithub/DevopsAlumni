@@ -69,7 +69,8 @@
                                         class="fas fa-download"></i>
                                     <span>Download</span>
                                 </a>
-                                <button type="button" class="btn btn-danger btn-sm" onclick="deleteData({{ $key }})">
+                                <button type="button" class="btn btn-danger btn-sm"
+                                    onclick="if (confirm('Are you sure to delete?')){document.getElementById('delete-form-{{$key}}').submit();}else{event.preventDefault()}">
                                     <i class="fas fa-trash-alt"></i>
                                     <span>Delete</span>
                                 </button>
