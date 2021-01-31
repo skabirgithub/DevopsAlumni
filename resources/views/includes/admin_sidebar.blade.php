@@ -91,7 +91,8 @@
             </a>
         </li>
         <li>
-            <a class="{{ Request::is('rt-admin/requests') ? 'mm-active' : '' }}" href="{{route('admin.blogs.requests')}}">
+            <a class="{{ Request::is('rt-admin/requests') ? 'mm-active' : '' }}"
+                href="{{route('admin.blogs.requests')}}">
                 <i class="metismenu-icon">
                 </i>Requests
             </a>
@@ -197,104 +198,103 @@
 @endif
 
 <li class="{{ Request::is('rt-admin/jobDetails**') ? 'mm-active' : '' }}">
-        <a href="#">
-            <i class="metismenu-icon pe-7s-wallet"></i>
-            Jobs
-            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-        </a>
-        <ul class="{{ Request::is('rt-admin/jobDetails*') ? 'mm-show' : '' }}">
-            <li>
-                <a class="{{ Request::is('rt-admin/jobDetails/create') ? 'mm-active' : '' }}"
-                    href="{{route('admin.jobDetails.create')}}">
-                    <i class="metismenu-icon"></i>
-                    Create Job
-                </a>
-            <li>
-                <a class="{{ Request::is('rt-admin/jobDetails') ? 'mm-active' : '' }}"
-                    href="{{route('admin.jobDetails.index')}}">
-                    <i class="metismenu-icon">
-                    </i>Manage
-                </a>
-            </li>
-            <li>
-                <a class="{{ Request::is('rt-admin/jobDetails-requests') ? 'mm-active' : '' }}"
-                    href="{{route('admin.jobDetails.requests')}}">
-                    <i class="metismenu-icon">
-                    </i>Requests
-                </a>
-            </li>
-        </ul>
+    <a href="#">
+        <i class="metismenu-icon pe-7s-wallet"></i>
+        Jobs
+        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+    </a>
+    <ul class="{{ Request::is('rt-admin/jobDetails*') ? 'mm-show' : '' }}">
+        <li>
+            <a class="{{ Request::is('rt-admin/jobDetails/create') ? 'mm-active' : '' }}"
+                href="{{route('admin.jobDetails.create')}}">
+                <i class="metismenu-icon"></i>
+                Create Job
+            </a>
+        <li>
+            <a class="{{ Request::is('rt-admin/jobDetails') ? 'mm-active' : '' }}"
+                href="{{route('admin.jobDetails.index')}}">
+                <i class="metismenu-icon">
+                </i>Manage
+            </a>
+        </li>
+        <li>
+            <a class="{{ Request::is('rt-admin/jobDetails-requests') ? 'mm-active' : '' }}"
+                href="{{route('admin.jobDetails.requests')}}">
+                <i class="metismenu-icon">
+                </i>Requests
+            </a>
+        </li>
+    </ul>
 </li>
 
 
 
 <li class="{{ Request::is('rt-admin/seminars**') ? 'mm-active' : '' }}">
-        <a href="#">
-            <i class="metismenu-icon pe-7s-wristwatch"></i>
-            Seminar Or Events
-            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-        </a>
-        <ul class="{{ Request::is('rt-admin/seminars*') ? 'mm-show' : '' }}">
-            <li>
-                <a class="{{ Request::is('rt-admin/seminars/create') ? 'mm-active' : '' }}"
-                    href="{{route('admin.seminars.create')}}">
-                    <i class="metismenu-icon"></i>
-                    Create
-                </a>
-            <li>
-                <a class="{{ Request::is('rt-admin/seminars') ? 'mm-active' : '' }}"
-                    href="{{route('admin.seminars.index')}}">
-                    <i class="metismenu-icon">
-                    </i>Manage
-                </a>
-            </li>
-        </ul>
+    <a href="#">
+        <i class="metismenu-icon pe-7s-wristwatch"></i>
+        Seminar Or Events
+        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+    </a>
+    <ul class="{{ Request::is('rt-admin/seminars*') ? 'mm-show' : '' }}">
+        <li>
+            <a class="{{ Request::is('rt-admin/seminars/create') ? 'mm-active' : '' }}"
+                href="{{route('admin.seminars.create')}}">
+                <i class="metismenu-icon"></i>
+                Create
+            </a>
+        <li>
+            <a class="{{ Request::is('rt-admin/seminars') ? 'mm-active' : '' }}"
+                href="{{route('admin.seminars.index')}}">
+                <i class="metismenu-icon">
+                </i>Manage
+            </a>
+        </li>
+    </ul>
 </li>
 
 
 <li class="{{ Request::is('rt-admin/scholarships**') ? 'mm-active' : '' }}">
-        <a href="#">
-            <i class="metismenu-icon pe-7s-magic-wand"></i>
-            Scholarships
-            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-        </a>
-        <ul class="{{ Request::is('rt-admin/scholarships*') ? 'mm-show' : '' }}">
-            <li>
-                <a class="{{ Request::is('rt-admin/scholarships/create') ? 'mm-active' : '' }}"
-                    href="{{route('admin.scholarships.create')}}">
-                    <i class="metismenu-icon"></i>
-                    Create
-                </a>
-            <li>
-                <a class="{{ Request::is('rt-admin/scholarships') ? 'mm-active' : '' }}"
-                    href="{{route('admin.scholarships.index')}}">
-                    <i class="metismenu-icon">
-                    </i>Manage
-                </a>
-            </li>
-        </ul>
+    <a href="#">
+        <i class="metismenu-icon pe-7s-magic-wand"></i>
+        Scholarships
+        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+    </a>
+    <ul class="{{ Request::is('rt-admin/scholarships*') ? 'mm-show' : '' }}">
+        <li>
+            <a class="{{ Request::is('rt-admin/scholarships/create') ? 'mm-active' : '' }}"
+                href="{{route('admin.scholarships.create')}}">
+                <i class="metismenu-icon"></i>
+                Create
+            </a>
+        <li>
+            <a class="{{ Request::is('rt-admin/scholarships') ? 'mm-active' : '' }}"
+                href="{{route('admin.scholarships.index')}}">
+                <i class="metismenu-icon">
+                </i>Manage
+            </a>
+        </li>
+    </ul>
 </li>
 <li class="{{ Request::is('rt-admin/zooms**') ? 'mm-active' : '' }}">
-        <a href="#">
-            <i class="metismenu-icon pe-7s-menu"></i>
-            Zoom Meeting
-            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-        </a>
-        <ul class="{{ Request::is('rt-admin/zooms*') ? 'mm-show' : '' }}">
-            <li>
-                <a class="{{ Request::is('rt-admin/zooms/create') ? 'mm-active' : '' }}"
-                    href="{{route('admin.zooms.create')}}">
-                    <i class="metismenu-icon"></i>
-                    Create
-                </a>
-            <li>
-                <a class="{{ Request::is('rt-admin/zooms') ? 'mm-active' : '' }}"
-                    href="{{route('admin.zooms.index')}}">
-                    <i class="metismenu-icon">
-                    </i>Manage
-                </a>
-            </li>
-        </ul>
+    <a href="#">
+        <i class="metismenu-icon pe-7s-menu"></i>
+        Zoom Meeting
+        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+    </a>
+    <ul class="{{ Request::is('rt-admin/zooms*') ? 'mm-show' : '' }}">
+        <li>
+            <a class="{{ Request::is('rt-admin/zooms/create') ? 'mm-active' : '' }}"
+                href="{{route('admin.zooms.create')}}">
+                <i class="metismenu-icon"></i>
+                Create
+            </a>
+        <li>
+            <a class="{{ Request::is('rt-admin/zooms') ? 'mm-active' : '' }}" href="{{route('admin.zooms.index')}}">
+                <i class="metismenu-icon">
+                </i>Manage
+            </a>
+        </li>
+    </ul>
 </li>
 
 {{-- Contacts --}}
@@ -306,3 +306,9 @@
     </a>
 </li>
 @endif
+<li class="">
+    <a href="{{route('admin.backups.index')}}" class="{{ Request::is('rt-admin/backups*') ? 'mm-active' : '' }}">
+        <i class="metismenu-icon pe-7s-cloud"></i>
+        Backup
+    </a>
+</li>

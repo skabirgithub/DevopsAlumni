@@ -151,6 +151,12 @@ Route::prefix('rt-admin')->group(function () {
                 // Scholarship
                 Route::get('scholarship-status/{id}', 'ScholarshipController@status')->name('scholarships.status');
                 Route::get('scholarship-applicants/{id}', 'ScholarshipController@applicants')->name('scholarships.applicants');
+
+
+                // Backups
+                Route::resource('backups', 'BackupController')->only(['index', 'store', 'destroy']);
+                Route::get('backups/{file_name}', 'BackupController@download')->name('backups.download');
+                Route::delete('backups', 'BackupController@clean')->name('backups.clean');
             });
         });
     });
