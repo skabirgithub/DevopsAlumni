@@ -93,7 +93,7 @@ Route::prefix('rt-admin')->group(function () {
 Route::prefix('rt-admin')->group(function () {
     Route::name('admin.')->group(function () {
         Route::namespace('Admin')->group(function () {
-            Route::group(['middleware' => ['auth:admin']], function () {
+            Route::group(['middleware' => ['auth:admin', 'preventBackHistory']], function () {
                 // Dashboard
                 Route::get('dashboard', 'DashboardController@dashboard')->name('dashboard');
                 //change password
