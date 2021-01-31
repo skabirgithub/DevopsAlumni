@@ -57,7 +57,7 @@
                     <tbody>
                         @foreach($backups as $key=>$backup)
                         <tr>
-                            <td class="text-center text-muted">#{{ $key + 1 }}</td>
+                            <td class="text-center text-muted">{{ $key + 1 }}</td>
                             <td class="text-center">
                                 <code>{{ $backup['file_name'] }}</code>
                             </td>
