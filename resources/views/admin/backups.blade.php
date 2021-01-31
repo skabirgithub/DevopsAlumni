@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title',' Change Password')
+@section('title','Backup')
 @section('content')
 <div class="app-page-title">
     <div class="page-title-wrapper">

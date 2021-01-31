@@ -32,13 +32,13 @@ class BackupController extends Controller
                     'file_name' => $file_name,
                     'file_size' => $this->bytesToHuman($disk->size($f)),
                     'created_at' => Carbon::parse($disk->lastModified($f))->diffForHumans(),
-                    'download_link' => action('Backend\BackupController@download', [$file_name]),
+                    'download_link' => action('Admin\BackupController@download', [$file_name]),
                 ];
             }
         }
 
         // reverse the backups, so the newest one would be on top
-         $backups = array_reverse($backups);
+        $backups = array_reverse($backups);
         return view('admin.backups', compact('backups'));
     }
 
