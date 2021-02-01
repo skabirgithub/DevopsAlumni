@@ -1,8 +1,6 @@
 @extends('layouts.frontend')
 @section('title','Blog')
-@section('content')
-@include('includes.banner',['title'=>'Blog','details'=>'This is a page. This is a demo paragraph.This is a
-demo senten.'])
+@section('meta')
 <meta name="title" content="{{$blog->title}}">
 <meta name="description" content="{{$blog->details}}">
 <meta name="image" content="{{asset('images/'.$blog->image)}}">
@@ -15,6 +13,10 @@ demo senten.'])
 <meta property="twitter:title" content="{{$blog->title}}">
 <meta property="twitter:description" content="{{$blog->details}}">
 <meta property="twitter:image" content="{{asset('images/'.$blog->image)}}">
+@endsection
+@section('content')
+@include('includes.banner',['title'=>'Blog','details'=>'This is a page. This is a demo paragraph.This is a
+demo senten.'])
 
 <div id="page-content-wrap">
     <div class="blog-page-content-wrap section-padding">

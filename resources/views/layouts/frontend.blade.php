@@ -9,7 +9,8 @@
 
     <title>@yield('title')</title>
 
-    <meta name="description" content="simple description for your site" />
+    @yield('meta')
+    {{-- <meta name="description" content="simple description for your site" />
     <meta name="keywords" content="keyword1, keyword2" />
     <meta name="author" content="Jobz" />
 
@@ -39,7 +40,7 @@
     <!-- desktop bookmark -->
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{asset('frontend/assets/img/favicon/ms-icon-144x144.png')}}">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#ffffff"> --}}
 
     <!-- icons & favicons -->
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('frontend/assets/img/favicon/favicon.ico')}}" />

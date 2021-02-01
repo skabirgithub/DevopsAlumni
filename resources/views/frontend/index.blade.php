@@ -1,7 +1,6 @@
 @extends('layouts.frontend')
 @section('title','Home')
-@section('content')
-<!--== Slider Area Start ==-->
+@section('meta')
 @if(count($seminars)>0)
 <meta name="title" content="{{$seminars[0]->title}}">
 <meta name="description" content="{{$seminars[0]->details}}">
@@ -16,6 +15,9 @@
 <meta property="twitter:description" content="{{$seminars[0]->details}}">
 <meta property="twitter:image" content="{{asset('images/'.$seminars[0]->image)}}">
 @endif
+@endsection
+@section('content')
+<!--== Slider Area Start ==-->
 <section id="slider-area">
     <div class="slider-active-wrap owl-carousel text-center text-md-left">
         <!-- Single Slide Item Start -->
