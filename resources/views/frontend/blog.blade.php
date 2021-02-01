@@ -3,16 +3,16 @@
 @section('meta')
 <meta name="title" content="{{$blog->title}}">
 <meta name="description" content="{{$blog->details}}">
-<meta name="image" content="{{asset('images/'.$blog->image)}}">
+<meta name="image" content="{{asset('images/avatar-'.$blog->image)}}">
 
 <meta property="og:title" content="{{$blog->title}}">
 <meta property="og:description" content="{{$blog->details}}">
-<meta property="og:image" content="{{asset('images/'.$blog->image)}}">
+<meta property="og:image" content="{{asset('images/avatar-'.$blog->image)}}">
 <meta property="og:url" content="{{Request::url()}}">
 
 <meta property="twitter:title" content="{{$blog->title}}">
 <meta property="twitter:description" content="{{$blog->details}}">
-<meta property="twitter:image" content="{{asset('images/'.$blog->image)}}">
+<meta property="twitter:image" content="{{asset('images/avatar-'.$blog->image)}}">
 @endsection
 @section('content')
 @include('includes.banner',['title'=>'Blog','details'=>'This is a page. This is a demo paragraph.This is a
