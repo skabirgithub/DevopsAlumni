@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 @section('title','Seminar Details')
-@section('meta')
+{{-- @section('meta')
 <meta name="title" content="{{$seminar->title}}">
 <meta name="description" content="{{$seminar->details}}">
 <meta name="image" content="{{asset('images/'.$seminar->image)}}">
@@ -13,7 +13,7 @@
 <meta property="twitter:title" content="{{$seminar->title}}">
 <meta property="twitter:description" content="{{$seminar->details}}">
 <meta property="twitter:image" content="{{asset('images/'.$seminar->image)}}">
-@endsection
+@endsection --}}
 @section('content')
 @include('includes.banner',['title'=>'Seminar Details','details'=>'This is a page. This is a demo paragraph.This is a
 demo senten.'])
