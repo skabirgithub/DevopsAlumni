@@ -22,7 +22,7 @@ $factory->define(Blog::class, function (Faker $faker) {
     return [
         'title' => $faker->randomElement($blogTitles),
         'details' => $faker->paragraph,
-        'image' => "blog.jpg",
+        'image' => $faker->randomElement(['01.jpg', '02.jpg', '03.jpg']),
         'tags' => $faker->word,
         'posted_by' => $faker->name,
     ];

@@ -12,6 +12,6 @@ $factory->define(Program::class, function (Faker $faker) {
         'title' => $faker->sentence,
         'details' => '<b>Hello </b>' . $faker->paragraph,
         'category' => $faker->randomElement($categories),
-        'image' => "15956542645f1bc0788a00b.jpg",
+        'image' => $faker->randomElement(['01.jpg', '02.jpg', '03.jpg']),
     ];
 });

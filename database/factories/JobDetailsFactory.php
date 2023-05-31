@@ -23,8 +23,8 @@ $factory->define(JobDetails::class, function (Faker $faker) {
     return [
         'title' => $faker->randomElement($jobTitles),
         'details' => $faker->text,
-        'image' => 'job2.jpg',
-        'file' => 'job2.jpg',
+        'image' => 'job.png',
+        'file' => 'job.png',
         'status' => 'Open',
         'created_at' => $faker->date('Y-m-d H:i:s'),
         'updated_at' => $faker->date('Y-m-d H:i:s')

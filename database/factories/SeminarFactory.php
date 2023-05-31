@@ -13,7 +13,7 @@ $factory->define(Seminar::class, function (Faker $faker) {
         'seminar_date' => $faker->date,
         'seminar_time' => $faker->time,
         'place' => $faker->word,
-        'image' => 'seminer.jpg',
+        'image' => $faker->randomElement(['01.jpg', '02.jpg', '03.jpg']),
         'created_at' => $faker->date('Y-m-d H:i:s'),
         'updated_at' => $faker->date('Y-m-d H:i:s')
     ];
