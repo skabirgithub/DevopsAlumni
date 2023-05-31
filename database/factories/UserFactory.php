@@ -21,8 +21,8 @@ $factory->define(User::class, function (Faker $faker) {
 
      static $nameIntervals = -1;
      static $emailIntervals = -1;
-     $name = ["user a","user b","user c"];
-     $email = ["a@a.com","b@b.com","c@c.com"];
+     $name = ["Sk Abir","Sifat Istiak","Touhed Ratul"];
+     $email = ["sk@skoder.co","istiak@skoder.co","ratul@skoder.co"];
     return  [
             'name' => $name[++$nameIntervals],
             // 'details' => $faker->paragraph,
