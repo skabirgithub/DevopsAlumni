@@ -219,7 +219,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="nav-item"><a class="nav-link" href="{{route('seminars')}}">Seminars</a>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('seminars')}}">Events</a>
                                     </li>
                                     <li class="nav-item"><a class="nav-link" href="{{route('jobs')}}">Career</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{route('blogs')}}">Blog</a></li>
