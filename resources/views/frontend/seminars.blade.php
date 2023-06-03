@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
-@section('title','Seminars')
+@section('title','Events')
 @section('content')
-@include('includes.banner',['title'=>'Seminars','details'=>'This is a page. This is a demo paragraph.This is a demo senten.'])
+@include('includes.banner',['title'=>'Events','details'=>'This is a page. This is a demo paragraph.This is a demo senten.'])
 <!--== Committee Page Content Start ==-->
 <section id="page-content-wrap">
     <div class="event-page-content-wrap section-padding">
@@ -45,7 +45,7 @@
                 <div class="col-lg-12">
                     <div class="all-event-list">
                         @foreach ($seminars as $seminar)
-                            
+
                         <!-- Single Event Start -->
                         <div class="single-upcoming-event">
                             <div class="row">

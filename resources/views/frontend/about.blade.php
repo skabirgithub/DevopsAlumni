@@ -160,54 +160,43 @@
                         <!-- Single People Testimonial -->
                         <div class="single-testimonial-wrap">
                             <div class="people-thumb">
-                                <img src="{{asset('frontend/assets/img/testimonial/testi-3.png')}}" alt="Alumni" class="img-fluid" />
+                                <img src="{{asset('frontend/assets/img/testimonial/vc.jpg')}}" alt="Alumni" class="img-fluid" />
                             </div>
                             <i class="quote-icon"></i>
                             <p>Exxcellent Lorem ipsum dolor sit amet, ectetur adipisicing elit, sed do eimod tempor
                                 inciidunt ut
                                 labore et dolorgna aliqua. Ut enim ad minim ostrud. </p>
-                            <h4>Touhedul Islam <span class="people-deg">Founder at Boxr</span></h4>
+                            <h4>Major General Md Mahbub-ul Alam<span class="people-deg">ndc, afwc, psc, Mphil, PhD</span><span class="people-deg">Vice Chancellor</span></h4>
                         </div>
                         <!-- Single People Testimonial -->
 
                         <!-- Single People Testimonial -->
                         <div class="single-testimonial-wrap">
                             <div class="people-thumb">
-                                <img src="{{asset('frontend/assets/img/testimonial/testi-3.png')}}" alt="" class="img-fluid">
+                                <img src="{{asset('frontend/assets/img/testimonial/dean.jpg')}}" alt="" class="img-fluid">
                             </div>
                             <i class="quote-icon"></i>
                             <p>Exxcellent Lorem ipsum dolor sit amet, ectetur adipisicing elit, sed do eimod tempor
                                 inciidunt ut
                                 labore et dolorgna aliqua. Ut enim ad minim ostrud. </p>
-                            <h4>Faizur Rahman <span class="people-deg">Founder at BUP</span></h4>
+                            <h4>Brig Gen Mohammed Monir Hossain Patwary<span class="people-deg">    psc, Dean - FBS</span></h4>
                         </div>
                         <!-- Single People Testimonial -->
 
                         <!-- Single People Testimonial -->
                         <div class="single-testimonial-wrap">
                             <div class="people-thumb">
-                                <img src="{{asset('frontend/assets/img/testimonial/testi-3.png')}}" alt="" class="img-fluid" />
+                                <img src="{{asset('frontend/assets/img/testimonial/avatar.jpg')}}" alt="" class="img-fluid" />
                             </div>
                             <i class="quote-icon"></i>
                             <p>Exxcellent Lorem ipsum dolor sit amet, ectetur adipisicing elit, sed do eimod tempor
                                 inciidunt ut
                                 labore et dolorgna aliqua. Ut enim ad minim ostrud. </p>
-                            <h4>Taklo Nahid <span class="people-deg">Minister at BUP</span></h4>
+                            <h4>Major Masudur Rashid<span class="people-deg">ndc, Deputy Director Alumni</span></h4>
                         </div>
                         <!-- Single People Testimonial -->
 
-                        <!-- Single People Testimonial -->
-                        <div class="single-testimonial-wrap">
-                            <div class="people-thumb">
-                                <img src="{{asset('frontend/assets/img/testimonial/testi-2.png')}}" alt="" class="img-fluid" />
-                            </div>
-                            <i class="quote-icon"></i>
-                            <p>Exxcellent Lorem ipsum dolor sit amet, ectetur adipisicing elit, sed do eimod tempor
-                                inciidunt ut
-                                labore et dolorgna aliqua. Ut enim ad minim ostrud. </p>
-                            <h4>Noushin Akhter<span class="people-deg">Founder at BUP</span></h4>
-                        </div>
-                        <!-- Single People Testimonial -->
+
                     </div>
                 </div>
             </div>
