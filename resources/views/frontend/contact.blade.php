@@ -1,8 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Contact Us')
 @section('content')
-@include('includes.banner',['title'=>'Contact','details'=>'This is a page. This is a demo paragraph.This is a demo
-senten.'])
+@include('includes.banner',['title'=>'Contact','details'=>''])
 <br>
 <div class="container">
     <div class="col-md-6"><br>

@@ -15,8 +15,7 @@
 <meta property="twitter:image" content="{{asset('images/'.$seminar->image)}}">
 @endsection
 @section('content')
-@include('includes.banner',['title'=>'Seminar Details','details'=>'This is a page. This is a demo paragraph.This is a
-demo senten.'])
+@include('includes.banner',['title'=>'Seminar Details','details'=>''])
 <section id="page-content-wrap">
     <div class="single-event-page-content section-padding">
         <div class="container">
@@ -29,7 +28,7 @@ demo senten.'])
                                     <img src="{{asset('images/'.$seminar->image)}}" class="img-fluid"
                                         alt="Upcoming Event">
                                     <div class="event-meta">
-                                        <h3>Recently we are going to arrange a awesome get together!</h3>
+                                        <h3>{{$seminar->title}}</h3>
                                         <a class="event-address" href="#"><i class="fa fa-map-marker"></i> at
                                             {{$seminar->place}}</a>
                                         {{-- <a href="#" class="btn btn-brand btn-join">Join</a> --}}

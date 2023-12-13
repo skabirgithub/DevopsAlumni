@@ -15,8 +15,7 @@
 <meta property="twitter:image" content="{{asset('images/'.$blog->image)}}">
 @endsection
 @section('content')
-@include('includes.banner',['title'=>'Blog','details'=>'This is a page. This is a demo paragraph.This is a
-demo senten.'])
+@include('includes.banner',['title'=>$blog->title,'details'=>''])
 
 <div id="page-content-wrap">
     <div class="blog-page-content-wrap section-padding">

@@ -1,8 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Job Opportunity')
 @section('content')
-@include('includes.banner',['title'=>'Job Opportunity','details'=>'This is a page. This is a demo paragraph.This is a
-demo senten.'])
+@include('includes.banner',['title'=>'Job Opportunity','details'=>''])
 <meta name="title" content="{{$job->title}}">
 <meta name="description" content="{{$job->details}}">
 <meta name="image" content="{{asset('images/'.$job->image)}}">

@@ -250,8 +250,7 @@
                                 <div class="footer-about">
                                     <img src="{{asset('frontend/assets/img/buplogo-resize.png')}}" alt="Logo"
                                         class="img-fluid" />
-                                    <p>We are legend Lorem ipsum dolor sitmet, nsecte ipisicing eit, sed do eiusmod
-                                        tempor incidunt ut et do maga aliqua enim ad minim.</p>
+                                    <p>Connecting the threads of the past, weaving the fabric of the future. Proudly fostering unity and excellence among BUP Alumni.</p>
                                     <a href="#">Phone:88-02-8000368</a> <br> <a href="#">Fax: 88-02-8000443</a> <br> <a
                                         href="#">Email: info@alumni.bup.edu.bd</a>
                                 </div>
@@ -265,7 +264,7 @@
                         <div class="single-widget-wrap">
                             <h4 class="widget-title">Get In Touch</h4>
                             <div class="widgei-body">
-                                <p>We are legend Lorem ipsum dolor sitmet, nsecte ipisicing eit, sed</p>
+                                <p>Get the latest Newsletter via your email. Subscribe Now!</p>
                                 <div class="newsletter-form">
                                     <form id="cbx-subscribe-form" role="search">
                                         <input type="email" placeholder="Enter Your Email" id="subscribe" required>
@@ -295,7 +294,7 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <div class="footer-bottom-text">
-                            <p>© 2020 BUP Alumni Society, All Rights Reserved.</p>
+                            <p>© 2023 BUP Alumni Society | Technology Partner <span><a href="https://skoder.co">Skoder</a></span></p>
                         </div>
                     </div>
                 </div>

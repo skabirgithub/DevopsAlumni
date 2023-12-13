@@ -42,27 +42,7 @@
         </div>
         <!-- Single Slide Item End -->
 
-        <!-- Single Slide Item Start -->
-        <div class="single-slide-wrap slide-bg-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9">
-                        <div class="slider-content">
-                            <h2>We Are Proud</h2>
-                            <h3>Students of <span>Bangladesh University of Professionals</span></h3>
-                            <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be
-                                the need (academic, relocation, career, projects, mentorship, etc. you can ask the
-                                community and get responses in three.</p>
-                            <div class="slider-btn">
-                                <a href="#" class="btn btn-brand">our mission</a>
-                                <a href="#" class="btn btn-brand-rev">our story</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Single Slide Item End -->
+        
 
         <!-- Single Slide Item Start -->
         <div class="single-slide-wrap slide-bg-3">
@@ -163,20 +143,15 @@
                 <div class="col-lg-10 ml-auto">
                     <div class="about-content-wrap">
                         <div class="section-title text-center text-lg-left">
-                            <h2>Our Misssion</h2>
+                            <h2>Misssion and Vision</h2>
                         </div>
 
                         <div class="about-thumb">
                             <img src="{{asset('frontend/assets/img/about-bg.jpg')}}" alt="" class="img-fluid">
                         </div>
 
-                        <p>There are many company Lorem ipsm dolor sitg amet, csetur adipicing elit, sed do eiusmod
-                            tempor dncint ut labore et dolore magna alis enim ad minim veniam, quis csetur adipicing
-                            elit, sed do eiusmod tempor dncint ut labore et dolore magna alis enim ad minim veniam,
-                            quis nostrud exercitation ullamco.</p>
-                        <p>There are many company Lorem ipsm dolor sitg amet, csetur adipicing elit, sed do eiusmod
-                            tempor dncint ut labore et dolore magna alis enim ad minim veniam, quis nostrud
-                            exercitation ullamco.</p>
+                        <p>At the core of the BUPAA's mission lies the commitment to connect, engage, and empower its alumni. The association endeavors to create a robust platform that facilitates meaningful interactions among graduates, providing opportunities for networking, mentorship, and professional development. By bridging the past with the present, BUPAA seeks to uphold the spirit of camaraderie and support among its diverse members.</p>
+                        <p>The vision of BUPAA is rooted in the aspiration to build a global community of empowered, compassionate, and successful individuals who share a common connection to BUP. The association envisions a future where every graduate is not only a beneficiary of their alma mater but also an active contributor to its legacy.</p>
                         <a href="{{route('about')}}" class="btn btn-brand about-btn">know more</a>
                     </div>
                 </div>
@@ -193,7 +168,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="section-title">
-                    <h2>Our Responsibility</h2>
+                    <h2>Our Responsibilities</h2>
                 </div>
             </div>
         </div>
@@ -206,7 +181,7 @@
                 <div class="single-responsibility">
                     <img src="{{asset('frontend/assets/img/responsibility/01.png')}}" alt="Responsibility">
                     <h4>Scholarship</h4>
-                    <p>De create building thinking about your requirment and latest treand on our marketplace area
+                    <p>Bridging dreams with opportunities, we empower promising minds to soar. Etch your journey with the BUP Alumni Society Scholarship.
                     </p>
                 </div>
             </div>
@@ -217,7 +192,7 @@
                 <div class="single-responsibility">
                     <img src="{{asset('frontend/assets/img/responsibility/02.png')}}" alt="Responsibility">
                     <h4>Help Current Students</h4>
-                    <p>De create building thinking about your requirment and latest treand on our marketplace area
+                    <p>Nurturing the potential of current students, our alumni community strives to provide guidance and support for a brighter journey.
                     </p>
                 </div>
             </div>
@@ -228,7 +203,7 @@
                 <div class="single-responsibility">
                     <img src="{{asset('frontend/assets/img/responsibility/03.png')}}" alt="Responsibility">
                     <h4>Help Our University</h4>
-                    <p>De create building thinking about your requirment and latest treand on our marketplace area
+                    <p>Empowering our alma mater, the BUP Alumni Society actively contributes to the growth and prosperity of our beloved university.
                     </p>
                 </div>
             </div>
@@ -239,7 +214,7 @@
                 <div class="single-responsibility">
                     <img src="{{asset('frontend/assets/img/responsibility/04.png')}}" alt="Responsibility">
                     <h4>Build Our Community</h4>
-                    <p>De create building thinking about your requirment and latest treand on our marketplace area
+                    <p>Collaboratively shaping the future, the BUP Alumni Society works hand in hand to strengthen and build a vibrant, supportive community.
                     </p>
                 </div>
             </div>
@@ -428,7 +403,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="section-title">
-                    <h2>Campus & Blog</h2>
+                    <h2>Campus Stories</h2>
                 </div>
             </div>
         </div>

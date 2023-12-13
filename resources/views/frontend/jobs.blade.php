@@ -1,8 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Job Opportunities')
 @section('content')
-@include('includes.banner',['title'=>'Job Opportunities','details'=>'This is a page. This is a demo paragraph.This is a
-demo senten.'])
+@include('includes.banner',['title'=>'Job Opportunities','details'=>''])
 
 <section id="page-content-wrap">
     <div class="career-page-wrapper">
