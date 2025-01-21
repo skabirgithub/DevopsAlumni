@@ -18,6 +18,21 @@ senten.'])
                                             <div class="display-table-cell">
                                                 <div class="signin-area-wrap">
                                                     <h4>Student Verification & Registration</h4>
+
+                                                    <!-- Display Error Message -->
+                                                    @if (session('error'))
+                                                        <div class="alert alert-danger">
+                                                            {{ session('error') }}
+                                                        </div>
+                                                    @endif
+
+                                                    <!-- Display Success Message -->
+                                                    @if (session('success'))
+                                                        <div class="alert alert-success">
+                                                            {{ session('success') }}
+                                                        </div>
+                                                    @endif
+
                                                     <div class="sign-form">
                                                         <form method="POST" action="{{ route('register.by.verification') }}">
                                                             @csrf
@@ -51,6 +66,7 @@ senten.'])
         </div>
     </div>
 </section>
+
 {{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">

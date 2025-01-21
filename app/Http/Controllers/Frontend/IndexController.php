@@ -10,6 +10,7 @@ use App\Models\JobDetails;
 use App\Models\Profile;
 use App\Models\Scholarship;
 use App\Models\Seminar;
+use App\Models\User;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
@@ -55,19 +56,39 @@ class IndexController extends Controller
     }
     public function register_with_verification(Request $request)
     {
+        // return $request;
+        if ($request->password!= $request->password_confirmation) {
+            // Flash the error message to the session
+            return redirect()->back()->with('error', 'Password and Confirm Password does not match.');
+        }
+
         $rollNo = $request->input('student_id');
         $regNo = $request->input('student_reg_no');
         $result = $this->getGraduateInfo($rollNo, $regNo);
 
         // Check if the API call was successful
         if (isset($result['error']) && $result['error'] === true) {
-            // Return the error message from the API or a default error message
-            return response()->json(['message' => 'Wrong information or an error occurred.'], 400);
+            // Flash the error message to the session
+            return redirect()->back()->with('error', 'Wrong information. Please recheck your Register and Roll No.');
         }
 
-        // If the response is valid, return the response body
-        return response()->json($result, 200);
+        // If successful, you can redirect to another page or show success message
+        // return $result;
+        $register_user = User::create([
+            'student_id' => $request->student_id,
+            'student_reg_no' => $request->student_reg_no,
+            'name' => $result['GRADNAME'],
+            'email' => $request->email,
+            'status' => 1,
+            'note' => json_encode($result),
+            'password' => bcrypt($request->password),
+        ]);
+        if ($register_user) {
+            return redirect()->route('login')->with('success', 'Registration successful!');
+        }
+        // return redirect()->route('home')->with('success', 'Registration successful!');
     }
+
 
     function getGraduateInfo($rollNo, $regNo)
     {
