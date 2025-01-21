@@ -21,6 +21,9 @@ class Profile extends Model
         'student_type',
         'file',
         'image',
+        'student_reg_no',
+        'academic_program',
+        'academic_session',
     ];
 
     public function user()

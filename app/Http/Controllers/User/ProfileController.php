@@ -24,11 +24,17 @@ class ProfileController extends Controller
 
     public function create()
     {
-        return view('user.profile_create');
+        $note = Auth::user()->note;
+        // Decode the JSON string to an array
+        $data = json_decode($note, true);
+        // Access the GRADNAME field
+        // return $name = $data['GRADNAME'] ?? 'Name not available';
+        return view('user.profile_create',compact('data'));
     }
 
     public function store(UserProfileCreateRequest $request)
     {
+        // return $request;
         $imageName = FileHelper::uploadImage($request, NULL, array(), 270, 360);
         $fileName = FileHelper::uploadFile($request);
         Profile::create(array_merge($request->all(), ['user_id' => Auth::id(), 'image' => $imageName, 'file' => $fileName]));

@@ -153,33 +153,50 @@ senten.'])
                                                     action="{{route('user.profiles.store')}}" method="POST">
                                                     @csrf
 
+
+
+                                                    <div class="form-group">
+
+                                                        <label>Faculty*</label>
+                                                        <input value="{{$data['INST_FULLNAME']}}" required name="faculty"
+                                                            type="text" class="form-control" laceholder="Faculty" readonly>
+                                                    </div>
+
+                                                    <div class="form-group">
+
+                                                        <label>Program*</label>
+                                                        <input value="{{$data['PROG_FULLNAME']}}" required name="academic_program"
+                                                            type="text" class="form-control" laceholder="Program" readonly>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Session*</label>
+                                                        <input value="{{$data['SESS']}}" required name="academic_program"
+                                                            type="text" class="form-control" laceholder="Session" readonly>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label>Student Id*</label>
+                                                        <input value="{{$data['ROLL']}}" required name="student_id"
+                                                            type="number" class="form-control" laceholder="Student Id" readonly>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Student Registration No*</label>
+                                                        <input value="{{$data['REGNO']}}" required name="student_reg_no"
+                                                            type="number" class="form-control" laceholder="Student Reg" readonly>
+                                                    </div>
                                                     <div class="form-group">
                                                         <label>Department*</label><br>
                                                         <select name="department" class="">
                                                             <option value="ICT">ICT</option>
                                                             <option value="ES">ES</option>
                                                         </select>
-                                                        <br>
+
                                                     </div>
-                                                    <br>
+                                                    <br><br>
                                                     <div class="form-group">
-                                                        <label>Faculty*</label><br>
-                                                        <select name="faculty" class="">
-                                                            <option value="FST">FST</option>
-                                                            <option value="FBS">FBS</option>
-                                                        </select>
-                                                    </div>
-                                                    <br>
-                                                    <div class="form-group">
-                                                        <br>
-                                                        <label><br>Batch*</label>
+                                                        <label>Batch*</label>
                                                         <input value="{{old('batch')}}" required name="batch"
                                                             type="text" class="form-control" laceholder="Batch">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Student Id*</label>
-                                                        <input value="{{old('student_id')}}" required name="student_id"
-                                                            type="number" class="form-control" laceholder="Student Id">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Phone*</label>
@@ -201,6 +218,7 @@ senten.'])
                                                         <input value="{{old('linkedin')}}" name="linkedin" type="url"
                                                             class="form-control" placeholder="http://linkedin.com">
                                                     </div>
+
                                                     <div class="form-group">
                                                         <label>Job Type*</label><br>
                                                         <select name="job_type" class="form-control">
@@ -210,15 +228,14 @@ senten.'])
                                                             <option value="Govt. Job">Govt. Job</option>
                                                         </select>
                                                     </div>
-                                                    <br>
-                                                    <br>
+                                                    <br><br>
                                                     <div class="form-group">
-                                                        <label><br>Job Details*</label>
+                                                        <label>Job Details*</label>
                                                         <textarea required name="job_details" type="text"
                                                             class="form-control"
                                                             laceholder="Job Details">{{old('job_details')}}</textarea>
                                                     </div>
-                                                    <br>
+
                                                     <div class="form-group">
                                                         <label>Student Type*<br></label><br>
                                                         <select name="student_type" class="form-control">
