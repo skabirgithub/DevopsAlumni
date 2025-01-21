@@ -23,6 +23,8 @@ senten.'])
                                                             @csrf
                                                             <input value="{{ old('student_id') }}" required name="student_id"
                                                                 type="text" placeholder="Enter your Student ID">
+                                                            <input value="{{ old('student_reg_no') }}" required name="student_reg_no"
+                                                                type="text" placeholder="Enter your Student Registration No">
                                                             <input value="{{ old('email') }}" required name="email"
                                                                 type="email" placeholder="Enter your Email">
                                                             <input required minlength="8" name="password"
