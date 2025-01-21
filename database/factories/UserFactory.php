@@ -25,9 +25,9 @@ $factory->define(User::class, function (Faker $faker) {
      $email = ["sk@skoder.co","istiak@skoder.co","ratul@skoder.co"];
     return  [
             'name' => $name[++$nameIntervals],
-            // 'details' => $faker->paragraph,
+            'note' => $faker->paragraph,
             'email' => $email[++$emailIntervals],
-            // 'phone' => $faker->numberBetween(1000000000, 2000000000),
+            'phone' => $faker->numberBetween(1000000000, 2000000000),
             // 'address' => $faker->address,
             // 'image' => "15791434845e1fd13c9cf18.jpg",
             'status' => 1,

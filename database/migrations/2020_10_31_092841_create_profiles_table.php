@@ -19,6 +19,9 @@ class CreateProfilesTable extends Migration
             $table->string('department');
             $table->string('faculty');
             $table->string('batch');
+            $table->string('academic_program')->nullable();
+            $table->string('academic_session')->nullable();
+            $table->string('student_reg_no');
             $table->string('student_id');
             $table->string('phone');
             $table->string('address');
