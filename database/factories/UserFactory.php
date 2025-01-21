@@ -25,12 +25,14 @@ $factory->define(User::class, function (Faker $faker) {
      $email = ["sk@skoder.co","istiak@skoder.co","ratul@skoder.co"];
     return  [
             'name' => $name[++$nameIntervals],
-            'note' => $faker->paragraph,
+            'student_id' => $faker->numberBetween(100000, 200000),
+            'student_reg_no' => $faker->numberBetween(8000000000, 9000000000),
             'email' => $email[++$emailIntervals],
             'phone' => $faker->numberBetween(1000000000, 2000000000),
             // 'address' => $faker->address,
             // 'image' => "15791434845e1fd13c9cf18.jpg",
             'status' => 1,
+            'note' => $faker->paragraph,
             'email_verified_at' => now(),
             'password' => bcrypt('12345678'), // 12345678
             'remember_token' => Str::random(10),

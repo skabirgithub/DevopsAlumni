@@ -6,6 +6,9 @@
 Route::namespace('Frontend')->group(function () {
     Route::get('/', 'IndexController@index')->name('index');
     //Give feed back and contact User side
+    Route::get('verify-student', 'IndexController@verify_student_with_api')->name('verify.by.api');
+    Route::post('verify-register', 'IndexController@register_with_verification')->name('register.by.verification');
+
     Route::get('contact', 'IndexController@contact')->name('contact');
     Route::post('feedback', 'IndexController@submitFeedback')->name('submit.feedback');
     // Route::get('feedback', 'IndexController@feedback')->name('feedback');

@@ -46,6 +46,20 @@ class IndexController extends Controller
     //     return view('frontend.privacy_policy');
     // }
 
+
+    // student verification
+    public function verify_student_with_api()
+    {
+        return view('frontend.verification.startpage');
+    }
+    public function register_with_verification(Request $request)
+    {
+        return $request;
+    }
+    // student verification
+
+
+
     public function about()
     {
         return view('frontend.about');
@@ -54,6 +68,7 @@ class IndexController extends Controller
     {
         return view('frontend.contact');
     }
+
     public function feedback()
     {
         return view('frontend.feedback');
