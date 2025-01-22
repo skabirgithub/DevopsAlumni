@@ -128,7 +128,7 @@
                         <div class="preheader-right">
                             @guest
                             <a title="Login" class="btn-auth btn-auth-rev" href="{{route('login')}}">Login</a>
-                            <a title="Register" class="btn-auth btn-auth" href="{{route('register')}}">Signup</a>
+                            <a title="Register" class="btn-auth btn-auth" href="{{route('verify.by.api')}}">Signup</a>
                             @else
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item dropdown">
