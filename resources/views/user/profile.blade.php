@@ -26,14 +26,44 @@ senten.'])
                                                     <div class="form-group">
                                                         <label>Name*</label>
                                                         <input required type="text" value="{{$user->name}}" name="name"
-                                                            class="form-control" placeholder="Enter Name">
+                                                            class="form-control" placeholder="Enter Name" readonly>
                                                     </div>
 
                                                     <div class="form-group">
                                                         <label>Email address*</label>
-                                                        <input disabled value="{{$user->email}}" name="email" required
+                                                        <input readonly value="{{$user->email}}" name="email" required
                                                             type="email" class="form-control" placeholder="Enter Email">
                                                     </div>
+
+                                                    <div class="form-group">
+                                                        <label>Faculty</label>
+                                                        <input readonly value="{{$user->profile->faculty}}" name="faculty" required type="text" class="form-control" placeholder="Enter Faculty">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Academic Program</label>
+                                                        <input value="{{$user->profile->academic_program}}" required
+                                                            name="academic_program" type="text" class="form-control"
+                                                            laceholder="Academic Program" readonly>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Academic Session</label>
+                                                        <input value="{{$user->profile->academic_session}}" required
+                                                            name="academic_session" type="text" class="form-control"
+                                                            laceholder="Academic Session" readonly>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Student Id</label>
+                                                        <input value="{{$user->profile->student_id}}" required
+                                                            name="student_id" type="number" class="form-control"
+                                                            laceholder="Student Id" readonly>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Student Registration No</label>
+                                                        <input value="{{$user->profile->student_reg_no}}" required
+                                                            name="student_reg_no" type="number" class="form-control"
+                                                            laceholder="Student Registration No" readonly>
+                                                    </div>
+
                                                     <div class="form-group">
                                                         <label>Department*</label><br>
                                                         <select name="department" class="">
@@ -44,29 +74,15 @@ senten.'])
                                                         </select>
                                                         <br>
                                                     </div>
-                                                    <br>
-                                                    <div class="form-group">
-                                                        <label>Faculty*</label><br>
-                                                        <select name="faculty" class="">
-                                                            <option value="{{$user->profile->faculty}}">
-                                                                {{$user->profile->faculty}}</option>
-                                                            <option value="FST">FST</option>
-                                                            <option value="FBS">FBS</option>
-                                                        </select>
-                                                    </div>
-                                                    <br>
+
+
                                                     <div class="form-group">
                                                         <br>
                                                         <label><br>Batch*</label>
                                                         <input value="{{$user->profile->batch}}" required name="batch"
                                                             type="text" class="form-control" laceholder="Batch">
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label>Student Id*</label>
-                                                        <input value="{{$user->profile->student_id}}" required
-                                                            name="student_id" type="number" class="form-control"
-                                                            laceholder="Student Id">
-                                                    </div>
+
                                                     <div class="form-group">
                                                         <label>Phone*</label>
                                                         <input value="{{$user->profile->phone}}" required name="phone"

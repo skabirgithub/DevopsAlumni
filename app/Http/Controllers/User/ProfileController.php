@@ -48,8 +48,14 @@ class ProfileController extends Controller
         $activities = Activity::where('user_id', Auth::id())->latest()->get();
         $trainings = Training::where('user_id', Auth::id())->latest()->get();
 
+        $note = Auth::user()->note;
+        // Decode the JSON string to an array
+        $data = json_decode($note, true);
+        // Access the GRADNAME field
+        // return $name = $data['GRADNAME'] ?? 'Name not available';
+        // return $user->profile;
         $clubs = Club::where('user_id', Auth::id())->latest()->get();
-        return view('user.profile', compact('user', 'activities', 'trainings', 'clubs'));
+        return view('user.profile', compact('user', 'activities', 'trainings', 'clubs','data'));
     }
 
     public function profileChange(UserUpdateRequest $request)

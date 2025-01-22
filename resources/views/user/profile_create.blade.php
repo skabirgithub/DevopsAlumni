@@ -170,7 +170,7 @@ senten.'])
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Session*</label>
-                                                        <input value="{{$data['SESS']}}" required name="academic_program"
+                                                        <input value="{{$data['SESS']}}" required name="academic_session"
                                                             type="text" class="form-control" laceholder="Session" readonly>
                                                     </div>
 

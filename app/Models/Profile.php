@@ -15,7 +15,7 @@ class Profile extends Model
         'phone',
         'address',
         'facebook',
-        'facebook',
+        'linkedin',
         'job_type',
         'job_details',
         'student_type',

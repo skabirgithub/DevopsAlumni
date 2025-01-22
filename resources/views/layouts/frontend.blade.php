@@ -157,12 +157,12 @@
                                         <a class="dropdown-item" href="{{route('user.blogs.index')}}">
                                             <span style="font-size: 15px">Blog</span>
                                         </a>
-                                        <a class="dropdown-item" href="{{route('user.zooms.index')}}">
+                                        {{-- <a class="dropdown-item" href="{{route('user.zooms.index')}}">
                                             <span style="font-size: 15px">Zoom Meetings</span>
                                         </a>
                                         <a class="dropdown-item" href="/messenger">
                                             <span style="font-size: 15px">Messenger</span>
-                                        </a>
+                                        </a> --}}
                                         @endif
                                         <a class="dropdown-item" href="{{route('user.change.password')}}">
                                             <span style="font-size: 15px">Change
