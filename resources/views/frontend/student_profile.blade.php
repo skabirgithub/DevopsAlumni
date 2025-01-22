@@ -28,7 +28,7 @@
                     <p>E{{$user->profile->job_details}}</p>
                     <ul class="teacher-contact">
                         <li><strong>Email:</strong> {{$user->email}}</li>
-                        <li><strong>Phone:</strong> {{$user->profile->phone}}</li>
+                        {{-- <li><strong>Phone:</strong> {{$user->profile->phone}}</li> --}}
                         <li><strong>Student ID:</strong> {{$user->profile->student_id}}</li>
                         @if ($user->profile->file)<br>
                         <li><strong>CV:</strong>

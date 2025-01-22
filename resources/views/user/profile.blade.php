@@ -107,7 +107,7 @@ senten.'])
                                                             placeholder="http://linkedin.com">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Job Type*</label><br>
+                                                        <label>Profession</label><br>
                                                         <select name="job_type" class="form-control">
                                                             <option value="{{$user->profile->job_type}}">
                                                                 {{$user->profile->job_type}}</option>
@@ -120,7 +120,7 @@ senten.'])
                                                     <br>
                                                     <br>
                                                     <div class="form-group">
-                                                        <label><br>Job Details*</label>
+                                                        <label><br>Professional Details*</label>
                                                         <textarea required name="job_details" type="text"
                                                             class="form-control"
                                                             laceholder="Job Details">{{$user->profile->job_details}}</textarea>

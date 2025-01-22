@@ -220,7 +220,7 @@ senten.'])
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label>Job Type*</label><br>
+                                                        <label>Profession*</label><br>
                                                         <select name="job_type" class="form-control">
                                                             <option value="Student">Student</option>
                                                             <option value="Business">Business</option>
@@ -230,7 +230,7 @@ senten.'])
                                                     </div>
                                                     <br><br>
                                                     <div class="form-group">
-                                                        <label>Job Details*</label>
+                                                        <label>Professional Details*</label>
                                                         <textarea required name="job_details" type="text"
                                                             class="form-control"
                                                             laceholder="Job Details">{{old('job_details')}}</textarea>
