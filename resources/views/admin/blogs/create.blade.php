@@ -1,3 +1,7 @@
+@php
+    use App\Models\Blog;
+    $blogCategory = Blog::$blogCategory;
+@endphp
 @extends('layouts.admin')
 @section('title','Create New Blog')
 @section('content')
@@ -20,7 +24,20 @@
                         <textarea id="editor" rows="30" required name="details" class="form-control"
                             placeholder="Blog Details">{{old('details')}}</textarea>
                     </div>
+                    <div class="form-group">
+                        <label>Category*</label>
+                        <select name="category" class="form-control" id="">
+                            @foreach ($blogCategory as $key=>$item)
+                            <option value="{{$key}}">{{$item}}</option>
+                            @endforeach
+                            {{-- <option value="News">News</option>
+                            <option value="Notice">Notice</option>
+                            <option value="Activity">Activity</option>
+                            <option value="Story">Story</option>
+                            <option value="Achievement">Achievement</option> --}}
 
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label>Tags</label>
                         <input value="{{old('tags')}}" name="tags" type="text" class="form-control "
