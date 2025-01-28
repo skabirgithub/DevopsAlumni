@@ -20,10 +20,10 @@
                     @foreach ($sliders as $index => $slider)
                     <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
                         <img src="{{ asset('slider_images/slider-'.$slider->image) }}" class="img-responsive" alt="Slider Image">
-                        {{-- <div class="carousel-caption">
+                        <div class="carousel-caption" style="background: rgba(0, 0, 0, 0.5);">
                             <h3>{{ $slider->title }}</h3>
                             <p>{{ $slider->description }}</p>
-                        </div> --}}
+                        </div>
                     </div>
                     @endforeach
                 </div>
