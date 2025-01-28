@@ -26,7 +26,13 @@ class GalleryController extends Controller
             return DataTables::of($galleries)
                 ->addIndexColumn()
                 ->addColumn('image', function (Gallery $gallery) {
-                    return "<img src='" . asset('images/avatar-' . $gallery->image) . "' />";
+                    if ($gallery->category == "Slider") {
+                        return "<img height='50px' src='" . asset('slider_images/slider-' . $gallery->image) . "' />";
+                    } else {
+                        return "<img height='50px' src='" . asset('gallery_images/gallery-' . $gallery->image) . "' />";
+                    }
+
+
                 })
                 ->addColumn('action', function (Gallery $gallery) {
                     return
@@ -64,9 +70,9 @@ class GalleryController extends Controller
         ]);
 
         if ($request->category == "Slider") {
-            $imageName = FileHelper::uploadImage($request, NULL, ['avatar', 'big']);
+            $imageName = FileHelper::uploadImage($request, NULL, ['slider', 'big']);
         } else {
-            $imageName = FileHelper::uploadImage($request, NULL, ['avatar']);
+            $imageName = FileHelper::uploadImage($request, NULL, ['gallery','big','avatar']);
         }
         Gallery::create(array_merge($request->all(), ['image' => $imageName]));
         return back()->with('success', 'Successfully Created.');

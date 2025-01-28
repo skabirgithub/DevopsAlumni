@@ -150,7 +150,7 @@ class IndexController extends Controller
     }
     public function galleries()
     {
-        $galleries = Gallery::latest();
+        $galleries = Gallery::latest()->get();
         return view('frontend.galleries', compact('galleries'));
     }
     public function submitFeedback(Request $request)

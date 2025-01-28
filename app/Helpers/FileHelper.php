@@ -38,7 +38,27 @@ class FileHelper
                     $bigWidth = 720;
                     $bigHeight = 1080;
                 }
-                Image::make($image)->resize($bigWidth, $bigHeight)->save('images/big-' . $imageName, 50);
+                Image::make($image)->resize($bigWidth, $bigHeight)->save('images/big-' . $imageName, 90);
+            }
+            if (in_array('gallery', $type)) {
+                if (array_key_exists('bigWidth', $type) && array_key_exists('bigHeight', $type)) {
+                    $bigWidth = $type['bigWidth'];
+                    $bigHeight = $type['bigHeight'];
+                } else {
+                    $bigWidth = 480;
+                    $bigHeight = 320;
+                }
+                Image::make($image)->resize($bigWidth, $bigHeight)->save('gallery_images/gallery-' . $imageName, 50);
+            }
+            if (in_array('slider', $type)) {
+                if (array_key_exists('bigWidth', $type) && array_key_exists('bigHeight', $type)) {
+                    $bigWidth = $type['bigWidth'];
+                    $bigHeight = $type['bigHeight'];
+                } else {
+                    $bigWidth = 1280;
+                    $bigHeight = 720;
+                }
+                Image::make($image)->resize($bigWidth, $bigHeight)->save('slider_images/slider-' . $imageName, 50);
             }
             // Image::make($image)->resize(400, null, function ($constraint) {
             //     $constraint->aspectRatio();
