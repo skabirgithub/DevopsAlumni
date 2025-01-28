@@ -26,6 +26,9 @@ class IndexController extends Controller
         $countGallery = Gallery::count();
         $countSeminar = Seminar::count();
         $countJobDetails = JobDetails::count();
+
+        $sliders = Gallery::where('category', "Slider")->latest()->take(2)->get();
+
         return view('frontend.index', compact(
             'seminars',
             'jobs',
@@ -34,7 +37,8 @@ class IndexController extends Controller
             'countSeminar',
             'countJobDetails',
             'scholarship',
-            'blogs'
+            'blogs',
+            'sliders'
         ));
     }
 

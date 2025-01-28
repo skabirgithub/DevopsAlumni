@@ -12,6 +12,20 @@
                     method="POST">
                     @csrf
                     <div class="form-group">
+                        <label>Title*</label>
+                        <input value="{{old('title')}}" required name="title" type="text" class="form-control "
+                            placeholder="Enter Title...">
+                    </div>
+                    <div class="form-group">
+                        <label>SubTitle</label>
+                        <input value="{{old('subtitle')}}" required name="subtitle" type="text" class="form-control "
+                            placeholder="Enter subTitle...">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea required name="description" class="form-control" placeholder="Enter description...">{{ old('description') }}</textarea>
+                    </div>
+                    <div class="form-group">
                         <label>Category*</label>
                         <select name="category" class="form-control" id="">
                             <option value="Gallery">Gallery</option>

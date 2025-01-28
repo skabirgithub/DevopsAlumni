@@ -21,7 +21,7 @@
 <section id="slider-area">
     <div class="slider-active-wrap owl-carousel text-center text-md-left">
         <!-- Single Slide Item Start -->
-        <div class="single-slide-wrap slide-bg-1">
+        {{-- <div class="single-slide-wrap slide-bg-1">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9">
@@ -39,43 +39,40 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Single Slide Item End -->
 
-        
 
+        @foreach ($sliders as $key=>$slider)
         <!-- Single Slide Item Start -->
-        <div class="single-slide-wrap slide-bg-3">
+        <div class="single-slide-wrap" style="background-image: url({{asset('slider_images/slider-'.$slider->image)}});">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9">
                         <div class="slider-content">
-                            <h2>Excellence through knowledge</h2>
-                            <h3> <span>Bangladesh University of Professionals</span></h3>
-                            <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be
-                                the need (academic, relocation, career, projects, mentorship, etc. you can ask the
-                                community and get responses in three.</p>
-                            <div class="slider-btn">
-                                <a href="#" class="btn btn-brand">our mission</a>
-                                <a href="#" class="btn btn-brand-rev">our story</a>
-                            </div>
+                            <h2>{{$slider->title}}</h2>
+                            <h3> <span>{{$slider->subtitle}}</span></h3>
+                            <p>{{$slider->description}}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Single Slide Item End -->
+        @endforeach
+
+
     </div>
 
     <!-- Social Icons Area Start -->
-    <div class="social-networks-icon">
+    {{-- <div class="social-networks-icon">
         <ul>
             <li><a href="#"><i class="fa fa-facebook"></i> <span>7.2k Likes</span></a></li>
             <li><a href="#"><i class="fa fa-twitter"></i> <span>3.2m Followers</span></a></li>
 
             <li><a href="#"><i class="fa fa-youtube"></i> <span>2.2k Subscribers</span></a></li>
         </ul>
-    </div>
+    </div> --}}
     <!-- Social Icons Area End -->
 </section>
 <!--== Slider Area End ==-->
