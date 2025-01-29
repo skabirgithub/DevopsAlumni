@@ -450,4 +450,40 @@
 </section>
 <!--== Blog Area EndBlog ==-->
 
+
+<div class="people-to-say section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="about-page-area-title">
+                    <h2>Our Future Leaders</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+            <div class="people-to-say-wrapper owl-carousel owl-theme" data-items="4">
+                @foreach ($prospectiveStudents as $key=>$student)
+                <!-- Single People Testimonial -->
+                <div class="single-testimonial-wrap">
+                <div class="people-thumb">
+                    <img src="{{asset('images/'.$student->image)}}" alt="{{$student->name}}" class="img-fluid" />
+                </div>
+                <i class="quote-icon"></i>
+                {{-- <strong>{{$student->message_subject}}</strong> --}}
+                <p>{{$student->job_details}}</p>
+                <h4>{{$student->user->name}}<span class="people-deg"><br>{{$student->academic_program}}</span> (<span class="people-deg">{{$student->academic_session}}</span>)</h4>
+                </div>
+                <!-- Single People Testimonial -->
+                @endforeach
+            </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
 @endsection

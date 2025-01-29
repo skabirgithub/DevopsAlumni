@@ -30,6 +30,7 @@ class CreateProfilesTable extends Migration
             $table->string('job_type');
             $table->text('job_details');
             $table->string('student_type');
+            $table->string('student_prospective')->nullable();
             $table->string('file')->nullable();
             $table->string('image');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
