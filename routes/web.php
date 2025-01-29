@@ -15,8 +15,8 @@ Route::namespace('Frontend')->group(function () {
     // Route::get('privacy-policy', 'IndexController@privacyPolicy')->name('privacy.policy');
     // Route::get('terms-and-conditions', 'IndexController@termsAndConditions')->name('terms.and.conditions');
     // Blog
-    Route::get('blogs', 'BlogController@blogs')->name('blogs');
-    Route::get('blog/{id}-{slug}', 'BlogController@blogSingle')->name('blog.single');
+    Route::get('newsfeed', 'BlogController@blogs')->name('blogs');
+    Route::get('newsfeed/{id}-{slug}', 'BlogController@blogSingle')->name('blog.single');
     Route::get('about', 'IndexController@about')->name('about');
     Route::get('galleries', 'IndexController@galleries')->name('galleries');
 

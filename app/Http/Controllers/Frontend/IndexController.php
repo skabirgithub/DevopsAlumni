@@ -21,7 +21,7 @@ class IndexController extends Controller
         $seminars = Seminar::where('seminar_date', '>=', today())->get();
         $jobs = JobDetails::latest()->where('status', 'Open')->take(6)->get();
         $scholarship = Scholarship::latest()->where('status', 1)->first();
-        $blogs = Blog::where('status', 1)->latest()->take(3)->get();
+        $blogs = Blog::where('status', 1)->where('category', 'Story')->latest()->take(3)->get();
         $countAlumni = Profile::where('student_type', 'Alumni')->count();
         $countGallery = Gallery::count();
         $countSeminar = Seminar::count();

@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
-@section('title','Blogs')
+@section('title','Newsfeed')
 @section('content')
-@include('includes.banner',['title'=>'Blogs','details'=>'Get the latest Blogs and Articles.'])
+@include('includes.banner',['title'=>'Newsfeed','details'=>'Get the latest News and Activities.'])
 
 <div id="page-content-wrap">
     <div class="blog-page-content-wrap section-padding">
