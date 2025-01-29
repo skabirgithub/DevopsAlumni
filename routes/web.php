@@ -3,6 +3,7 @@
 // *****************************Frontend **************************
 
 use App\Http\Controllers\Frontend\BlogController;
+use App\Http\Controllers\Frontend\TestimonialController;
 
 Route::namespace('Frontend')->group(function () {
     Route::get('/', 'IndexController@index')->name('index');
@@ -132,6 +133,7 @@ Route::prefix('rt-admin')->group(function () {
                         'seminars' => 'SeminarController',
                         'scholarships' => 'ScholarshipController',
                         'zooms' => 'ZoomController',
+                        'testimonials' => 'TestimonialController',
                     ]
                 );
                 Route::get('users-requests', 'UserController@requests')->name('users.requests');
@@ -167,3 +169,6 @@ Route::prefix('rt-admin')->group(function () {
         });
     });
 });
+
+
+

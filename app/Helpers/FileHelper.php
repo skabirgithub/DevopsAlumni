@@ -63,6 +63,8 @@ class FileHelper
             // Image::make($image)->resize(400, null, function ($constraint) {
             //     $constraint->aspectRatio();
             // })->save('images/' . $imageName, 50);
+        }else{
+            return $imageName = $request->image;
         }
         return $imageName;
     }

@@ -312,3 +312,26 @@
         Backup
     </a>
 </li>
+<li class="{{ Request::is('rt-admin/testimonials**') ? 'mm-active' : '' }}">
+        <a href="#">
+            <i class="metismenu-icon pe-7s-menu"></i>
+            Testimonials
+            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+        </a>
+        <ul class="{{ Request::is('rt-admin/testimonials*') ? 'mm-show' : '' }}">
+            <li>
+                <a class="{{ Request::is('rt-admin/testimonials/create') ? 'mm-active' : '' }}"
+                    href="{{route('admin.testimonials.create')}}">
+                    <i class="metismenu-icon"></i>
+                    Create
+                </a>
+            <li>
+                <a class="{{ Request::is('rt-admin/testimonials') ? 'mm-active' : '' }}"
+                    href="{{route('admin.testimonials.index')}}">
+                    <i class="metismenu-icon">
+                    </i>Manage
+                </a>
+            </li>
+        </ul>
+</li>
+
