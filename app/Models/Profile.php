@@ -24,6 +24,20 @@ class Profile extends Model
         'student_reg_no',
         'academic_program',
         'academic_session',
+        'student_prospective',
+    ];
+
+    public static $studentProspective = [
+        'Prospective' => 'Prospective',
+        'Visionary' => 'Visionary',
+        'Achiever' => 'Achiever',
+        'Alumni Committee' => 'Alumni Committee',
+        'Alumni Member' => 'Alumni Member',
+        'Executive Member' => 'Executive Member',
+        'Previous Committee' => 'Previous Committee',
+        'Guest' => 'Guest',
+        'Special' => 'Special',
+        'Others' => 'Others',
     ];
 
     public function user()

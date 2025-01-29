@@ -43,6 +43,7 @@
         @endforeach
     </select>
 </div>
+
 <div class="form-group">
     {!! Form::label('priority', 'Priority:') !!}
     {!! Form::number('priority', null, ['class' => 'form-control']) !!}

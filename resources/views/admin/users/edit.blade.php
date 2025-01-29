@@ -1,3 +1,7 @@
+@php
+    use App\Models\Profile;
+    $studentProspective = Profile::$studentProspective;
+@endphp
 @extends('layouts.admin')
 @section('title','Update Student Profile')
 @section('content')
@@ -93,6 +97,16 @@
                             <option value="{{$user->profile->student_type}}">{{$user->profile->student_type}}</option>
                             <option value="Current Student">Current Student</option>
                             <option value="Alumni">Alumni</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Prospective</label>
+                        <select name="student_prospective" class="form-control" id="">
+                            @foreach ($studentProspective as $key=>$item)
+                            <option value="{{ $key }}" {{ $user->profile->student_prospective == $key ? 'selected' : '' }}>
+                                {{ $item }}
+                            </option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
