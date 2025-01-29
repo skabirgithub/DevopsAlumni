@@ -2,6 +2,7 @@
 
 // *****************************Frontend **************************
 
+use App\Http\Controllers\Frontend\BlogController;
 
 Route::namespace('Frontend')->group(function () {
     Route::get('/', 'IndexController@index')->name('index');
@@ -15,8 +16,10 @@ Route::namespace('Frontend')->group(function () {
     // Route::get('privacy-policy', 'IndexController@privacyPolicy')->name('privacy.policy');
     // Route::get('terms-and-conditions', 'IndexController@termsAndConditions')->name('terms.and.conditions');
     // Blog
-    Route::get('newsfeed', 'BlogController@blogs')->name('blogs');
-    Route::get('newsfeed/{id}-{slug}', 'BlogController@blogSingle')->name('blog.single');
+    Route::get('/newsfeeds', [BlogController::class, 'blogs'])->name('blogs');
+    Route::get('/newsfeed/{id}', [BlogController::class, 'blogSingle'])->name('blog.single');
+    Route::get('/newsfeeds/category/{category}', [BlogController::class, 'filterByCategory'])->name('blog.category');
+
     Route::get('about', 'IndexController@about')->name('about');
     Route::get('galleries', 'IndexController@galleries')->name('galleries');
 
