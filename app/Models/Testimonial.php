@@ -69,5 +69,18 @@ class Testimonial extends Model
         'details' => 'required|string|max:65530'
     ];
 
+    public static $testimonialTypes = [
+        'VC' => 'VC',
+        'Alumni Head' => 'Alumni Head',
+        'Alumni Official' => 'Alumni Official',
+        'Alumni Committee' => 'Alumni Committee',
+        'Executive Comittee' => 'Executive Comittee',
+        'Previous Committee' => 'Previous Committee',
+        'Alumni Member' => 'Alumni Member',
+        'Guest' => 'Guest',
+        'Special' => 'Special',
+        'Others' => 'Others',
+    ];
+
 
 }

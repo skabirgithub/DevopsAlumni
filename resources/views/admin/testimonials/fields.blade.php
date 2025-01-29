@@ -1,3 +1,7 @@
+@php
+    use App\Models\Testimonial;
+    $testimonialTypes = Testimonial::$testimonialTypes;
+@endphp
 <!-- Name Field -->
 <div class="form-group">
     {!! Form::label('name', 'Name:') !!}
@@ -26,6 +30,22 @@
 <div class="form-group">
     {!! Form::label('details', 'Details:') !!}
     {!! Form::textarea('details', null, ['class' => 'form-control','maxlength' => 65530]) !!}
+</div>
+
+
+<div class="form-group">
+    <label>Type*</label>
+    <select name="type" class="form-control" id="">
+        @foreach ($testimonialTypes as $key=>$item)
+        <option value="{{ $key }}" {{ $testimonial->type == $key ? 'selected' : '' }}>
+            {{ $item }}
+        </option>
+        @endforeach
+    </select>
+</div>
+<div class="form-group">
+    {!! Form::label('priority', 'Priority:') !!}
+    {!! Form::number('priority', null, ['class' => 'form-control']) !!}
 </div>
 
 @if (isset($testimonial))
