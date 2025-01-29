@@ -10,6 +10,7 @@ use App\Models\JobDetails;
 use App\Models\Profile;
 use App\Models\Scholarship;
 use App\Models\Seminar;
+use App\Models\Testimonial;
 use App\Models\User;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
@@ -141,7 +142,8 @@ class IndexController extends Controller
 
     public function about()
     {
-        return view('frontend.about');
+        $testimonials = Testimonial::where('status', 'Active')->orderBy('priority','desc')->latest()->take(5)->get();
+        return view('frontend.about',compact('testimonials'));
     }
     public function contact()
     {
