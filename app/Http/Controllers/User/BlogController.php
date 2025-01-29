@@ -48,7 +48,7 @@ class BlogController extends Controller
     public function store(BlogCreateRequest $request)
     {
         $imageName = FileHelper::uploadImage($request, NULL, ['avatar', 'big']);
-        Blog::create(array_merge($request->all(), ['image' => $imageName, 'user_id' => Auth::id(), 'status' => 0, 'posted_by' => Auth::user()->name]));
+        Blog::create(array_merge($request->all(), ['image' => $imageName, 'user_id' => Auth::id(), 'status' => 0, 'category' => 'Activity', 'posted_by' => Auth::user()->name]));
         return back()->with('success', 'Successfully Created. Admin will review it.');
     }
 
@@ -87,7 +87,7 @@ class BlogController extends Controller
     public function update(BlogUpdateRequest $request, Blog $blog)
     {
         $imageName = FileHelper::uploadImage($request, $blog, ['avatar', 'big']);
-        $blog->fill(array_merge($request->all(), ['image' => $imageName]))->save();
+        $blog->fill(array_merge($request->all(), ['image' => $imageName, 'category' => 'Activity']))->save();
         return back()->with('success', 'Update Successful.');
     }
 

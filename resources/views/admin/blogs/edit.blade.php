@@ -1,3 +1,7 @@
+@php
+    use App\Models\Blog;
+    $blogCategory = Blog::$blogCategory;
+@endphp
 @extends('layouts.admin')
 @section('title','Update Blog')
 @section('content')
@@ -6,7 +10,7 @@
         <div class="main-card mb-3 card">
             <div class="card-header">
                 <h5 class="card-title text-primary">Update Blog </h5><br>
-            
+
             </div>
             <div class="card-body">
                 <form data-parsley-validate enctype="multipart/form-data"
@@ -23,6 +27,17 @@
                         <textarea rows="15" required id="details" name="details"
                             class="form-control" placeholder="Enter Email">{!!$blog->details!!}</textarea>
                     </div>
+                    <div class="form-group">
+                        <label>Category*</label>
+                        <select name="category" class="form-control">
+                            @foreach ($blogCategory as $key => $item)
+                                <option value="{{ $key }}" {{ $blog->category == $key ? 'selected' : '' }}>
+                                    {{ $item }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     <div class="form-group">
                         <label>Tags</label>
                         <input value="{{$blog->tags}}" name="tags" type="text"

@@ -30,12 +30,6 @@
                             @foreach ($blogCategory as $key=>$item)
                             <option value="{{$key}}">{{$item}}</option>
                             @endforeach
-                            {{-- <option value="News">News</option>
-                            <option value="Notice">Notice</option>
-                            <option value="Activity">Activity</option>
-                            <option value="Story">Story</option>
-                            <option value="Achievement">Achievement</option> --}}
-
                         </select>
                     </div>
                     <div class="form-group">
