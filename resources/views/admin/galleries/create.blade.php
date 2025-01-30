@@ -1,3 +1,7 @@
+@php
+    use App\Models\Gallery;
+    $galleryCategory = Gallery::$galleryCategory;
+@endphp
 @extends('layouts.admin')
 @section('title','Create New gallery')
 @section('content')
@@ -32,12 +36,9 @@
                     <div class="form-group">
                         <label>Category*</label>
                         <select name="category" class="form-control" id="">
-                            <option value="Gallery">Gallery</option>
-                            <option value="Slider">Slider</option>
-                            <option value="Video">Video</option>
-                            <option value="Audio">Audio</option>
-                            <option value="Document">Document</option>
-                            <option value="URL">URL</option>
+                            @foreach ($galleryCategory as $key=>$item)
+                            <option value="{{$key}}">{{$item}}</option>
+                            @endforeach
                         </select>
                     </div>
 
