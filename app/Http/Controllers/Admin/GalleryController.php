@@ -74,7 +74,9 @@ class GalleryController extends Controller
         } else {
             $imageName = FileHelper::uploadImage($request, NULL, ['gallery','big','avatar']);
         }
-        Gallery::create(array_merge($request->all(), ['image' => $imageName]));
+
+        $fileName = FileHelper::uploadFile($request);
+        Gallery::create(array_merge($request->all(), ['image' => $imageName, 'file' => $fileName]));
         return back()->with('success', 'Successfully Created.');
     }
 

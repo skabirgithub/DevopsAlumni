@@ -26,16 +26,29 @@
                         <textarea required name="description" class="form-control" placeholder="Enter description...">{{ old('description') }}</textarea>
                     </div>
                     <div class="form-group">
+                        <label>Url</label>
+                        <textarea required name="url" class="form-control" placeholder="Enter url...">{{ old('url') }}</textarea>
+                    </div>
+                    <div class="form-group">
                         <label>Category*</label>
                         <select name="category" class="form-control" id="">
                             <option value="Gallery">Gallery</option>
                             <option value="Slider">Slider</option>
+                            <option value="Video">Video</option>
+                            <option value="Audio">Audio</option>
+                            <option value="Document">Document</option>
+                            <option value="URL">URL</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label>Image*</label>
                         <input  required name="image" style="background: #f5f6fa" type="file"
+                            class="form-control ">
+                    </div>
+                    <div class="form-group">
+                        <label>File</label>
+                        <input name="file" style="background: #f5f6fa" type="file"
                             class="form-control ">
                     </div>
                     <div class="form-footer pt-4 pt-2 mt-4 border-top">
