@@ -2,6 +2,7 @@
 
 // *****************************Frontend **************************
 
+use App\Http\Controllers\Frontend\GalleryController;
 use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\TestimonialController;
 
@@ -23,6 +24,10 @@ Route::namespace('Frontend')->group(function () {
 
     Route::get('about', 'IndexController@about')->name('about');
     Route::get('galleries', 'IndexController@galleries')->name('galleries');
+
+    Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+    Route::get('/gallery/category/{category}', [GalleryController::class, 'filterByCategory'])->name('gallery.category');
+
 
     Route::get('students/{category}', 'AllController@students')->name('students');
     Route::get('student-search', 'AllController@studentSearch')->name('student.search');

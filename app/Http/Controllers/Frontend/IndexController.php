@@ -161,7 +161,7 @@ class IndexController extends Controller
     {
         $galleries = Gallery::where('category','Gallery')->latest()->get();
         $sliders = Gallery::where('category','Slider')->latest()->get();
-        return view('frontend.galleries', compact('galleries','sliders'));
+        return view('frontend.galleries-old', compact('galleries','sliders'));
     }
     public function submitFeedback(Request $request)
     {

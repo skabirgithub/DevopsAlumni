@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Gallery extends Model
 {
-    protected $fillable = ['category', 'title', 'subtitle', 'description', 'image', 'file', 'url'];
+    protected $fillable = ['category', 'title', 'subtitle', 'description', 'image', 'file', 'url','status'];
 
     public static $galleryCategory = [
         'Slider' => 'Slider',

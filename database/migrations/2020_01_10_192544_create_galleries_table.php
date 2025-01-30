@@ -22,6 +22,7 @@ class CreateGalleriesTable extends Migration
             $table->string('image');
             $table->string('file')->nullable();
             $table->text('url')->nullable();
+            $table->string('status')->default(1);
             $table->timestamps();
         });
     }
