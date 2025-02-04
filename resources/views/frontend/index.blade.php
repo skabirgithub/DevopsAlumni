@@ -148,8 +148,8 @@
                             <img src="{{asset('frontend/assets/img/about-bg.jpg')}}" alt="" class="img-fluid">
                         </div>
 
-                        <p>At the core of the BUPAA's mission lies the commitment to connect, engage, and empower its alumni. The association endeavors to create a robust platform that facilitates meaningful interactions among graduates, providing opportunities for networking, mentorship, and professional development. By bridging the past with the present, BUPAA seeks to uphold the spirit of camaraderie and support among its diverse members.</p>
-                        <p>The vision of BUPAA is rooted in the aspiration to build a global community of empowered, compassionate, and successful individuals who share a common connection to BUP. The association envisions a future where every graduate is not only a beneficiary of their alma mater but also an active contributor to its legacy.</p>
+                        <p>The mission of the Alumni Association is to strengthen the relationship between the University and an Alumni; recognize achievements and contributions of the university; and heighten the sense of pride and commitment of the university.</p>
+                        <p>The vision of the Alumni Association of BUP is to develop a dedicated and dynamic global community whose members are committed to each other of creating a fraternal bond of concern for mentoring, internship and career opportunities and to reinforce the interaction among alumni and students of BUP.</p>
                         <a href="{{route('about')}}" class="btn btn-brand about-btn">know more</a>
                     </div>
                 </div>
