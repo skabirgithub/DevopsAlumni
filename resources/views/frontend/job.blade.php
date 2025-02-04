@@ -69,6 +69,7 @@
                     </div>
                 </div>
             </div>
+            @if(Auth::check())
             <div class="row">
                 <div class="col-lg-12">
                     <div class="register-page-inner">
@@ -85,29 +86,28 @@
                                                         <form enctype="multipart/form-data" method="POST"
                                                             action="{{ route('user.jobs.apply') }}">
                                                             @csrf
-                                                            <input value="{{ Auth::user()->name ?? '' }}" required
-                                                                name="name" type="text" placeholder="Enter your Name">
-                                                            <input value="{{ Auth::user()->email ?? ''}}" required
-                                                                name="email" type="email"
-                                                                placeholder="Enter your Email">
+                                                            <input value="{{ Auth::user()->name }}" required name="name"
+                                                                type="text" placeholder="Enter your Name" readonly>
+                                                            <input value="{{ Auth::user()->email }}" required
+                                                                name="email" type="email" placeholder="Enter your Email"
+                                                                readonly>
                                                             <label><br>Cover Letter*</label>
                                                             <textarea required rows="8" name="cover_letter" type="text"
                                                                 class="form-control"
-                                                                laceholder="Activity Details">{{old('cover_letter')}}</textarea>
+                                                                placeholder="Enter Cover Letter">{{ old('cover_letter') }}</textarea>
                                                             <br>
                                                             Upload Your CV*
-                                                            <input type="hidden" name="job_details_id" value="{{ $job->id }}" />
+                                                            <input type="hidden" name="job_details_id"
+                                                                value="{{ $job->id }}" />
                                                             <input required type="file" name="file" />
                                                             <button type="submit" class="btn btn-reg">
-                                                                <i class=" mdi mdi-checkbox-marked-outline mr-1"></i>
+                                                                <i class="mdi mdi-checkbox-marked-outline mr-1"></i>
                                                                 Apply
                                                             </button>
                                                         </form>
                                                     </div>
                                                     <br>
                                                 </div>
-                                                {{-- Already a Member? <a href="{{ route('login') }}">
-                                                Login Here<br> </a> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -118,6 +118,12 @@
                     </div>
                 </div>
             </div>
+            @else
+            <div class="text-center">
+                <h4>Please <a href="{{ route('login') }}">Login</a> to apply for this job.</h4>
+            </div>
+            @endif
+
         </div>
     </div>
 </section>
