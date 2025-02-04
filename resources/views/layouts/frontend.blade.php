@@ -10,7 +10,8 @@
     <title>@yield('title')</title>
 
     @yield('meta')
-    {{-- <meta name="description" content="simple description for your site" />
+    {{--
+    <meta name="description" content="simple description for your site" />
     <meta name="keywords" content="keyword1, keyword2" />
     <meta name="author" content="Jobz" />
 
@@ -119,8 +120,8 @@
                 <div class="row">
                     <div class="col-lg-6 col-sm-7 col-7">
                         <div class="preheader-left">
-                            <a href="mailto:info@construc.com"><strong>Email:</strong> info@alumni.bup.edu.bd</a>
-                            <a href="phoneto:88-02-8000368"><strong>Hotline:</strong> 88-02-8000368</a>
+                            <a href="mailto:info@construc.com"><strong>Email:</strong> alumni@bup.edu.bd</a>
+                            <a href="phoneto:+88 01769-021962"><strong>Hotline:</strong> +88 01769-021962</a>
                         </div>
                     </div>
 
@@ -195,7 +196,7 @@
                     <div class="col-lg-12">
                         <nav class="main-menu navbar navbar-expand-lg navbar-light">
                             <a class="navbar-brand" href="{{route('index')}}">
-                                <img src="{{asset('frontend/assets/img/logo1.png')}}" alt="Logo" />
+                                <img src="{{asset('frontend/assets/img/bup-alumni-logo.png')}}" alt="Logo" />
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#menucontent" aria-controls="menucontent" aria-expanded="false">
@@ -248,11 +249,12 @@
                         <div class="single-widget-wrap">
                             <div class="widgei-body">
                                 <div class="footer-about">
-                                    <img src="{{asset('frontend/assets/img/buplogo-resize.png')}}" alt="Logo"
+                                    <img src="{{asset('frontend/assets/img/bup-alumni-logo-dark.png')}}" alt="Logo"
                                         class="img-fluid" />
-                                    <p>Connecting the threads of the past, weaving the fabric of the future. Proudly fostering unity and excellence among BUP Alumni.</p>
-                                    <a href="#">Phone:88-02-8000368</a> <br> <a href="#">Fax: 88-02-8000443</a> <br> <a
-                                        href="#">Email: info@alumni.bup.edu.bd</a>
+                                    <p>Connecting the threads of the past, weaving the fabric of the future. Proudly
+                                        fostering unity and excellence among BUP Alumni.</p>
+                                    <a href="#">Phone:+88 01769-021962</a> <br> <a href="#">Fax: 88-02-8000443</a> <br>
+                                    <a href="#">Email: alumni@bup.edu.bd</a>
                                 </div>
                             </div>
                         </div>
@@ -294,7 +296,8 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <div class="footer-bottom-text">
-                            <p>© 2023 BUP Alumni Society | Technology Partner <span><a href="https://skoder.co">Skoder</a></span></p>
+                            <p>Copyright © {{date('Y')}} BUP Alumni Association | Tech Partner <span><a
+                                        href="https://skoder.co">Skoder</a></span></p>
                         </div>
                     </div>
                 </div>
