@@ -27,7 +27,7 @@ senten.'])
                                 <thead>
                                     <tr>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Email</th>
+                                        {{-- <th scope="col">Email</th> --}}
                                         <th scope="col">Faculty</th>
                                         <th scope="col">Department</th>
                                         <th scope="col">Batch</th>
@@ -42,7 +42,7 @@ senten.'])
                                     <tr>
                                         <td><img src="{{asset('images/'.$student->image)}}"
                                                 alt="table">{{$student->activeUser->name}}</td>
-                                        <td>{{$student->activeUser->email}}</td>
+                                        {{-- <td>{{$student->activeUser->email}}</td> --}}
                                         <td>{{$student->faculty}}</td>
                                         <td>{{$student->department}}</td>
                                         <td>{{$student->batch}}</td>
