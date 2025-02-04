@@ -25,10 +25,10 @@ class DatabaseSeeder extends Seeder
         // $this->call(ProgramSeeder::class);
         $this->call(BlogSeeder::class);
         // factory(CheckTwo::class, 50)->create();
-        factory(JobDetails::class, 20)->create();
+        factory(JobDetails::class, 90)->create();
         factory(Scholarship::class, 15)->create();
-        factory(Seminar::class, 25)->create();
-        factory(Gallery::class, 15)->create();
+        factory(Seminar::class, 10)->create();
+        factory(Gallery::class, 9)->create();
         $this->call(UserSeeder::class);
         $this->call(ContactFeedbackSeeder::class);
     }

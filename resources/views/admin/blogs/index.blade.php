@@ -17,6 +17,7 @@
                                 <th> Title </th>
                                 <th> Details </th>
                                 <th> Tags </th>
+                                <th> Category </th>
                                 <th> Posted By </th>
                                 <th> Image </th>
                                 <th> Action </th>
@@ -69,6 +70,7 @@
                {data: 'Sl', name: 'id'},
             {data: 'title', name: 'title'},
             {data: 'details', name: 'details'},
+            {data: 'category', name: 'category'},
             {data: 'tags', name: 'tags'},
             {data: 'posted_by', name: 'posted_by'},
             {data: 'image', name: 'image'},

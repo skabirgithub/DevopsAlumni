@@ -256,7 +256,7 @@
                                 </div>
                             </div>
                             <h3><a href="{{route('job',$job->id)}}">{{$job->title}}</a></h3>
-                            <p>{!!Str::limit($job->details,100)!!}</p>
+                            <p>{!!Str::limit($job->details,50)!!}</p>
                         </div>
                         <a href="{{route('job',$job->id)}}" class="btn btn-job">Apply now</a>
                     </div>
