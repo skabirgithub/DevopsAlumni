@@ -19,6 +19,7 @@ class Blog extends Model
         'Story' => 'Story',
         'Event' => 'Event',
         'Article' => 'Article',
+        'Publication' => 'Publication',
         'Others' => 'Others',
     ];
 
