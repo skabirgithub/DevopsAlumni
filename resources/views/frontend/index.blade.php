@@ -86,50 +86,51 @@
                     <div class="up-event-titile">
                         <h3>Upcoming event</h3>
                     </div>
-                    <div class="upcoming-event-content owl-carousel">
-                        @foreach ($seminars as $seminar)
-                        <!-- No 1 Event -->
-                        <div class="single-upcoming-event">
-                            <div class="row">
-                                <div class="col-lg-5">
-                                    <div class="up-event-thumb">
-                                        <img src="{{asset('images/'.$seminar->image)}}" class="img-fluid"
-                                            alt="Upcoming Event">
-                                        <h4 class="up-event-date">{{$seminar->seminar_date->toFormattedDateString()}} at
-                                            {{date('h:i a',strtotime($seminar->seminar_time))}}</h4>
-                                    </div>
-                                </div>
 
-                                <div class="col-lg-7">
-                                    <div class="display-table">
-                                        <div class="display-table-cell">
-                                            <div class="up-event-text">
-                                                <div class="event-countdown">
-                                                    {{-- <div class="event-countdown-counter" data-date="2018/9/10">
-                                                    </div>
-                                                    <p>Remaining</p> --}}
+                    @if($seminars->isEmpty())
+                        <div class="text-center">
+                            <h4>No Upcoming Events...</h4>
+                        </div>
+                    @else
+                        <div class="upcoming-event-content owl-carousel">
+                            @foreach ($seminars as $seminar)
+                            <!-- No 1 Event -->
+                            <div class="single-upcoming-event">
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <div class="up-event-thumb">
+                                            <img src="{{ asset('images/'.$seminar->image) }}" class="img-fluid" alt="Upcoming Event">
+                                            <h4 class="up-event-date">
+                                                {{ $seminar->seminar_date->toFormattedDateString() }} at
+                                                {{ date('h:i a', strtotime($seminar->seminar_time)) }}
+                                            </h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-7">
+                                        <div class="display-table">
+                                            <div class="display-table-cell">
+                                                <div class="up-event-text">
+                                                    <h3><a href="{{ route('seminar', $seminar->id) }}">{{ $seminar->title }}</a></h3>
+                                                    <p>{!! Str::limit($seminar->details, 100) !!}</p>
+                                                    <p>Place : {{ $seminar->place }}</p>
+                                                    <a href="{{ route('seminar', $seminar->id) }}" class="btn btn-brand btn-brand-dark">View Details</a><br><br>
+                                                    <div class="sharethis-inline-share-buttons"></div>
                                                 </div>
-                                                <h3><a href="{{route('seminar',$seminar->id)}}">{{$seminar->title}}</a>
-                                                </h3>
-                                                <p>{!!Str::limit($seminar->details,100)!!}</p>
-                                                <p>Place : {{$seminar->place}}</p>
-                                                <a href="{{route('seminar',$seminar->id)}}"
-                                                    class="btn btn-brand btn-brand-dark">View Details</a><br><br>
-                                                <div class="sharethis-inline-share-buttons"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
-                        <!-- partial -->
-                        @endforeach
-                    </div>
+                    @endif
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 <!--== Upcoming Event Area End ==-->
 
 <!--== About Area Start ==-->
@@ -460,6 +461,7 @@
                 </div>
             </div>
         </div>
+
 
         <div class="row">
             <div class="col-lg-12">
