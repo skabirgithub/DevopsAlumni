@@ -17,16 +17,32 @@ class AllController extends Controller
     public function students($category)
     {
         // return Profile::all();
+        $academicProgram = Profile::get()->unique('academic_program')->pluck('academic_program');
         $students = Profile::where('student_type', $category)->with('activeUser')->paginate(9);
-        return view('frontend.students', compact('students', 'category'));
+        return view('frontend.students', compact('students', 'category', 'academicProgram'));
     }
     public function studentSearch(Request $request)
     {
-        // return Profile::all();
         $category = $request->category;
-        $students = Profile::where('student_type', $request->category)->where('department', $request->department)->with('activeUser')->paginate(9);
-        return view('frontend.students', compact('students', 'category'));
+        $query = Profile::where('student_type', $category)->with('activeUser');
+
+        if ($request->has('academic_program') && $request->academic_program != 'Academic Program') {
+            $query->where('academic_program', $request->academic_program);
+        }
+
+        if ($request->has('name') && !empty($request->name)) {
+            $query->whereHas('activeUser', function ($q) use ($request) {
+                $q->where('name', 'LIKE', '%' . $request->name . '%');
+            });
+        }
+
+        $students = $query->paginate(9);
+
+        $academicProgram = Profile::get()->unique('academic_program')->pluck('academic_program');
+
+        return view('frontend.students', compact('students', 'category', 'academicProgram'));
     }
+
 
     public function studentProfile($userId)
     {

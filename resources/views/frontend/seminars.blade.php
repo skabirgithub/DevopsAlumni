@@ -52,7 +52,7 @@
                                 <div class="col-lg-5">
                                     <div class="up-event-thumb">
                                         <img src="{{asset('images/'.$seminar->image)}}" class="img-fluid"
-                                            alt="Upcoming Event">
+                                            alt="{{$seminar->title}}">
                                         <h4 class="up-event-date">It’s {{$seminar->seminar_date->toFormattedDateString()}} at {{date('h:i a',strtotime($seminar->seminar_time))}}</h4>
                                     </div>
                                 </div>

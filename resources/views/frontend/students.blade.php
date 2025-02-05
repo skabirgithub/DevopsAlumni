@@ -1,8 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Students')
 @section('content')
-@include('includes.banner',['title'=>'Students','details'=>'This is a page. This is a demo paragraph.This is a demo
-senten.'])
+@include('includes.banner',['title'=>'Students','details'=>'Meet our students'])
 <section id="page-content-wrap">
     <div class="directory-page-content-warp section-padding">
         <div class="container">
@@ -10,17 +9,25 @@ senten.'])
                 <div class="col-lg-12 text-center">
                     <div class="directory-text-wrap">
                         <h2>Now we have <strong class="funfact-count">{{count($students)}}</strong> member </h2>
-                        <div class="table-search-area">
-                            <form action="{{route('student.search')}}">
-                                <input type="hidden" name="category" value="{{$category}}">
-                                <select name="department">
-                                    <option selected>Dept</option>
-                                    <option value="ICE">ICE</option>
-                                    <option value="ES">ES</option>
-                                </select>
-                                <button type="submit" class="btn btn-brand">Search</button>
+                        <div class="container mt-3">
+                            <form action="{{ route('student.search') }}" class="row g-2">
+                                <input type="hidden" name="category" value="{{ $category }}">
+
+                                <div class="col-md-8">
+                                    <select name="academic_program" class="form-select">
+                                        <option selected>Academic Program</option>
+                                        @foreach ($academicProgram as $key => $program)
+                                            <option value="{{ $key }}">{{ $program }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <button type="submit" class="btn btn-primary w-100">Filter</button>
+                                </div>
                             </form>
                         </div>
+
 
                         <div class="directory-table table-responsive">
                             <table class="table table-bordered">

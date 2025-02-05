@@ -1,9 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Scholarship Apply')
 @section('content')
-@include('includes.banner',['title'=>'Scholarship Apply','details'=>'This is a page. This is a demo paragraph.This is
-a demo
-senten.'])
+@include('includes.banner',['title'=>'Scholarship Apply','details'=>''])
 <link rel="stylesheet" href="{{asset('frontend/assets/css/style.min.css')}}">
 <section id="page-content-wrap">
     <div class="register-page-wrapper section-padding">
@@ -50,7 +48,7 @@ senten.'])
                                                             class="form-control" placeholde="Enter siblings">
                                                     </div>
 
-                                                   
+
                                                     <br>
                                                     <div class="form-group">
                                                         <label><br>Reason For scholarship*</label>
@@ -58,7 +56,7 @@ senten.'])
                                                             class="form-control"
                                                             laceholder="Job Details">{{old('reasons')}}</textarea>
                                                     </div>
-                                                   
+
                                                     <div class="form-footer pt-4 pt-2 mt-4 border-top">
                                                         <button type="submit" class="btn btn-reg">
                                                             <i class=" mdi mdi-checkbox-marked-outline mr-1"></i> Apply
