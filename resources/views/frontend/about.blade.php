@@ -204,6 +204,7 @@
                             <i class="quote-icon"></i>
                             <strong>{{$testimonial->message_subject}}</strong>
                             <p>{{Str::limit($testimonial->details, 100)}}</p>
+                            <br><br>
                             <h4>{{$testimonial->name}}<span class="people-deg">{{$testimonial->message_title}}</span><span class="people-deg">{{$testimonial->designation}}</span></h4>
                         </div>
                         <!-- Single People Testimonial -->
