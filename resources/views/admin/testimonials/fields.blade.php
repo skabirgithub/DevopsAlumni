@@ -37,9 +37,10 @@
     <label>Type*</label>
     <select name="type" class="form-control" id="">
         @foreach ($testimonialTypes as $key=>$item)
-        <option value="{{ $key }}" {{ $testimonial->type == $key ? 'selected' : '' }}>
+        <option value="{{ $key }}" {{ old('type') == $key ? 'selected' : '' }}>
             {{ $item }}
         </option>
+
         @endforeach
     </select>
 </div>
