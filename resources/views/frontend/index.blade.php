@@ -472,10 +472,12 @@
                 <div class="people-thumb">
                     <img src="{{asset('images/'.$student->image)}}" alt="{{$student->name}}" class="img-fluid" />
                 </div>
-                <i class="quote-icon"></i>
+                <br><i class="quote-icon"></i>
                 {{-- <strong>{{$student->message_subject}}</strong> --}}
-                <p>{{$student->job_details}}</p>
-                <h4>{{$student->user->name}}<span class="people-deg"><br>{{$student->academic_program}}</span> (<span class="people-deg">{{$student->academic_session}}</span>)</h4>
+                <p>{{Str::limit($student->job_details, 100)}}</p>
+
+                <h5>{{$student->user->name}}</h5>
+                <p>{{$student->academic_program}}</p>
                 </div>
                 <!-- Single People Testimonial -->
                 @endforeach
