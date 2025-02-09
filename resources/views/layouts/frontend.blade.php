@@ -224,13 +224,16 @@
                                         <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" href="{{route('about')}}">About</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle {{ request()->is('students/*') ? 'active' : '' }}" href="#" data-toggle="dropdown" role="button">Students</a>
+                                        <a class="nav-link dropdown-toggle {{ request()->is('students/*') ? 'active' : '' }}" href="#" data-toggle="dropdown" role="button">Alumni</a>
                                         <ul class="dropdown-menu">
                                             <li class="nav-item">
-                                                <a class="nav-link {{ request()->is('students/Current Student') ? 'active' : '' }}" href="{{route('students','Current Student')}}">Current Students</a>
+                                                <a class="nav-link {{ request()->is('students/Executive Comittee') ? 'active' : '' }}" href="{{route('students','Executive Comittee')}}">Executive Comittee</a>
                                             </li>
+                                            {{-- <li class="nav-item">
+                                                <a class="nav-link {{ request()->is('students/Current Student') ? 'active' : '' }}" href="{{route('students','Current Student')}}">Current Students</a>
+                                            </li> --}}
                                             <li class="nav-item">
-                                                <a class="nav-link {{ request()->is('students/Alumni') ? 'active' : '' }}" href="{{route('students','Alumni')}}">Alumni</a>
+                                                <a class="nav-link {{ request()->is('students/Alumni') ? 'active' : '' }}" href="{{route('students','Alumni')}}">Members</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -243,6 +246,7 @@
                                     <li class="nav-item">
                                         <a class="nav-link {{ request()->routeIs('blogs') ? 'active' : '' }}" href="{{route('blogs')}}">Newsfeed</a>
                                     </li>
+
                                     <li class="nav-item">
                                         <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{route('contact')}}">Contact</a>
                                     </li>
