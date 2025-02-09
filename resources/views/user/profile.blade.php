@@ -125,6 +125,40 @@ senten.'])
                                                             class="form-control"
                                                             laceholder="Job Details">{{$user->profile->job_details}}</textarea>
                                                     </div>
+                                                    <div class="form-group">
+                                                        <label>Designation</label>
+                                                        <input value="{{$user->profile->designation}}" name="designation"
+                                                            type="url" class="form-control"
+                                                            placeholder="Designation">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Organization</label>
+                                                        <input value="{{$user->profile->organization}}" name="organization"
+                                                            type="url" class="form-control"
+                                                            placeholder="Organization">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Office address</label>
+                                                        <input value="{{$user->profile->office_address}}" name="office_address"
+                                                            type="url" class="form-control"
+                                                            placeholder="Office Address">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Blood Group*</label><br>
+                                                        <select name="blood_group" class="">
+                                                            <option value="{{$user->profile->blood_group}}">
+                                                                {{$user->profile->blood_group}}</option>
+                                                            <option value="A+">A+</option>
+                                                            <option value="A-">A-</option>
+                                                            <option value="B+">B+</option>
+                                                            <option value="B-">B-</option>
+                                                            <option value="AB+">AB+</option>
+                                                            <option value="AB-">AB-</option>
+                                                            <option value="O+">O+</option>
+                                                            <option value="O-">O-</option>
+                                                        </select>
+                                                        <br>
+                                                    </div>
                                                     <br>
                                                     <div class="form-group">
                                                         <label>Student Type*<br></label><br>

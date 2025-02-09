@@ -29,6 +29,10 @@ class CreateProfilesTable extends Migration
             $table->string('linkedin')->nullable();
             $table->string('job_type');
             $table->text('job_details');
+            $table->string('designation')->nullable();
+            $table->string('organization')->nullable();
+            $table->text('office_address')->nullable();
+            $table->string('blood_group')->nullable();
             $table->string('student_type');
             $table->string('student_prospective')->nullable();
             $table->string('file')->nullable();

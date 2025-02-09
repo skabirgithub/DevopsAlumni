@@ -230,17 +230,48 @@ senten.'])
                                                     </div>
                                                     <br><br>
                                                     <div class="form-group">
+                                                        <label>Designation</label>
+                                                        <input value="{{old('designation')}}" name="designation" type="text"
+                                                            class="form-control" placeholder="Designation">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Organization</label>
+                                                        <input value="{{old('organization')}}" name="organization" type="text"
+                                                            class="form-control" placeholder="Organization">
+                                                    </div>
+                                                    <div class="form-group">
                                                         <label>Professional Details*</label>
                                                         <textarea required name="job_details" type="text"
                                                             class="form-control"
                                                             laceholder="Job Details">{{old('job_details')}}</textarea>
                                                     </div>
+                                                    <div class="form-group">
+                                                        <label>Offie Address*</label>
+                                                        <textarea required name="office_address" type="text"
+                                                            class="form-control"
+                                                            laceholder="Job Details">{{old('office_address')}}</textarea>
+                                                    </div>
 
+
+                                                    <div class="form-group">
+                                                        <label>Blood Group*</label><br>
+                                                        <select name="blood_group" class="form-control">
+                                                            <option value="A+">A+</option>
+                                                            <option value="A-">A-</option>
+                                                            <option value="B+">B+</option>
+                                                            <option value="B-">B-</option>
+                                                            <option value="C+">C+</option>
+                                                            <option value="C-">C-</option>
+                                                            <option value="D+">D+</option>
+                                                            <option value="D-">D-</option>
+                                                        </select>
+                                                    </div>
+                                                    <br><br>
                                                     <div class="form-group">
                                                         <label>Student Type*<br></label><br>
                                                         <select name="student_type" class="form-control">
-                                                            <option value="Executive Comittee">Executive Comittee</option>
                                                             <option value="Alumni">Alumni</option>
+                                                            <option value="Executive Comittee">Executive Comittee</option>
                                                         </select>
                                                     </div>
                                                     <br>
