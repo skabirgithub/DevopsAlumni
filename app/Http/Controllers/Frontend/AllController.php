@@ -23,8 +23,11 @@ class AllController extends Controller
     }
     public function studentSearch(Request $request)
     {
+        // return $request->all();
         $category = $request->category;
         $query = Profile::where('student_type', $category)->with('activeUser');
+
+
 
         if ($request->has('academic_program') && $request->academic_program != 'Academic Program') {
             $query->where('academic_program', $request->academic_program);

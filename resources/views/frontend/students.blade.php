@@ -16,10 +16,11 @@
                                 <!-- Academic Program Dropdown -->
                                 <div class="col-md-3">
                                     {{-- <label for="academic_program" class="form-label fw-bold">Academic Program</label> --}}
+                                    {!! Form::hidden('category', $category, []) !!}
                                     <select id="academic_program" name="academic_program" class="form-select">
                                         <option selected disabled>Choose Program</option>
                                         @foreach ($academicProgram as $key => $program)
-                                            <option value="{{ $key }}">{{ $program }}</option>
+                                            <option value="{{ $program }}">{{ $program }}</option>
                                         @endforeach
                                     </select>
                                 </div>
