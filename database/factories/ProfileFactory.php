@@ -6,7 +6,7 @@ use App\Models\Profile;
 use Faker\Generator as Faker;
 
 $factory->define(Profile::class, function (Faker $faker) {
-    $studentType = ['Current Student', 'Alumni'];
+    $studentType = ['Executive Comittee', 'Alumni'];
     return [
         'department' => $faker->word,
         'faculty' => $faker->word,

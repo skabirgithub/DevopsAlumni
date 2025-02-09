@@ -131,7 +131,7 @@ senten.'])
                                                         <select name="student_type" class="form-control">
                                                             <option value="{{$user->profile->student_type}}">
                                                                 {{$user->profile->student_type}}</option>
-                                                            <option value="Current Student">Current Student</option>
+                                                            <option value="Executive Comittee">Executive Comittee</option>
                                                             <option value="Alumni">Alumni</option>
                                                         </select>
                                                     </div>

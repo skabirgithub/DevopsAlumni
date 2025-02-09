@@ -93,7 +93,7 @@
                     <div class="form-group">
                         <label>Student Type*</label>
                         <select name="student_type" class="form-control">
-                            <option value="Current Student">Current Student</option>
+                            <option value="Executive Comittee">Executive Comittee</option>
                             <option value="Alumni">Alumni</option>
                         </select>
                     </div>
