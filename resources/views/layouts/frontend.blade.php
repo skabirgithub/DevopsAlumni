@@ -195,7 +195,7 @@
             .navbar-nav .nav-link.active {
                 color: #ffffff !important;  /* Change text color */
                 background-color: #007bff;  /* Highlight with a background color */
-                border-radius: 5px;         /* Rounded corners */
+                border-radius: 0px;         /* Rounded corners */
                 padding: 8px 15px;          /* Adjust padding */
                 font-weight: bold;          /* Make text bold */
                 transition: all 0.3s ease-in-out;
