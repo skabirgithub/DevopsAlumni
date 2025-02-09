@@ -203,13 +203,14 @@
 
         </style>
         <div class="header-bottom-area" id="fixheader">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
                         <nav class="main-menu navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand" href="{{route('index')}}">
-                                <img src="{{asset('frontend/assets/img/bup-alumni-logo.png')}}" alt="Logo" />
+                            <a class="navbar-brand d-flex align-items-center justify-content-center" style="margin-left: 20px" href="{{route('index')}}">
+                                <img src="{{asset('frontend/assets/img/bup-alumni-logo.png')}}" alt="Logo" class="img-fluid" />
                             </a>
+
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#menucontent" aria-controls="menucontent" aria-expanded="false">
                                 <span class="navbar-toggler-icon"></span>
