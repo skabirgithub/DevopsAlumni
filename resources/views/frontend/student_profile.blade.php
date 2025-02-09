@@ -1,170 +1,136 @@
 @extends('layouts.frontend')
-@section('title','Student Profile')
+@section('title','Alumni')
 @section('content')
-{{-- <link rel="stylesheet" href="{{asset('frontend/assets/css/plugins.min.css')}}"> --}}
-<link rel="stylesheet" href="{{asset('frontend/assets/css/style.min.css')}}">
-<section class="teacher-details">
-    <div class="container">
-        <div class="row teachers-row justify-content-center">
-            <div class="col-lg-5 col-md-6 col-sm-8 teachers-col">
-                <div class="single-teacher-details mt-50 text-center">
 
-                    <div class="teacher-image">
-                        <a href="teacher-details.html">
-                            <img src="{{asset('images/'.$user->profile->image)}}" alt="teacher">
-                        </a>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-size: 18px;
+            background-color: #f8f9fa;
+        }
+        .profile-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .profile-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #007bff;
+        }
+        .tab-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <div class="profile-card">
+                    <img src="{{asset('images/'.$user->profile->image)}}" alt="Profile Picture">
+                    <h1 class="mt-3">{{$user->name}}</h1>
+                    <p class="text-muted">{{$user->profile->student_type}}</p>
+                    <p><strong>Department:</strong> {{$user->profile->department}}</p>
+                    <p><strong>Faculty:</strong> {{$user->profile->faculty}}</p>
+                    <p><strong>Job Type:</strong> {{$user->profile->job_type}}</p>
+                    <p>{{$user->profile->job_details}}</p>
+                    <p><strong>Email:</strong> {{$user->email}}</p>
+                    <p><strong>Student ID:</strong> {{$user->profile->student_id}}</p>
+                    @if ($user->profile->file)
+                    <a href="{{asset('files/'.$user->profile->file)}}" class="btn btn-primary btn-sm mt-2" download>Download CV</a>
+                    @endif
+                    <div class="mt-3">
+                        <a href="{{$user->profile->facebook}}" class="btn btn-outline-primary btn-sm">Facebook</a>
+                        <a href="{{$user->profile->linkedin}}" class="btn btn-outline-primary btn-sm">LinkedIn</a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5 teachers-col">
-                <div class="teacher-details-content mt-45">
-                    <h4 class="teacher-name">{{$user->name}}</h4>
-                    <span class="designation">{{$user->profile->student_type}}</span>
-                    <br>
-                    <span class="department">{{$user->profile->department}}</span>
-                    <br>
-                    <span class="department">{{$user->profile->faculty}}</span>
-                    <span class="department">{{$user->profile->job_type}}</span>
-                    <p>E{{$user->profile->job_details}}</p>
-                    <ul class="teacher-contact">
-                        <li><strong>Email:</strong> {{$user->email}}</li>
-                        {{-- <li><strong>Phone:</strong> {{$user->profile->phone}}</li> --}}
-                        <li><strong>Student ID:</strong> {{$user->profile->student_id}}</li>
-                        @if ($user->profile->file)<br>
-                        <li><strong>CV:</strong>
-                            <a download href="{{asset('files/'.$user->profile->file)}}">Download
-                                CV</a>
-                        </li>
-                        @endif
-                    </ul>
-                </div>
-
-            </div>
-
-
         </div>
-        <br>
-        <br>
-        <center>
-            <form action="#">
 
-                <a class="main-btn main-btn-2" href="{{$user->profile->facebook}}">Facebook</a>
-                <a class="main-btn main-btn-2" href="{{$user->profile->linkedin}}">LinkedIn</a>
-                {{-- <a href="#"><button class="main-btn main-btn-2">Text me</button></a> --}}
+        <ul class="nav nav-tabs mt-4" id="profileTabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" href="#activity">Activity</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#training">Training</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#club">Club</a>
+            </li>
+        </ul>
 
-            </form>
-
-        </center>
-
-
-
-
-
-
-
-        <div class="teacher-details-tab">
-            <ul class="nav nav-justified" role="tablist">
-                <li class="nav-item"><a class="active" data-toggle="tab" href="#experience" role="tab">Activity</a>
-                </li>
-                <li class="nav-item"><a data-toggle="tab" href="#educational" role="tab">Training</a></li>
-                <li class="nav-item"><a data-toggle="tab" href="#achievements " role="tab">Club </a></li>
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane fade show active" id="experience" role="tabpanel">
-
-                    <div class="row">
-                        @foreach ($activities as $activity)
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="single-content-tab">
-                                <h4 class="title">{{$activity->title}}</h4>
-                                <p>{{$activity->details}}</p>
-                                <p>@if($activity->file)
-                                    <a download="" href="{{asset('files/'.$activity->file)}}">Download
-                                        File</a><br><br>
-                                    @endif</p><br>
-                                {{-- <a href="{{route('user.activities.edit',$activity->id)}}"
-                                    class="btn btn-lg btn-success">Edit</a>
-                                <a class="btn btn-lg btn-danger" href="#"
-                                    onclick="if (confirm('Are you sure to delete?')){document.getElementById('delete-form-{{$activity->id}}').submit();}else{event.preventDefault()}">
-                                    Delete</a>
-                                <form id="delete-form-{{$activity->id}}"
-                                    action="{{ route('user.activities.destroy',$activity->id) }}" method="POST"
-                                    style="display: none;">
-                                    @csrf
-                                    @method('DELETE')
-                                </form> --}}
-                            </div>
+        <div class="tab-content mt-3">
+            <div class="tab-pane fade show active" id="activity">
+                <div class="row">
+                    @foreach ($activities as $activity)
+                    <div class="col-md-6">
+                        <div class="tab-content p-3">
+                            <h5>{{$activity->title}}</h5>
+                            <p>{{$activity->details}}</p>
+                            @if($activity->file)
+                            <a href="{{asset('files/'.$activity->file)}}" class="btn btn-outline-secondary btn-sm" download>Download File</a>
+                            @endif
                         </div>
-                        @endforeach
-
                     </div>
+                    @endforeach
                 </div>
-                <div class="tab-pane fade" id="educational" role="tabpanel">
+            </div>
 
-                    <div class="row">
-                        @foreach ($trainings as $training)
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="single-content-tab">
-                                <h4 class="title">{{$training->institute}}</h4>
-                                <p>Subject : {{$training->subject}}</p>
-                                <p>{{$training->details}}</p>
-                                <p>From : {{date('d-M-Y',strtotime($training->from))}} &nbsp;&nbsp; To :
-                                    {{date('d-M-Y',strtotime($training->to))}}</p>
-                                @if($training->file)
-                                <a download="" href="{{asset('files/'.$training->file)}}">Download File</a>
-                                @endif
-                                <br>
-                                {{-- <a href="{{route('user.trainings.edit',$training->id)}}"
-                                    class="btn btn-lg btn-success">Edit</a>
-                                <a class="btn btn-lg btn-danger" href="#"
-                                    onclick="if (confirm('Are you sure to delete?')){document.getElementById('delete-form-{{$training->id}}').submit();}else{event.preventDefault()}">
-                                    Delete</a>
-                                <form id="delete-form-{{$training->id}}"
-                                    action="{{ route('user.trainings.destroy',$training->id) }}" method="POST"
-                                    style="display: none;">
-                                    @csrf
-                                    @method('DELETE')
-                                </form> --}}
-                            </div>
+            <div class="tab-pane fade" id="training">
+                <div class="row">
+                    @foreach ($trainings as $training)
+                    <div class="col-md-6">
+                        <div class="tab-content p-3">
+                            <h5>{{$training->institute}}</h5>
+                            <p><strong>Subject:</strong> {{$training->subject}}</p>
+                            <p>{{$training->details}}</p>
+                            <p><strong>Duration:</strong> {{date('d-M-Y',strtotime($training->from))}} to {{date('d-M-Y',strtotime($training->to))}}</p>
+                            @if($training->file)
+                            <a href="{{asset('files/'.$training->file)}}" class="btn btn-outline-secondary btn-sm" download>Download File</a>
+                            @endif
                         </div>
-                        @endforeach
-
                     </div>
+                    @endforeach
                 </div>
-                <div class="tab-pane fade" id="achievements" role="tabpanel">
+            </div>
 
-                    <div class="row">
-                        @foreach ($clubs as $club)
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="single-content-tab">
-                                <h4 class="title">{{$club->name}}</h4>
-                                <p>{{$club->details}}</p>
-                                <p>Designation : {{$club->designation}}</p>
-                                <p>Member Since : {{date('d-M-Y',strtotime($club->member_since))}}</p>
-                                @if($club->file)
-                                <a download="" href="{{asset('files/'.$club->file)}}">Download File</a>
-                                @endif<br>
-                                {{-- <a href="{{route('user.clubs.edit',$club->id)}}" class="btn btn-lg btn-success">Edit</a>
-                                <a class="btn btn-lg btn-danger" href="#"
-                                    onclick="if (confirm('Are you sure to delete?')){document.getElementById('delete-form-{{$club->id}}').submit();}else{event.preventDefault()}">
-                                    Delete</a>
-                                <form id="delete-form-{{$club->id}}"
-                                    action="{{ route('user.clubs.destroy',$club->id) }}" method="POST"
-                                    style="display: none;">
-                                    @csrf
-                                    @method('DELETE')
-                                </form> --}}
-                            </div>
+            <div class="tab-pane fade" id="club">
+                <div class="row">
+                    @foreach ($clubs as $club)
+                    <div class="col-md-6">
+                        <div class="tab-content p-3">
+                            <h5>{{$club->name}}</h5>
+                            <p>{{$club->details}}</p>
+                            <p><strong>Designation:</strong> {{$club->designation}}</p>
+                            <p><strong>Member Since:</strong> {{date('d-M-Y',strtotime($club->member_since))}}</p>
+                            @if($club->file)
+                            <a href="{{asset('files/'.$club->file)}}" class="btn btn-outline-secondary btn-sm" download>Download File</a>
+                            @endif
                         </div>
-                        @endforeach
-
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
-</section>
-<br>
-<br>
-<br>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+<br><br>
 @endsection
