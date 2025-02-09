@@ -190,6 +190,18 @@
             </div>
         </div>
 
+        <style>
+            /* Custom styling for active navbar link */
+            .navbar-nav .nav-link.active {
+                color: #ffffff !important;  /* Change text color */
+                background-color: #007bff;  /* Highlight with a background color */
+                border-radius: 5px;         /* Rounded corners */
+                padding: 8px 15px;          /* Adjust padding */
+                font-weight: bold;          /* Make text bold */
+                transition: all 0.3s ease-in-out;
+            }
+
+        </style>
         <div class="header-bottom-area" id="fixheader">
             <div class="container">
                 <div class="row">
@@ -205,28 +217,34 @@
 
                             <div class="collapse navbar-collapse" id="menucontent">
                                 <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item"><a class="nav-link" href="{{route('index')}}">Home</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="{{route('about')}}">About</a></li>
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ request()->routeIs('index') ? 'active' : '' }}" href="{{route('index')}}">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" href="{{route('about')}}">About</a>
+                                    </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
-                                            role="button">Students</a>
+                                        <a class="nav-link dropdown-toggle {{ request()->is('students/*') ? 'active' : '' }}" href="#" data-toggle="dropdown" role="button">Students</a>
                                         <ul class="dropdown-menu">
-
-                                            <li class="nav-item"><a class="nav-link"
-                                                    href="{{route('students','Current Student')}}">Current
-                                                    Students</a></li>
-                                            <li class="nav-item"><a class="nav-link"
-                                                    href="{{route('students','Alumni')}}">Alumni</a>
+                                            <li class="nav-item">
+                                                <a class="nav-link {{ request()->is('students/Current Student') ? 'active' : '' }}" href="{{route('students','Current Student')}}">Current Students</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link {{ request()->is('students/Alumni') ? 'active' : '' }}" href="{{route('students','Alumni')}}">Alumni</a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="nav-item"><a class="nav-link" href="{{route('seminars')}}">Events</a>
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ request()->routeIs('seminars') ? 'active' : '' }}" href="{{route('seminars')}}">Events</a>
                                     </li>
-                                    <li class="nav-item"><a class="nav-link" href="{{route('jobs')}}">Career</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="{{route('blogs')}}">Newsfeed</a></li>
-
-
-                                    <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">Contact</a>
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ request()->routeIs('jobs') ? 'active' : '' }}" href="{{route('jobs')}}">Career</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ request()->routeIs('blogs') ? 'active' : '' }}" href="{{route('blogs')}}">Newsfeed</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{route('contact')}}">Contact</a>
                                     </li>
                                 </ul>
                             </div>
@@ -235,6 +253,7 @@
                 </div>
             </div>
         </div>
+
     </header>
     <!--== Header Area End ==-->
     @yield('content')
