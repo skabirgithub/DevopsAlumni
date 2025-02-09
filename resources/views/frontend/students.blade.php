@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
-@section('title','Alumni')
+@section('title',$category)
 @section('content')
-@include('includes.banner',['title'=>'Alumni','details'=>'Meet our alumni'])
+@include('includes.banner',['title'=>$category,'details'=>'Meet our '.$category])
 
 <section id="page-content-wrap">
     <div class="directory-page-content-warp section-padding">
