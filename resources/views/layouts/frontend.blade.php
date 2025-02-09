@@ -244,7 +244,10 @@
                                         <a class="nav-link {{ request()->routeIs('jobs') ? 'active' : '' }}" href="{{route('jobs')}}">Career</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link {{ request()->routeIs('blogs') ? 'active' : '' }}" href="{{route('blogs')}}">Newsfeed</a>
+                                        <a class="nav-link {{ request()->routeIs('blogs') ? 'active' : '' }}" href="{{route('blogs')}}">News</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ request()->routeIs('gallery') ? 'active' : '' }}" href="{{route('gallery')}}">Gallery</a>
                                     </li>
 
                                     <li class="nav-item">
