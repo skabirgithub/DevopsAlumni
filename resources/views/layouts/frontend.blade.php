@@ -253,8 +253,7 @@
                                         class="img-fluid" />
                                     <p>Connecting the threads of the past, weaving the fabric of the future. Proudly
                                         fostering unity and excellence among BUP Alumni.</p>
-                                    <a href="#">Phone:+88 01769-021962</a> <br> <a href="#">Fax: 88-02-8000443</a> <br>
-                                    <a href="#">Email: alumni@bup.edu.bd</a>
+
                                 </div>
                             </div>
                         </div>
@@ -264,14 +263,14 @@
                     <!-- Single Widget Start -->
                     <div class="col-lg-6 col-sm-6">
                         <div class="single-widget-wrap">
-                            <h4 class="widget-title">Get In Touch</h4>
+                            <h4 class="widget-title"></h4>
                             <div class="widgei-body">
-                                <p>Get the latest Newsletter via your email. Subscribe Now!</p>
+                                <h1 style="color: white">Get In Touch</h1>
+                                <p>Get in touch with our Alumni Association. Call Us Now!</p>
                                 <div class="newsletter-form">
-                                    <form id="cbx-subscribe-form" role="search">
-                                        <input type="email" placeholder="Enter Your Email" id="subscribe" required>
-                                        <button type="submit"><i class="fa fa-send"></i></button>
-                                    </form>
+                                    <a href="tel:+8801769021962">Phone: +88 01769-021962</a> <br>
+                                    <span>Fax: +88-02-8000443</span> <br>
+                                    <a href="mailto:alumni@bup.edu.bd">Email: alumni@bup.edu.bd</a>
                                 </div>
                                 <div class="footer-social-icons">
                                     <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
