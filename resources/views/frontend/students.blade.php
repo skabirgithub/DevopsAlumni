@@ -1,67 +1,61 @@
 @extends('layouts.frontend')
-@section('title','Students')
+@section('title','Alumni')
 @section('content')
-@include('includes.banner',['title'=>'Students','details'=>'Meet our students'])
+@include('includes.banner',['title'=>'Alumni','details'=>'Meet our alumni'])
+
 <section id="page-content-wrap">
     <div class="directory-page-content-warp section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="directory-text-wrap">
-                        <h2>Now we have <strong class="funfact-count">{{count($students)}}</strong> member </h2>
-                        <div class="container mt-3">
-                            <form action="{{ route('student.search') }}" class="row g-2">
-                                <input type="hidden" name="category" value="{{ $category }}">
+                        <h2>Now we have <strong class="funfact-count">{{ count($students) }}</strong> alumni</h2>
 
-                                <div class="col-md-8">
-                                    <select name="academic_program" class="form-select">
-                                        <option selected>Academic Program</option>
+                        <div class="container mt-4 p-4 rounded shadow-sm bg-white" style="max-width: 700px;">
+                            <form action="{{ route('student.search') }}" class="row g-3">
+                                <!-- Academic Program Dropdown -->
+                                <div class="col-md-3">
+                                    {{-- <label for="academic_program" class="form-label fw-bold">Academic Program</label> --}}
+                                    <select id="academic_program" name="academic_program" class="form-select">
+                                        <option selected disabled>Choose Program</option>
                                         @foreach ($academicProgram as $key => $program)
                                             <option value="{{ $key }}">{{ $program }}</option>
                                         @endforeach
                                     </select>
                                 </div>
 
-                                <div class="col-md-4">
-                                    <button type="submit" class="btn btn-primary w-100">Filter</button>
+                                <!-- Name Input -->
+                                <div class="col-md-6">
+                                    {{-- <label for="name" class="form-label fw-bold">Search by Name</label> --}}
+                                    <input type="text" style="height: 50px; font-size: 12px" id="name" name="name" class="form-control" placeholder="Enter student name">
+                                </div>
+
+
+
+                                <!-- Submit Button -->
+                                <div class="col-md-3 text-center">
+                                    <button type="submit" class="btn btn-primary h-100 w-100">Filter</button>
                                 </div>
                             </form>
                         </div>
 
 
-                        <div class="directory-table table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Name</th>
-                                        {{-- <th scope="col">Email</th> --}}
-                                        <th scope="col">Faculty</th>
-                                        <th scope="col">Department</th>
-                                        <th scope="col">Batch</th>
-                                        <th scope="col">Action</th>
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($students as $student)
-
-                                    @if($student->activeUser)
-                                    <tr>
-                                        <td><img src="{{asset('images/'.$student->image)}}"
-                                                alt="table">{{$student->activeUser->name}}</td>
-                                        {{-- <td>{{$student->activeUser->email}}</td> --}}
-                                        <td>{{$student->faculty}}</td>
-                                        <td>{{$student->department}}</td>
-                                        <td>{{$student->batch}}</td>
-                                        <td><a href="{{route('student.profile',$student->user_id)}}">View Full
-                                                Profile</a></td>
-                                    </tr>
-                                    @endif
-                                    @endforeach
-
-
-                                </tbody>
-                            </table>
+                        <div class="row mt-4">
+                            @foreach ($students as $alumnus)
+                                @if($alumnus->activeUser)
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card shadow-sm border-0">
+                                            <img src="{{ asset('images/'.$alumnus->image) }}" class="card-img-top" alt="Alumni Photo">
+                                            <div class="card-body text-center">
+                                                <h5 class="card-title">{{ $alumnus->activeUser->name }}</h5>
+                                                <p class="card-text">{{ $alumnus->faculty }} - {{ $alumnus->department }}</p>
+                                                <p class="text-muted">Batch: {{ $alumnus->batch }}</p>
+                                                <a href="{{ route('student.profile', $alumnus->user_id) }}" class="btn btn-brand">View Profile</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -69,17 +63,7 @@
             <br>
             <div class="row justify-content-center">
                 <div class="col-lg-2">
-                    {{$students->links()}}
-                    {{-- <div class="pagination-wrap text-center">
-                        <nav>
-                            <ul class="pagination">
-                                <li class="page-item">
-                                </li>
-                                <li ><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div> --}}
+                    {{ $students->links() }}
                 </div>
             </div>
         </div>
