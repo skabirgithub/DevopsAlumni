@@ -26,7 +26,7 @@ class CreateOrdersTable extends Migration
             $table->string('transaction_id');
             $table->string('currency');
             $table->integer('user_id');
-            $table->string('note');
+            $table->text('note');
             $table->timestamps();
         });
     }
