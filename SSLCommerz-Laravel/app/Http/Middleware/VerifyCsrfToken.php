@@ -18,9 +18,6 @@ class VerifyCsrfToken extends Middleware
      *
      * @var array
      */
-    // protected $except = [
-    //     // 'admin.blog.upload'
-    // ];
     protected $except = [
         '/pay-via-ajax', '/success','/cancel','/fail','/ipn'
     ];
