@@ -37,6 +37,10 @@ class CreateProfilesTable extends Migration
             $table->string('student_prospective')->nullable();
             $table->string('file')->nullable();
             $table->string('image');
+            $table->text('validity')->nullable();
+            $table->text('paid')->nullable();
+            $table->text('last_paid_on')->nullable();
+            $table->text('last_paid_order')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

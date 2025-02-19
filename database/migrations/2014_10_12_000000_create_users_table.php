@@ -24,6 +24,10 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('phone')->nullable();
             $table->text('note')->nullable();
+            $table->text('validity')->nullable();
+            $table->text('paid')->nullable();
+            $table->text('last_paid_on')->nullable();
+            $table->text('last_paid_order')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

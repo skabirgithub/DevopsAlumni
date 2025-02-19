@@ -32,3 +32,8 @@ Route::get('/meetings', 'User\ZoomController@create');
 Route::get('/meetings/{id}', 'User\ZoomController@get')->where('id', '[0-9]+');
 Route::patch('/meetings/{id}', 'User\ZoomController@update')->where('id', '[0-9]+');
 Route::delete('/meetings/{id}', 'User\ZoomController@delete')->where('id', '[0-9]+');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('orders', 'OrderAPIController');
+});

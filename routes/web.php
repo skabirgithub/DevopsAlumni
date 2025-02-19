@@ -150,6 +150,7 @@ Route::prefix('rt-admin')->group(function () {
                         'scholarships' => 'ScholarshipController',
                         'zooms' => 'ZoomController',
                         'testimonials' => 'TestimonialController',
+                        'orders' => 'OrderController',
                     ]
                 );
                 Route::get('users-requests', 'UserController@requests')->name('users.requests');
