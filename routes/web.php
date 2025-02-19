@@ -5,6 +5,7 @@
 use App\Http\Controllers\Frontend\GalleryController;
 use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\TestimonialController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\User\SslCommerzPaymentController;
 
 Route::namespace('Frontend')->group(function () {
@@ -189,3 +190,8 @@ Route::prefix('rt-admin')->group(function () {
 
 
 
+
+
+// Route::group(['prefix' => 'rt-admin'], function () {
+//     Route::resource('orders', 'OrderController', ["as" => 'admin']);
+// });

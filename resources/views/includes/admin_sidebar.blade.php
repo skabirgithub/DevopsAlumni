@@ -335,3 +335,27 @@
         </ul>
 </li>
 
+
+<li class="{{ Request::is('rt-admin/orders**') ? 'mm-active' : '' }}">
+        <a href="#">
+            <i class="metismenu-icon pe-7s-menu"></i>
+            Orders
+            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+        </a>
+        <ul class="{{ Request::is('rt-admin/orders*') ? 'mm-show' : '' }}">
+            <li>
+                <a class="{{ Request::is('rt-admin/orders/create') ? 'mm-active' : '' }}"
+                    href="{{route('admin.orders.create')}}">
+                    <i class="metismenu-icon"></i>
+                    Create
+                </a>
+            <li>
+                <a class="{{ Request::is('rt-admin/orders') ? 'mm-active' : '' }}"
+                    href="{{route('admin.orders.index')}}">
+                    <i class="metismenu-icon">
+                    </i>Manage
+                </a>
+            </li>
+        </ul>
+</li>
+

@@ -7,7 +7,7 @@ use Eloquent as Model;
 /**
  * Class Order
  * @package App\Models
- * @version February 20, 2025, 12:46 am +06
+ * @version February 20, 2025, 12:59 am +06
  *
  * @property string $name
  * @property string $email
