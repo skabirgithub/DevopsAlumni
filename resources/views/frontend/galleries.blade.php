@@ -24,28 +24,36 @@
                                 switch ($gallery->category) {
                                     case 'Url':
                                         $gallery_url = $gallery->url;
+                                        $file_url = $gallery->url;
                                         break;
                                     case 'Video':
                                         $gallery_url = $file_url;
+                                        $file_url = $gallery->url;
                                         break;
                                     case 'Document':
                                         $gallery_url = $file_url;
+                                        $file_url = $gallery->url;
                                         break;
                                     case 'File':
-                                        $gallery_url = $file_url;
+                                        $gallery_url = $image_url;
+                                        $file_url =$file_url;
                                         break;
                                     case 'Others':
                                         $gallery_url = $file_url;
+                                        $file_url =$file_url;
                                         break;
                                     case 'Gallery':
                                         $gallery_url = $image_url;
+                                        $file_url = $gallery->url;
                                         break;
                                     case 'Slider':
                                         $gallery_url = $image_url;
+                                        $file_url = $gallery->url;
                                         break;
 
                                     default:
                                         $gallery_url = $image_url;
+                                        $file_url =$file_url;
                                         break;
                                 }
 
@@ -53,8 +61,12 @@
                                 <div class="col-lg-4 col-md-4">
                                     <div class="single-gallery-item">
                                         <a href="{{ $gallery_url }}" target="_blank">
-                                            <img src="{{ $image_url }}" alt="Gallery Image" class="img-fluid">
+                                            <img src="{{ $gallery_url }}" alt="Gallery Image" class="img-fluid">
                                         </a>
+
+                                    </div>
+                                    <div class="gallery-item-actions">
+                                        <a href="{{ $file_url }}" class="btn btn-download" download>Download</a>
                                     </div>
                                 </div>
                             @endforeach
