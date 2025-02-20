@@ -292,7 +292,7 @@ class SslCommerzPaymentController extends Controller
             return "Invalid Transaction";
         }
 
-        return redirect()->route('user.dashboard');
+        return redirect()->route('user.dashboard')->with('success', 'Payment Successful');
 
     }
 
@@ -337,7 +337,7 @@ class SslCommerzPaymentController extends Controller
         } else {
             echo "Transaction is Invalid";
         }
-
+        return redirect()->route('user.dashboard')->with('error', 'Payment Failed');
     }
 
     public function cancel(Request $request)
@@ -359,6 +359,7 @@ class SslCommerzPaymentController extends Controller
             echo "Transaction is Invalid";
         }
 
+        return redirect()->route('user.dashboard')->with('error', 'Payment Cancelled');
 
     }
 
@@ -387,13 +388,14 @@ class SslCommerzPaymentController extends Controller
                     $update_product = DB::table('orders')
                         ->where('transaction_id', $tran_id)
                         ->update(['status' => 'Processing']);
-
+                        $this->completePayTask($order_details);
                     echo "Transaction is successfully Completed";
                 }
             } else if ($order_details->status == 'Processing' || $order_details->status == 'Complete') {
 
                 #That means Order status already updated. No need to udate database.
 
+                $this->completePayTask($order_details);
                 echo "Transaction is already successfully Completed";
             } else {
                 #That means something wrong happened. You can redirect customer to your product page.
@@ -403,6 +405,7 @@ class SslCommerzPaymentController extends Controller
         } else {
             echo "Invalid Data";
         }
+        return 'Payment Updated';
     }
 
 }
