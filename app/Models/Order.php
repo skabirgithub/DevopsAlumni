@@ -25,7 +25,7 @@ class Order extends Model
 {
 
     public $table = 'orders';
-    
+
 
 
 
@@ -37,6 +37,7 @@ class Order extends Model
         'address',
         'status',
         'type',
+        'type_id',
         'transaction_id',
         'currency',
         'user_id',
@@ -76,5 +77,5 @@ class Order extends Model
         'address' => 'required|string|max:65530'
     ];
 
-    
+
 }

@@ -23,6 +23,7 @@ class CreateOrdersTable extends Migration
             $table->text('address');
             $table->string('status');
             $table->string('type');
+            $table->string('type_id');
             $table->string('transaction_id');
             $table->string('currency');
             $table->integer('user_id');

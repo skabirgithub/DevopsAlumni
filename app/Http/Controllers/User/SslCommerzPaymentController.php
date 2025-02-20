@@ -6,7 +6,11 @@ use App\Http\Controllers\Controller;
 use DB;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
+use App\Models\Order;
+use App\Models\Profile;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB as FacadesDB;
 
 class SslCommerzPaymentController extends Controller
 {
@@ -63,15 +67,16 @@ class SslCommerzPaymentController extends Controller
         $post_data['ship_country'] = "Bangladesh";
 
         $post_data['shipping_method'] = "NO";
-        $post_data['product_name'] = "Computer";
+        $post_data['product_name'] = "Skoder";
         $post_data['product_category'] = $request->type;
-        $post_data['product_profile'] = "physical-goods";
+        $post_data['product_profile'] = $request->type_id;
 
         # OPTIONAL PARAMETERS
-        $post_data['value_a'] = $user->id;
-        $post_data['value_b'] = $user->student_id;
-        $post_data['value_c'] = $user->student_reg_no;
-        $post_data['value_d'] = $request->type;
+        $post_data['value_a'] = $request->type;
+        $post_data['value_b'] = $request->type_id;
+        $post_data['value_c'] = $user->id;
+        $post_data['value_d'] = $user->student_reg_no;
+        $post_data['value_e'] = $user->student_id;
 
         // return $post_data;
 
@@ -87,9 +92,10 @@ class SslCommerzPaymentController extends Controller
                 'address' => $post_data['cus_add1'],
                 'transaction_id' => $post_data['tran_id'],
                 'currency' => $post_data['currency'],
-                'user_id' => $post_data['value_a'],
-                'type' => $post_data['value_d'],
-                'note' => "-",
+                'type' => $post_data['value_a'],
+                'type_id' => $post_data['value_b'],
+                'user_id' => $post_data['value_c'],
+                'note' => json_encode($post_data),
             ]);
 
         $sslc = new SslCommerzNotification();
@@ -245,8 +251,8 @@ class SslCommerzPaymentController extends Controller
 
     public function success(Request $request)
     {
-        echo "Transaction is Successful";
-
+        // echo "Transaction is Successful";
+        // return $request;
         $tran_id = $request->input('tran_id');
         $amount = $request->input('amount');
         $currency = $request->input('currency');
@@ -254,11 +260,10 @@ class SslCommerzPaymentController extends Controller
         $sslc = new SslCommerzNotification();
 
         #Check order status in order tabel against the transaction id or order id.
-        $order_details = DB::table('orders')
-            ->where('transaction_id', $tran_id)
-            ->select('transaction_id', 'status', 'currency', 'amount')->first();
-
+        $order_details = Order::where('transaction_id', $tran_id)->get()->first();
+            // return $order_details;
         if ($order_details->status == 'Pending') {
+            // return 1;
             $validation = $sslc->orderValidate($request->all(), $tran_id, $amount, $currency);
 
             if ($validation) {
@@ -269,21 +274,49 @@ class SslCommerzPaymentController extends Controller
                 */
                 $update_product = DB::table('orders')
                     ->where('transaction_id', $tran_id)
-                    ->update(['status' => 'Processing']);
+                    ->update(['status' => 'Complete']);
 
-                echo "<br >Transaction is successfully Completed";
+                $this->completePayTask($order_details);
+
+                // echo "<br >Transaction is successfully Completed";
             }
         } else if ($order_details->status == 'Processing' || $order_details->status == 'Complete') {
             /*
              That means through IPN Order status already updated. Now you can just show the customer that transaction is completed. No need to udate database.
              */
-            echo "Transaction is successfully Completed";
+            // return 2;
+            $this->completePayTask($order_details);
+            // return "Transaction is successfully Completed";
         } else {
             #That means something wrong happened. You can redirect customer to your product page.
-            echo "Invalid Transaction";
+            return "Invalid Transaction";
         }
 
+        return redirect()->route('user.dashboard');
 
+    }
+
+    public function completePayTask($order_details)
+    {
+
+        // return $order_details;
+        if($order_details->type=='membership'){
+            $user = User::find($order_details->type_id)->profile;
+            $user->paid='paid';
+            $user->last_paid_on=date('Y-m-d H:i:s');
+            $user->last_paid_order=$order_details->id;
+            $user->validity=date('Y-m-d H:i:s', strtotime('+1 year'));
+            $user->save();
+
+            $profile = Profile::where('user_id',$user->id)->first();
+            $profile->paid='paid';
+            $profile->last_paid_on=date('Y-m-d H:i:s');
+            $profile->last_paid_order=$order_details->id;
+            $profile->validity=date('Y-m-d H:i:s', strtotime('+1 year'));
+            $profile->save();
+
+        }
+        return 'update success';
     }
 
     public function fail(Request $request)

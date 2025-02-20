@@ -19,6 +19,7 @@ senten.'])
                     <div class="form-group">
                         <input type="hidden" name="amount" id="amount" value="10" class="form-control" required>
                         <input type="hidden" name="type" id="type" value="membership" class="form-control" required>
+                        <input type="hidden" name="type_id" id="type" value="{{Auth::user()->id}}" class="form-control" required>
                     </div>
                     <button type="submit" class="btn btn-brand">Pay Now</button>
                 </form>
