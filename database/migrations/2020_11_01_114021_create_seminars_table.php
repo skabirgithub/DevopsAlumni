@@ -19,7 +19,7 @@ class CreateSeminarsTable extends Migration
             $table->string('title');
             $table->string('subtitle')->nullable();
             $table->text('details');
-            $table->double('amount');
+            $table->double('amount')->default(0);
             $table->date('seminar_date');
             $table->time('seminar_time');
             $table->date('seminar_close_date')->nullable();
