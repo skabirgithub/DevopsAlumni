@@ -6,6 +6,7 @@ use App\Http\Controllers\Frontend\GalleryController;
 use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\TestimonialController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\SeminarRegistrationController;
 use App\Http\Controllers\User\SslCommerzPaymentController;
 
 Route::namespace('Frontend')->group(function () {
@@ -143,7 +144,7 @@ Route::prefix('rt-admin')->group(function () {
                         'zooms' => 'ZoomController',
                         'testimonials' => 'TestimonialController',
                         'orders' => 'OrderController',
-                        'seminar_registrations' => 'SeminarRegistrationController',
+                        'seminarRegistrations' => 'SeminarRegistrationController',
                     ]
                 );
                 Route::get('users-requests', 'UserController@requests')->name('users.requests');
@@ -198,8 +199,6 @@ Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 // Route::group(['prefix' => 'rt-admin'], function () {
 //     Route::resource('orders', 'OrderController', ["as" => 'admin']);
 // });
-
-
-Route::group(['prefix' => 'admin'], function () {
-    Route::resource('seminarRegistrations', 'SeminarRegistrationController', ["as" => 'admin']);
-});
+// Route::group(['prefix' => 'admin'], function () {
+//     Route::resource('seminarRegistrations', 'SeminarRegistrationController', ["as" => 'admin']);
+// });

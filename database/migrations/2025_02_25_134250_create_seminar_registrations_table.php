@@ -19,12 +19,12 @@ class CreateSeminarRegistrationsTable extends Migration
             $table->integer('user_id');
             $table->integer('seminar_id');
             $table->integer('order_id');
-            $table->double('payment_amount');
+            $table->double('payment_amount')->default(0);
             $table->date('payment_date');
-            $table->string('status');
-            $table->text('transaction_id');
-            $table->text('note');
-            $table->string('image');
+            $table->string('status')->nullable();
+            $table->text('transaction_id')->nullable();
+            $table->text('note')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
