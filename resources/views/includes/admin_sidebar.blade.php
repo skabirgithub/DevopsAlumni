@@ -359,3 +359,27 @@
         </ul>
 </li>
 
+
+<li class="{{ Request::is('rt-admin/seminarRegistrations**') ? 'mm-active' : '' }}">
+        <a href="#">
+            <i class="metismenu-icon pe-7s-menu"></i>
+            Seminar Registrations
+            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+        </a>
+        <ul class="{{ Request::is('rt-admin/seminarRegistrations*') ? 'mm-show' : '' }}">
+            <li>
+                <a class="{{ Request::is('rt-admin/seminarRegistrations/create') ? 'mm-active' : '' }}"
+                    href="{{route('admin.seminarRegistrations.create')}}">
+                    <i class="metismenu-icon"></i>
+                    Create
+                </a>
+            <li>
+                <a class="{{ Request::is('rt-admin/seminarRegistrations') ? 'mm-active' : '' }}"
+                    href="{{route('admin.seminarRegistrations.index')}}">
+                    <i class="metismenu-icon">
+                    </i>Manage
+                </a>
+            </li>
+        </ul>
+</li>
+

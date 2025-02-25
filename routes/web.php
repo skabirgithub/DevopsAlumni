@@ -77,6 +77,7 @@ Route::prefix('user')->group(function () {
                     'trainings' => 'TrainingController',
                     'jobs' => 'JobDetailsController',
                     'blogs' => 'BlogController',
+
                 ]);
             });
         });
@@ -142,6 +143,7 @@ Route::prefix('rt-admin')->group(function () {
                         'zooms' => 'ZoomController',
                         'testimonials' => 'TestimonialController',
                         'orders' => 'OrderController',
+                        'seminar_registrations' => 'SeminarRegistrationController',
                     ]
                 );
                 Route::get('users-requests', 'UserController@requests')->name('users.requests');
@@ -196,3 +198,8 @@ Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 // Route::group(['prefix' => 'rt-admin'], function () {
 //     Route::resource('orders', 'OrderController', ["as" => 'admin']);
 // });
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('seminarRegistrations', 'SeminarRegistrationController', ["as" => 'admin']);
+});

@@ -26,9 +26,13 @@ class Seminar extends Model
 
     public $fillable = [
         'title',
+        'subtitle',
         'details',
+        'amount',
         'seminar_date',
         'seminar_time',
+        'seminar_close_date',
+        'seminar_close_time',
         'place',
         'image'
     ];
@@ -41,8 +45,11 @@ class Seminar extends Model
     protected $casts = [
         'id' => 'integer',
         'title' => 'string',
+        'subtitle' => 'string',
         'details' => 'string',
+        'amount' => 'numeric',
         'seminar_date' => 'date',
+        'seminar_close_date' => 'date',
         'place' => 'string',
         'image' => 'string'
     ];
@@ -54,9 +61,13 @@ class Seminar extends Model
      */
     public static $rules = [
         'title' => 'required|string|max:191',
+        'subtitle' => 'nullable|string',
+        'amount' => 'required|numeric',
         'details' => 'required|string|max:65530',
         'seminar_date' => 'required|date',
         'seminar_time' => 'required',
+        'seminar_close_date' => 'nullable|date',
+        'seminar_close_time' => 'nullable',
         'place' => 'required|string|max:191',
         'image' => 'required|image|max:10000'
     ];
