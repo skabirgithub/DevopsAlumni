@@ -8,6 +8,7 @@ use App\Http\Controllers\Frontend\TestimonialController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\SeminarRegistrationController;
 use App\Http\Controllers\User\SslCommerzPaymentController;
+use App\Http\Controllers\MailController;
 
 Route::namespace('Frontend')->group(function () {
     Route::get('/', 'IndexController@index')->name('index');
@@ -197,6 +198,7 @@ Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 // **********************************SSL COMMERZ PAYMENT**********************************
 
+Route::get('/send-email', [MailController::class, 'sendTestEmail']);
 
 // Route::group(['prefix' => 'rt-admin'], function () {
 //     Route::resource('orders', 'OrderController', ["as" => 'admin']);

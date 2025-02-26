@@ -127,14 +127,14 @@
 @endif
 {{-- Project --}}
 @if(Route::has('admin.programs.index'))
-<li class="@isset($category) 
+<li class="@isset($category)
                             @if($category == 'Project') mm-active @endif @endisset">
     <a href="#">
         <i class="metismenu-icon pe-7s-diamond"></i>
         Projects
         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
     </a>
-    <ul class="@isset($category) 
+    <ul class="@isset($category)
                             @if($category == 'Project') mm-show @endif @endisset">
         <li>
             <form id="add-form-project" style="display: none" action="{{route('admin.programs.create')}}">
@@ -157,14 +157,14 @@
 </li>
 @endif
 {{-- Event --}}
-{{-- <li class="@isset($category) 
+{{-- <li class="@isset($category)
                             @if($category == 'Event') mm-active @endif @endisset">
         <a href="#">
             <i class="metismenu-icon pe-7s-diamond"></i>
             Events
             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
         </a>
-        <ul class="@isset($category) 
+        <ul class="@isset($category)
                             @if($category == 'Event') mm-show @endif @endisset">
             <li>
                 <form id="add-form-event" style="display: none" action="{{route('admin.program.create')}}">
@@ -306,12 +306,12 @@
     </a>
 </li>
 @endif
-<li class="">
+{{-- <li class="">
     <a href="{{route('admin.backups.index')}}" class="{{ Request::is('rt-admin/backups*') ? 'mm-active' : '' }}">
         <i class="metismenu-icon pe-7s-cloud"></i>
         Backup
     </a>
-</li>
+</li> --}}
 <li class="{{ Request::is('rt-admin/testimonials**') ? 'mm-active' : '' }}">
         <a href="#">
             <i class="metismenu-icon pe-7s-menu"></i>
