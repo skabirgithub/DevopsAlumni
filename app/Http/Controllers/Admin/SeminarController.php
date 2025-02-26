@@ -34,10 +34,10 @@ class SeminarController extends AppBaseController
     {
         $input = $request->all();
 
-        // Seminar::create($input);  
-        $imageName = FileHelper::uploadImage($request);      
+        // Seminar::create($input);
+        $imageName = FileHelper::uploadImage($request);
         Seminar::create(array_merge($request->all(), ['image' => $imageName]));
-        
+
         return back()->with('success','Seminar saved successfully.');
     }
 
@@ -80,8 +80,12 @@ class SeminarController extends AppBaseController
             return redirect(route('admin.seminars.index'));
         }
 
-        $imageName = FileHelper::uploadImage($request, $seminar);
-        $seminar->fill(array_merge($request->all(), ['image' => $imageName]));
+        if($request->hasFile('image')){
+            $imageName = FileHelper::uploadImage($request, $seminar);
+            $seminar->fill(array_merge($request->all(), ['image' => $imageName]));
+        }else{
+            $seminar->fill($request->all());
+        }
 
         // $seminar->fill($request->all());
         $seminar->save();

@@ -73,15 +73,19 @@ class AllController extends Controller
     public function seminar($id)
     {
         $seminar = Seminar::findOrFail($id);
-        $seminar_registration = SeminarRegistration::where('user_id', Auth::user()->id)
+        $registered = true;
+        if(Auth::user()){
+            $seminar_registration = SeminarRegistration::where('user_id', Auth::user()->id)
             ->where('seminar_id', $id)
             ->where('status', 'paid')
             ->first();
-
-        $registered = false;
-        if ($seminar_registration) {
-            $registered = true;
+            if ($seminar_registration) {
+                $registered = true;
+            } else {
+                $registered = false;
+            }
         }
+
         return view('frontend.seminar', compact('seminar','registered'));
     }
     public function seminarRegister($id, $user_id)
