@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\User\SslCommerzPaymentController;
 use App\Models\JobDetails;
 use App\Models\Activity;
 use App\Models\Club;
@@ -73,18 +74,35 @@ class AllController extends Controller
         $seminar = Seminar::findOrFail($id);
         return view('frontend.seminar', compact('seminar'));
     }
-    public function seminarRegister($id,$user_id)
+    public function seminarRegister($id, $user_id)
     {
-        $user_id = User::findOrFail($user_id);
+        $user = User::findOrFail($user_id);
         $event = Seminar::findOrFail($id);
 
-        $seminar_registration = SeminarRegistration::where('user_id', $user_id->id)->where('seminar_id', $event->id)->where('status','paid')->first();
-        if($seminar_registration){
+        $seminar_registration = SeminarRegistration::where('user_id', $user->id)
+            ->where('seminar_id', $event->id)
+            ->where('status', 'paid')
+            ->first();
+
+        if ($seminar_registration) {
             return redirect()->back()->with('error', 'You have already registered for this event');
-        }else{
-            return 99;
+        } else {
+            // return 99;
+            // Redirect to the payment route with necessary data
+            $sslcommerzPaymentController = new SslCommerzPaymentController();
+            $request = new Request();
+            $request->merge([
+                'event_id' => $event->id,
+                'user_id' => $user->id,
+                'amount' => 10,
+                'type' => 'event',
+                'type_id' => $event->id,
+            ]);
+            // return $request;
+            return $sslcommerzPaymentController->pay_event($request);
         }
     }
+
     public function jobs()
     {
         $jobs = JobDetails::latest()->where('status', 'Open')->paginate(9);

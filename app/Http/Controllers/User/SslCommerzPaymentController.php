@@ -8,7 +8,10 @@ use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
 use App\Models\Order;
 use App\Models\Profile;
+use App\Models\Seminar;
+use App\Models\SeminarRegistration;
 use App\Models\User;
+use Illuminate\Console\Scheduling\Event;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB as FacadesDB;
 
@@ -30,6 +33,13 @@ class SslCommerzPaymentController extends Controller
         return Auth::user()->profile;
         return Auth::user();
         return $request;
+    }
+    public function pay_event(Request $request)
+    {
+        return $this->paySK($request,Auth::user());
+        return $request;
+        return Auth::user()->profile;
+        return Auth::user();
     }
 
     public function paySK($request,$user)
@@ -314,6 +324,24 @@ class SslCommerzPaymentController extends Controller
             $profile->last_paid_order=$order_details->id;
             $profile->validity=date('Y-m-d H:i:s', strtotime('+1 year'));
             $profile->save();
+
+        }
+        if($order_details->type=='event'){
+            $user = User::find($order_details->user_id);
+            $seminar = Seminar::find($order_details->type_id);
+            if($user){
+                if($seminar){
+                    $seminar_registration = new SeminarRegistration();
+                    $seminar_registration->user_id = $user->id;
+                    $seminar_registration->seminar_id = $seminar->id;
+                    $seminar_registration->order_id = $order_details->id;
+                    $seminar_registration->payment_amount = $order_details->amount;
+                    $seminar_registration->payment_date = date('Y-m-d H:i:s');
+                    $seminar_registration->transaction_id = $order_details->transaction_id;
+                    $seminar_registration->status = 'paid';
+                    $seminar_registration->save();
+                }
+            }
 
         }
         return 'update success';

@@ -185,6 +185,7 @@ Route::prefix('rt-admin')->group(function () {
 
 // **********************************SSL COMMERZ PAYMENT**********************************
 Route::post('/pay_membership', [SslCommerzPaymentController::class, 'pay_membership'])->name('user.payment');
+Route::post('/pay_event', [SslCommerzPaymentController::class, 'pay_event'])->name('event.payment');
 Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
 Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
 Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
