@@ -91,7 +91,7 @@ senten.'])
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>SL</th>
+                        <th>Trx</th>
                         <th>Amount</th>
                         <th>Type</th>
                         <th>Date</th>
@@ -100,7 +100,8 @@ senten.'])
                 <tbody>
                     @foreach ($orders as $order)
                     <tr>
-                        <td>{{$loop->index+1}}</td>
+                        {{-- <td>{{$loop->index+1}}</td> --}}
+                        <td>{{$order->transaction_id}}</td>
                         <td>{{$order->amount}}</td>
                         <td>{{$order->type}}</td>
                         <td>{{$order->created_at}}</td>

@@ -41,7 +41,9 @@ class Order extends Model
         'transaction_id',
         'currency',
         'user_id',
-        'note'
+        'note',
+        'created_at',
+        'updated_at'
     ];
 
     /**

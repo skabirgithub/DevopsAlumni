@@ -104,7 +104,7 @@ class AllController extends Controller
             $request->merge([
                 'event_id' => $event->id,
                 'user_id' => $user->id,
-                'amount' => 10,
+                'amount' => $event->amount,
                 'type' => 'event',
                 'type_id' => $event->id,
             ]);
