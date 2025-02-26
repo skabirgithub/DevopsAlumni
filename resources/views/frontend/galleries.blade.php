@@ -31,8 +31,8 @@
                                         $file_url = $gallery->url;
                                         break;
                                     case 'Document':
-                                        $gallery_url = $file_url;
-                                        $file_url = $gallery->url;
+                                        $gallery_url = $image_url;
+                                        $file_url =$file_url;
                                         break;
                                     case 'File':
                                         $gallery_url = $image_url;
