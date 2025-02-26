@@ -94,6 +94,7 @@ senten.'])
                         <th>Trx</th>
                         <th>Amount</th>
                         <th>Type</th>
+                        <th>Status</th>
                         <th>Date</th>
                     </tr>
                 </thead>
@@ -104,6 +105,7 @@ senten.'])
                         <td>{{$order->transaction_id}}</td>
                         <td>{{$order->amount}}</td>
                         <td>{{$order->type}}</td>
+                        <td>{{$order->status}}</td>
                         <td>{{$order->created_at}}</td>
                     </tr>
                     @endforeach
