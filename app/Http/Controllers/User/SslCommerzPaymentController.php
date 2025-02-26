@@ -301,7 +301,7 @@ class SslCommerzPaymentController extends Controller
 
         // return $order_details;
         if($order_details->type=='membership'){
-            $user = User::find($order_details->type_id)->profile;
+            $user = User::find($order_details->type_id);
             $user->paid='paid';
             $user->last_paid_on=date('Y-m-d H:i:s');
             $user->last_paid_order=$order_details->id;
