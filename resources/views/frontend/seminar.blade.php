@@ -60,13 +60,15 @@
                                             <p>Place: {{$seminar->place}}</p>
                                             <p>Date: on {{$seminar->seminar_date->toFormattedDateString()}} at
                                                 {{date('h:i a',strtotime($seminar->seminar_time))}}</p>
+                                            @if ($seminar->amount > 0)
                                             <p>
                                                 Registration Fee: {{$seminar->amount}}
-                                                @if ($seminar->amount > -1)
+                                                @if (!$registered)
                                                 <a href="{{route('seminar.register',[$seminar->id,Auth::user()->id])}}"
                                                     class="btn btn-brand btn-join">Register</a>
                                                 @endif
                                             </p>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

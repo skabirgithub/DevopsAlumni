@@ -13,6 +13,7 @@ use App\Models\Seminar;
 use App\Models\SeminarRegistration;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AllController extends Controller
 {
@@ -72,7 +73,16 @@ class AllController extends Controller
     public function seminar($id)
     {
         $seminar = Seminar::findOrFail($id);
-        return view('frontend.seminar', compact('seminar'));
+        $seminar_registration = SeminarRegistration::where('user_id', Auth::user()->id)
+            ->where('seminar_id', $id)
+            ->where('status', 'paid')
+            ->first();
+
+        $registered = false;
+        if ($seminar_registration) {
+            $registered = true;
+        }
+        return view('frontend.seminar', compact('seminar','registered'));
     }
     public function seminarRegister($id, $user_id)
     {
