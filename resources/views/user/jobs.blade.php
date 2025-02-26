@@ -108,10 +108,11 @@ senten.'])
                             @else
                             <button class="btn btn-success">Open</button>
                             @endif</p>
-                        @if($appliedJob->jobDetails->file)
+                        {{-- @if($appliedJob->jobDetails->file)
                         <a download="" href="{{asset('files/'.$appliedJob->jobDetails->file)}}">Download File</a>
-                        @endif<br/>
-                        <a href="{{route('job',$job->id)}}" class="btn btn-lg btn-primary">View Full Details</a>
+                        @endif
+                        <br/>
+                        <a href="{{route('job',$job->id)}}" class="btn btn-lg btn-primary">View Full Details</a> --}}
                     </div>
                 </article>
             </div>
