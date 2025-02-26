@@ -29,8 +29,7 @@
                                         alt="Upcoming Event">
                                     <div class="event-meta">
                                         <h3>{{$seminar->title}}</h3>
-                                        <a class="event-address" href="#"><i class="fa fa-map-marker"></i> at
-                                            {{$seminar->place}}</a>
+                                        <a class="event-address" href="https://www.google.com/maps/search/?api=1&query={{ urlencode($seminar->place) }}" target="_blank"><i class="fa fa-map-marker"></i> at {{$seminar->place}}</a>
                                         {{-- <a href="#" class="btn btn-brand btn-join">Join</a> --}}
                                     </div>
                                 </div>
@@ -38,16 +37,18 @@
 
                             <div class="event-countdown">
                                 {{-- <div class="event-countdown-counter" data-date="2020/10/10"></div> --}}
-                                <p>{{$seminar->seminar_date->toFormattedDateString()}} at
-                                    {{date('h:i a',strtotime($seminar->seminar_time))}}</p>
+                                <p>
+                                    {{$seminar->seminar_date->toFormattedDateString()}} at {{date('h:i a',strtotime($seminar->seminar_time))}} - {{$seminar->seminar_close_date->toFormattedDateString()}} at {{date('h:i a',strtotime($seminar->seminar_close_time))}}
+
+                                </p>
                             </div>
                         </div>
-                        @if (Auth::check())
+                        @if (true)
                         <br>
                         <div class="container">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3>Event Summery</h3>
+                                    <h6>Event Summery</h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
@@ -57,17 +58,24 @@
                                         </div>
                                         <div class="col-md-8">
                                             <h4>{{$seminar->title}}</h4>
-                                            <p>Place: {{$seminar->place}}</p>
-                                            <p>Date: on {{$seminar->seminar_date->toFormattedDateString()}} at
-                                                {{date('h:i a',strtotime($seminar->seminar_time))}}</p>
-                                            @if ($seminar->amount > 0)
                                             <p>
+                                                Place:
+                                                <a class="event-address" href="https://www.google.com/maps/search/?api=1&query={{ urlencode($seminar->place) }}" target="_blank"><i class="fa fa-map-marker"></i> {{$seminar->place}}</a>
+                                                <br>
+                                            Event Start: {{$seminar->seminar_date->toFormattedDateString()}} at
+                                                {{date('h:i a',strtotime($seminar->seminar_time))}}
+                                                <br>
+                                            Event Close: {{$seminar->seminar_close_date->toFormattedDateString()}} at
+                                                {{date('h:i a',strtotime($seminar->seminar_close_time))}}
+                                                <br>
+                                            @if ($seminar->amount > 0)
+                                            <strong>
                                                 Registration Fee: {{$seminar->amount}}
                                                 @if (!$registered)
                                                 <a href="{{route('seminar.register',[$seminar->id,Auth::user()->id])}}"
                                                     class="btn btn-brand btn-join">Register</a>
                                                 @endif
-                                            </p>
+                                            </strong>
                                             @endif
                                         </div>
                                     </div>
