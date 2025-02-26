@@ -28,7 +28,7 @@ class DashboardController extends Controller
             $blogs = Blog::where('user_id',Auth::id())->count();
             $zooms = Zoom::where('user_id',Auth::id())->count();
             $seminars = SeminarRegistration::where('user_id',Auth::id())->where('status','paid')->count();
-            $orders = Order::where('user_id',Auth::id())->where('status','Complete');
+            $orders = Order::where('user_id',Auth::id())->where('status','Complete')->get();
             return view('user.dashboard',compact('jobs','blogs','zooms','seminars','orders'));
         } else {
             return redirect()->route('user.profiles.create');

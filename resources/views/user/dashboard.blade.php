@@ -81,4 +81,34 @@ senten.'])
     </div>
 </div>
 <br>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Recent Transactions</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>SL</th>
+                        <th>Amount</th>
+                        <th>Type</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($orders as $order)
+                    <tr>
+                        <td>{{$loop->index+1}}</td>
+                        <td>{{$order->amount}}</td>
+                        <td>{{$order->type}}</td>
+                        <td>{{$order->created_at}}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 @endsection
