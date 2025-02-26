@@ -85,7 +85,7 @@ senten.'])
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <h3>Recent Transactions</h3>
+            <h6>Recent Transactions</h6>
         </div>
         <div class="card-body">
             <table class="table table-bordered">
