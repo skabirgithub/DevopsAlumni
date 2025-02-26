@@ -34,7 +34,7 @@ senten.'])
 <!------ Include the above in your HEAD tag ---------->
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <a href="{{route('user.jobs.index')}}">
                 <div class="card-counter primary">
                     <i class="fa fa-code-fork"></i>
@@ -44,20 +44,36 @@ senten.'])
             </a>
         </div>
 
-        <div class="col-md-4"><a href="{{route('user.blogs.index')}}">
+        <div class="col-md-3"><a href="{{route('user.blogs.index')}}">
                 <div class="card-counter danger">
-                    <i class="fa fa-ticket"></i>
+                    <i class="fa fa-image"></i>
                     <span class="count-numbers">{{$blogs}}</span>
                     <span class="count-name">Blogs</span>
                 </div>
             </a>
         </div>
 
-        <div class="col-md-4"><a href="{{route('user.zooms.index')}}">
+        {{-- <div class="col-md-4"><a href="{{route('user.zooms.index')}}">
                 <div class="card-counter success">
                     <i class="fa fa-database"></i>
                     <span class="count-numbers">{{$zooms}}</span>
                     <span class="count-name">Meeting</span>
+                </div>
+            </a>
+        </div> --}}
+        <div class="col-md-3"><a href="#">
+                <div class="card-counter info">
+                    <i class="fa fa-ticket"></i>
+                    <span class="count-numbers">{{$seminars}}</span>
+                    <span class="count-name">Events</span>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3"><a href="#">
+                <div class="card-counter success">
+                    <i class="fa fa-database"></i>
+                    <span class="count-numbers">{{$orders->count()}}</span>
+                    <span class="count-name">Transactions</span>
                 </div>
             </a>
         </div>
