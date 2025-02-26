@@ -1,9 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Zoom Meeting')
 @section('content')
-@include('includes.banner',['title'=>'Zoom Meeting','details'=>'This is a page. This is a demo paragraph.This is
-a demo
-senten.'])
+@include('includes.banner',['title'=>'Zoom Meeting','details'=>''])
 <section id="page-content-wrap">
     <div class="register-page-wrapper section-padding">
         <div class="container">
@@ -41,13 +39,13 @@ senten.'])
                                             {{-- <td>{{\Carbon\Carbon::parse($zoom->start_time)}}</td> --}}
                                             <td>{{date('d-M-Y h:i a',strtotime($zoom->start_time))}}</td>
                                             <td><a href="{{$zoom->meeting_url}}"
-                                                target="_blank">{{$zoom->meeting_url}}</a></td>
-                                                <td>{{$zoom->meeting_id}}</td>
-                                                <td>{{$zoom->meeting_password}}</td>
+                                                    target="_blank">{{$zoom->meeting_url}}</a></td>
+                                            <td>{{$zoom->meeting_id}}</td>
+                                            <td>{{$zoom->meeting_password}}</td>
 
                                             <td>
                                                 {{-- <a href="{{route('user.zooms.show',$zoom->id)}}"> <button
-                                                    class="border-0 btn-transition btn btn-outline-primary">View</button></a>
+                                                        class="border-0 btn-transition btn btn-outline-primary">View</button></a>
                                                 <a href="{{route('user.zooms.edit',$zoom->id)}}"> <button
                                                         class="border-0 btn-transition btn btn-outline-info">Edit</button></a>
                                                 --}}

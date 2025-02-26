@@ -1,9 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Create Zoom Meeting')
 @section('content')
-@include('includes.banner',['title'=>'Create Zoom Meeting','details'=>'This is a page. This is a demo paragraph.This is
-a demo
-senten.'])
+@include('includes.banner',['title'=>'Create Zoom Meeting','details'=>''])
 <section id="page-content-wrap">
     <div class="register-page-wrapper section-padding">
         <div class="container">
@@ -24,13 +22,15 @@ senten.'])
                                                             @csrf
                                                             <input value="{{ old('title') }}" required name="title"
                                                                 type="text" placeholder="Enter Meeting Title">
-                                                                <label for="">Meeting Details</label>
+                                                            <label for="">Meeting Details</label>
                                                             <textarea name="details" id="" cols="52" rows="5"
-                                                        placeholder="">{{old('details')}}</textarea>
-                                                                <label for="">Meeting Date and Time</label>
-                                                            <input value="{{old('start_time')}}" required name="start_time" type="datetime-local"
+                                                                placeholder="">{{old('details')}}</textarea>
+                                                            <label for="">Meeting Date and Time</label>
+                                                            <input value="{{old('start_time')}}" required
+                                                                name="start_time" type="datetime-local"
                                                                 placeholder="Meeting Date">
-                                                            <input value="{{old('meeting_password')}}" required name="meeting_password" type="text"
+                                                            <input value="{{old('meeting_password')}}" required
+                                                                name="meeting_password" type="text"
                                                                 placeholder="Meeting Password">
                                                             <button type="submit" class="btn btn-reg">Create Zoom
                                                                 Meeting</button>

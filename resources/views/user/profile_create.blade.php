@@ -1,9 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Create Profile')
 @section('content')
-@include('includes.banner',['title'=>'Create Profile','details'=>'This is a page. This is a demo paragraph.This is
-a demo
-senten.'])
+@include('includes.banner',['title'=>'Create Profile','details'=>''])
 <section id="page-content-wrap">
     <div class="register-page-wrapper section-padding">
         <div class="container">
@@ -158,31 +156,36 @@ senten.'])
                                                     <div class="form-group">
 
                                                         <label>Faculty*</label>
-                                                        <input value="{{$data['INST_FULLNAME']}}" required name="faculty"
-                                                            type="text" class="form-control" laceholder="Faculty" readonly>
+                                                        <input value="{{$data['INST_FULLNAME']}}" required
+                                                            name="faculty" type="text" class="form-control"
+                                                            laceholder="Faculty" readonly>
                                                     </div>
 
                                                     <div class="form-group">
 
                                                         <label>Program*</label>
-                                                        <input value="{{$data['PROG_FULLNAME']}}" required name="academic_program"
-                                                            type="text" class="form-control" laceholder="Program" readonly>
+                                                        <input value="{{$data['PROG_FULLNAME']}}" required
+                                                            name="academic_program" type="text" class="form-control"
+                                                            laceholder="Program" readonly>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Session*</label>
-                                                        <input value="{{$data['SESS']}}" required name="academic_session"
-                                                            type="text" class="form-control" laceholder="Session" readonly>
+                                                        <input value="{{$data['SESS']}}" required
+                                                            name="academic_session" type="text" class="form-control"
+                                                            laceholder="Session" readonly>
                                                     </div>
 
                                                     <div class="form-group">
                                                         <label>Student Id*</label>
                                                         <input value="{{$data['ROLL']}}" required name="student_id"
-                                                            type="number" class="form-control" laceholder="Student Id" readonly>
+                                                            type="number" class="form-control" laceholder="Student Id"
+                                                            readonly>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Student Registration No*</label>
                                                         <input value="{{$data['REGNO']}}" required name="student_reg_no"
-                                                            type="number" class="form-control" laceholder="Student Reg" readonly>
+                                                            type="number" class="form-control" laceholder="Student Reg"
+                                                            readonly>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Department*</label><br>
@@ -231,13 +234,13 @@ senten.'])
                                                     <br><br>
                                                     <div class="form-group">
                                                         <label>Designation</label>
-                                                        <input value="{{old('designation')}}" name="designation" type="text"
-                                                            class="form-control" placeholder="Designation">
+                                                        <input value="{{old('designation')}}" name="designation"
+                                                            type="text" class="form-control" placeholder="Designation">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Organization</label>
-                                                        <input value="{{old('organization')}}" name="organization" type="text"
-                                                            class="form-control" placeholder="Organization">
+                                                        <input value="{{old('organization')}}" name="organization"
+                                                            type="text" class="form-control" placeholder="Organization">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Professional Details*</label>
@@ -271,18 +274,22 @@ senten.'])
                                                         <label>Student Type*<br></label><br>
                                                         <select name="student_type" class="form-control">
                                                             <option value="Alumni">Alumni</option>
-                                                            <option value="Executive Comittee">Executive Comittee</option>
+                                                            <option value="Executive Comittee">Executive Comittee
+                                                            </option>
                                                         </select>
                                                     </div>
                                                     <br>
 
                                                     <div class="form-group file-input">
-                                                        <input type="file" name="image" id="customfile" class="d-none" />
-                                                        <label class="custom-file" for="customfile"><i class="fa fa-upload"></i>Upload Your Photo</label>
+                                                        <input type="file" name="image" id="customfile"
+                                                            class="d-none" />
+                                                        <label class="custom-file" for="customfile"><i
+                                                                class="fa fa-upload"></i>Upload Your Photo</label>
                                                     </div>
                                                     <div class="form-group file-input">
                                                         <input type="file" name="file" id="customfile" class="d-none" />
-                                                        <label class="custom-file" for="customfile"><i class="fa fa-upload"></i>Upload Your recent CV</label>
+                                                        <label class="custom-file" for="customfile"><i
+                                                                class="fa fa-upload"></i>Upload Your recent CV</label>
                                                     </div>
                                                     {{-- <div class="form-group">
                                                         <label>CV</label>

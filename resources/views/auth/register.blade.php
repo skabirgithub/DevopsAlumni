@@ -1,8 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Register')
 @section('content')
-@include('includes.banner',['title'=>'Register','details'=>'This is a page. This is a demo paragraph.This is a demo
-senten.'])
+@include('includes.banner',['title'=>'Register','details'=>''])
 <section id="page-content-wrap">
     <div class="register-page-wrapper section-padding">
         <div class="container">

@@ -1,9 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Zoom Meeting')
 @section('content')
-@include('includes.banner',['title'=>'Zoom Meeting','details'=>'This is a page. This is a demo paragraph.This is
-a demo
-senten.'])
+@include('includes.banner',['title'=>'Zoom Meeting','details'=>''])
 
 
 <section id="blog-area" class="section-padding">
@@ -43,15 +41,14 @@ senten.'])
                         <p>Join Url : <a href="{{$zoom->meeting_url}}" target="_blank">{{$zoom->meeting_url}}</a></p>
                         <p>Meeting ID : {{$zoom->meeting_id}}</p>
                         <p>Password : {{$zoom->meeting_password}}</p>
-                        
+
                         <p>
-                        @if($zoom->user_id == Auth::id())
-                        <a class="btn btn-lg btn-danger" href="#"
-                            onclick="if (confirm('Are you sure to delete?')){document.getElementById('delete-form-{{$zoom->id}}').submit();}else{event.preventDefault()}">
-                            Delete</a>
-                        <form id="delete-form-{{$zoom->id}}"
-                            action="{{ route('user.zooms.destroy',$zoom->id) }}" method="POST"
-                            style="display: none;">
+                            @if($zoom->user_id == Auth::id())
+                            <a class="btn btn-lg btn-danger" href="#"
+                                onclick="if (confirm('Are you sure to delete?')){document.getElementById('delete-form-{{$zoom->id}}').submit();}else{event.preventDefault()}">
+                                Delete</a>
+                        <form id="delete-form-{{$zoom->id}}" action="{{ route('user.zooms.destroy',$zoom->id) }}"
+                            method="POST" style="display: none;">
                             @csrf
                             @method('DELETE')
                         </form>

@@ -1,9 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Profile')
 @section('content')
-@include('includes.banner',['title'=>'Profile','details'=>'This is a page. This is a demo paragraph.This is
-a demo
-senten.'])
+@include('includes.banner',['title'=>'Profile','details'=>''])
 <link rel="stylesheet" href="{{asset('frontend/assets/css/style.min.css')}}">
 <section id="page-content-wrap">
     <div class="register-page-wrapper section-padding">
@@ -37,7 +35,9 @@ senten.'])
 
                                                     <div class="form-group">
                                                         <label>Faculty</label>
-                                                        <input readonly value="{{$user->profile->faculty}}" name="faculty" required type="text" class="form-control" placeholder="Enter Faculty">
+                                                        <input readonly value="{{$user->profile->faculty}}"
+                                                            name="faculty" required type="text" class="form-control"
+                                                            placeholder="Enter Faculty">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Academic Program</label>
@@ -127,20 +127,20 @@ senten.'])
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Designation</label>
-                                                        <input value="{{$user->profile->designation}}" name="designation"
-                                                            type="url" class="form-control"
+                                                        <input value="{{$user->profile->designation}}"
+                                                            name="designation" type="url" class="form-control"
                                                             placeholder="Designation">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Organization</label>
-                                                        <input value="{{$user->profile->organization}}" name="organization"
-                                                            type="url" class="form-control"
+                                                        <input value="{{$user->profile->organization}}"
+                                                            name="organization" type="url" class="form-control"
                                                             placeholder="Organization">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Office address</label>
-                                                        <input value="{{$user->profile->office_address}}" name="office_address"
-                                                            type="url" class="form-control"
+                                                        <input value="{{$user->profile->office_address}}"
+                                                            name="office_address" type="url" class="form-control"
                                                             placeholder="Office Address">
                                                     </div>
                                                     <div class="form-group">
@@ -165,7 +165,8 @@ senten.'])
                                                         <select name="student_type" class="form-control">
                                                             <option value="{{$user->profile->student_type}}">
                                                                 {{$user->profile->student_type}}</option>
-                                                            <option value="Executive Comittee">Executive Comittee</option>
+                                                            <option value="Executive Comittee">Executive Comittee
+                                                            </option>
                                                             <option value="Alumni">Alumni</option>
                                                         </select>
                                                     </div>
@@ -243,7 +244,8 @@ senten.'])
                                     <p>@if($activity->file)
                                         <a download="" href="{{asset('files/'.$activity->file)}}">Download
                                             File</a><br><br>
-                                        @endif</p><br>
+                                        @endif
+                                    </p><br>
                                     <a href="{{route('user.activities.edit',$activity->id)}}"
                                         class="btn btn-lg btn-success">Edit</a>
                                     <a class="btn btn-lg btn-danger" href="#"

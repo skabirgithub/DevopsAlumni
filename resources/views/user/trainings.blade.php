@@ -1,9 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Trainings')
 @section('content')
-@include('includes.banner',['title'=>'Trainings','details'=>'This is a page. This is a demo paragraph.This is
-a demo
-senten.'])
+@include('includes.banner',['title'=>'Trainings','details'=>''])
 
 
 <section id="blog-area" class="section-padding">
@@ -39,7 +37,8 @@ senten.'])
                         <h3><a href="#">{{$training->institute}}</a></h3>
                         <p>Subject : {{$training->subject}}</p>
                         <p>{{$training->details}}</p>
-                        <p>From : {{date('d-M-Y',strtotime($training->from))}}  &nbsp;&nbsp; To : {{date('d-M-Y',strtotime($training->to))}}</p>
+                        <p>From : {{date('d-M-Y',strtotime($training->from))}} &nbsp;&nbsp; To :
+                            {{date('d-M-Y',strtotime($training->to))}}</p>
                         @if($training->file)
                         <a download="" href="{{asset('files/'.$training->file)}}">Download File</a><br><br>
                         @endif

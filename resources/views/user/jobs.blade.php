@@ -1,9 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Jobs')
 @section('content')
-@include('includes.banner',['title'=>'Jobs','details'=>'This is a page. This is a demo paragraph.This is
-a demo
-senten.'])
+@include('includes.banner',['title'=>'Jobs','details'=>''])
 
 
 <section id="blog-area" class="section-padding">
@@ -49,7 +47,8 @@ senten.'])
                                 Applicants</a>
                             <a href="{{route('user.jobs.close',$job->id)}}" onclick="return confirm('Are you sure?')"
                                 class="btn btn-danger">Close this job</a>
-                            @endif</p>
+                            @endif
+                        </p>
                         @if($job->file)
                         <a download="" href="{{asset('files/'.$job->file)}}">Download File</a><br><br>
                         @endif
@@ -88,7 +87,8 @@ senten.'])
                 <article class="single-blog-post">
                     <figure class="blog-thumb">
                         <div class="blog-thumbnail">
-                            <img src="{{asset('images/'.$appliedJob->jobDetails->image)}}" alt="Blog" class="img-fluid" />
+                            <img src="{{asset('images/'.$appliedJob->jobDetails->image)}}" alt="Blog"
+                                class="img-fluid" />
                         </div>
                         <figcaption class="blog-meta clearfix">
                             <a href="#" class="author">
@@ -101,17 +101,20 @@ senten.'])
                     </figure>
 
                     <div class="blog-content">
-                        <h3><a href="{{route('job',$appliedJob->jobDetails->id)}}">{{$appliedJob->jobDetails->title}}</a></h3>
+                        <h3><a
+                                href="{{route('job',$appliedJob->jobDetails->id)}}">{{$appliedJob->jobDetails->title}}</a>
+                        </h3>
                         <p>{!!Str::limit($appliedJob->jobDetails->details,100)!!}</p>
                         <p>Status : @if($appliedJob->jobDetails->status == "Close")
                             <button class="btn btn-danger">Close</button>
                             @else
                             <button class="btn btn-success">Open</button>
-                            @endif</p>
+                            @endif
+                        </p>
                         {{-- @if($appliedJob->jobDetails->file)
                         <a download="" href="{{asset('files/'.$appliedJob->jobDetails->file)}}">Download File</a>
                         @endif
-                        <br/>
+                        <br />
                         <a href="{{route('job',$job->id)}}" class="btn btn-lg btn-primary">View Full Details</a> --}}
                     </div>
                 </article>

@@ -1,8 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Register')
 @section('content')
-@include('includes.banner',['title'=>'Register','details'=>'This is a page. This is a demo paragraph.This is a demo
-senten.'])
+@include('includes.banner',['title'=>'Register','details'=>''])
 <section id="page-content-wrap">
     <div class="register-page-wrapper section-padding">
         <div class="container">
@@ -21,32 +20,36 @@ senten.'])
 
                                                     <!-- Display Error Message -->
                                                     @if (session('error'))
-                                                        <div class="alert alert-danger">
-                                                            {{ session('error') }}
-                                                        </div>
+                                                    <div class="alert alert-danger">
+                                                        {{ session('error') }}
+                                                    </div>
                                                     @endif
 
                                                     <!-- Display Success Message -->
                                                     @if (session('success'))
-                                                        <div class="alert alert-success">
-                                                            {{ session('success') }}
-                                                        </div>
+                                                    <div class="alert alert-success">
+                                                        {{ session('success') }}
+                                                    </div>
                                                     @endif
 
                                                     <div class="sign-form">
-                                                        <form method="POST" action="{{ route('register.by.verification') }}">
+                                                        <form method="POST"
+                                                            action="{{ route('register.by.verification') }}">
                                                             @csrf
-                                                            <input value="{{ old('student_id') }}" required name="student_id"
-                                                                type="text" placeholder="Enter your Student ID">
-                                                            <input value="{{ old('student_reg_no') }}" required name="student_reg_no"
-                                                                type="text" placeholder="Enter your Student Registration No">
+                                                            <input value="{{ old('student_id') }}" required
+                                                                name="student_id" type="text"
+                                                                placeholder="Enter your Student ID">
+                                                            <input value="{{ old('student_reg_no') }}" required
+                                                                name="student_reg_no" type="text"
+                                                                placeholder="Enter your Student Registration No">
                                                             <input value="{{ old('email') }}" required name="email"
                                                                 type="email" placeholder="Enter your Email">
                                                             <input required minlength="8" name="password"
                                                                 type="password" placeholder="Password">
                                                             <input required name="password_confirmation" minlength="8"
                                                                 type="password" placeholder="Confirm Password">
-                                                            <button type="submit" class="btn btn-reg">Verify & Register</button>
+                                                            <button type="submit" class="btn btn-reg">Verify &
+                                                                Register</button>
                                                         </form>
                                                     </div>
                                                     <br>

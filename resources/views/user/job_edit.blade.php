@@ -1,9 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Update Job Details')
 @section('content')
-@include('includes.banner',['title'=>'Update Job Details','details'=>'This is a page. This is a demo paragraph.This is
-a demo
-senten.'])
+@include('includes.banner',['title'=>'Update Job Details','details'=>''])
 <section id="page-content-wrap">
     <div class="register-page-wrapper section-padding">
         <div class="container">
@@ -25,8 +23,8 @@ senten.'])
 
                                                     <div class="form-group">
                                                         <label>Title*</label>
-                                                        <input value="{{$job->title}}" required name="title"
-                                                            type="text" class="form-control" laceholder="Job Title">
+                                                        <input value="{{$job->title}}" required name="title" type="text"
+                                                            class="form-control" laceholder="Job Title">
                                                     </div>
                                                     <div class="form-group">
                                                         <label><br>Job Details*</label>
@@ -34,7 +32,8 @@ senten.'])
                                                             class="form-control"
                                                             laceholder="Job Details">{{$job->details}}</textarea>
                                                     </div>
-                                                    <img height="200px" width="200px"  src="{{asset('images/'.$job->image)}}"/>
+                                                    <img height="200px" width="200px"
+                                                        src="{{asset('images/'.$job->image)}}" />
                                                     <div class="form-group file-input">
                                                         <input type="file" name="image" id="customfile"
                                                             class="d-none" />
@@ -42,8 +41,9 @@ senten.'])
                                                                 class="fa fa-upload"></i>Upload Image</label>
                                                     </div>
                                                     <div class="form-group file-input">
-                                                        
-                                                        <input type="file" name="file" id="customfile2" class="d-none" />
+
+                                                        <input type="file" name="file" id="customfile2"
+                                                            class="d-none" />
                                                         <label class="custom-file" for="customfile2"><i
                                                                 class="fa fa-upload"></i>Upload File</label>
                                                     </div>

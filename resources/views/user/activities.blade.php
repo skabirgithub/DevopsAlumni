@@ -1,9 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Activities')
 @section('content')
-@include('includes.banner',['title'=>'Activities','details'=>'This is a page. This is a demo paragraph.This is
-a demo
-senten.'])
+@include('includes.banner',['title'=>'Activities','details'=>''])
 
 
 <section id="blog-area" class="section-padding">

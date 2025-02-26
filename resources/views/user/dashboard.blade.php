@@ -1,9 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Dashboard')
 @section('content')
-@include('includes.banner',['title'=>'Dashboard','details'=>'This is a page. This is a demo paragraph.This is
-a demo
-senten.'])
+@include('includes.banner',['title'=>'Dashboard','details'=>''])
 <link rel="stylesheet" href="{{asset('my_files/mycss_index.css')}}">
 <br>
 

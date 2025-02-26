@@ -1,9 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Clubs')
 @section('content')
-@include('includes.banner',['title'=>'Clubs','details'=>'This is a page. This is a demo paragraph.This is
-a demo
-senten.'])
+@include('includes.banner',['title'=>'Clubs','details'=>''])
 
 
 <section id="blog-area" class="section-padding">
@@ -47,9 +45,8 @@ senten.'])
                         <a class="btn btn-lg btn-danger" href="#"
                             onclick="if (confirm('Are you sure to delete?')){document.getElementById('delete-form-{{$club->id}}').submit();}else{event.preventDefault()}">
                             Delete</a>
-                        <form id="delete-form-{{$club->id}}"
-                            action="{{ route('user.clubs.destroy',$club->id) }}" method="POST"
-                            style="display: none;">
+                        <form id="delete-form-{{$club->id}}" action="{{ route('user.clubs.destroy',$club->id) }}"
+                            method="POST" style="display: none;">
                             @csrf
                             @method('DELETE')
                         </form>
