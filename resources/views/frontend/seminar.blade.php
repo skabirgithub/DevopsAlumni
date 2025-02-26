@@ -68,7 +68,7 @@
                                             Event Close: {{$seminar->seminar_close_date->toFormattedDateString()}} at
                                                 {{date('h:i a',strtotime($seminar->seminar_close_time))}}
                                                 <br>
-                                            <a href="https://calendar.google.com/calendar/r/eventedit?text={{ urlencode($seminar->title) }}&dates={{ $seminar->seminar_date->format('Ymd\THis\Z') }}/{{ $seminar->seminar_close_date->format('Ymd\THis\Z') }}&details={{ urlencode($seminar->details) }}&location={{ urlencode($seminar->place) }}" target="_blank" class="btn btn-brand">Save to Calendar</a>
+                                            <a href="https://calendar.google.com/calendar/r/eventedit?text={{ urlencode($seminar->title) }}&dates={{ $seminar->seminar_date->format('Ymd\THis\Z') }}/{{ $seminar->seminar_close_date->format('Ymd\THis\Z') }}&details={{ urlencode($seminar->details) }}&location={{ urlencode($seminar->place) }}" target="_blank" class="btn btn-info">Save to Calendar</a>
                                                 <br>
                                             @if ($seminar->amount > 0)
                                             <strong>
