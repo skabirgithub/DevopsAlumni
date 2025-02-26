@@ -39,6 +39,7 @@ Route::namespace('Frontend')->group(function () {
 
     Route::get('seminars', 'AllController@seminars')->name('seminars');
     Route::get('seminar/{id}', 'AllController@seminar')->name('seminar');
+    Route::get('seminar/{id}/{user_id}', 'AllController@seminarRegister')->name('seminar.register');
 
     Route::get('jobs', 'AllController@jobs')->name('jobs');
     Route::get('job/{id}', 'AllController@job')->name('job');

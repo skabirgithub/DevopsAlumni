@@ -9,6 +9,7 @@ use App\Models\Club;
 use App\Models\Profile;
 use App\Models\Training;
 use App\Models\Seminar;
+use App\Models\SeminarRegistration;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -71,6 +72,18 @@ class AllController extends Controller
     {
         $seminar = Seminar::findOrFail($id);
         return view('frontend.seminar', compact('seminar'));
+    }
+    public function seminarRegister($id,$user_id)
+    {
+        $user_id = User::findOrFail($user_id);
+        $event = Seminar::findOrFail($id);
+
+        $seminar_registration = SeminarRegistration::where('user_id', $user_id->id)->where('seminar_id', $event->id)->where('status','paid')->first();
+        if($seminar_registration){
+            return redirect()->back()->with('error', 'You have already registered for this event');
+        }else{
+            return 99;
+        }
     }
     public function jobs()
     {
