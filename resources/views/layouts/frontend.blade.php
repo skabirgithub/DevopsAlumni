@@ -200,6 +200,20 @@
                 font-weight: bold;          /* Make text bold */
                 transition: all 0.3s ease-in-out;
             }
+            .dropdown-menu .nav-link.active {
+                color: #020d72 !important;  /* Change text color */
+                background-color: #007bff;  /* Highlight with a background color */
+                border-radius: 0px;         /* Rounded corners */
+                padding: 8px 15px;          /* Adjust padding */
+                font-weight: bold;          /* Make text bold */
+                transition: all 0.3s ease-in-out;
+            }
+
+            .navbar-nav .nav-link:hover,
+            .dropdown-menu .nav-link:hover {
+                color: #ffffff !important;  /* Change text color on hover */
+                background-color: #0056b3;  /* Highlight with a background color on hover */
+            }
 
         </style>
         <div class="header-bottom-area" id="fixheader">
