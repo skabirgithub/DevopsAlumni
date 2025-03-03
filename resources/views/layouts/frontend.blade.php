@@ -211,7 +211,7 @@
 
             .navbar-nav .nav-link:hover,
             .dropdown-menu .nav-link:hover {
-                color: #ffffff !important;  /* Change text color on hover */
+                color: #1ac9c0 !important;  /* Change text color on hover */
                 background-color: #0056b3;  /* Highlight with a background color on hover */
             }
 
@@ -248,7 +248,7 @@
                                     <li class="nav-item">
                                         <a class="nav-link {{ request()->routeIs('blogs') ? 'active' : '' }}" href="{{route('blogs')}}">News</a>
                                     </li>
-                                    
+
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle {{ request()->is('students/*') ? 'active' : '' }}" href="#" data-toggle="dropdown" role="button">Alumni</a>
                                         <ul class="dropdown-menu">
