@@ -238,6 +238,17 @@
                                     <li class="nav-item">
                                         <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" href="{{route('about')}}">About</a>
                                     </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ request()->routeIs('seminars') ? 'active' : '' }}" href="{{route('seminars')}}">Events</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ request()->routeIs('jobs') ? 'active' : '' }}" href="{{route('jobs')}}">Career</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ request()->routeIs('blogs') ? 'active' : '' }}" href="{{route('blogs')}}">News</a>
+                                    </li>
+                                    
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle {{ request()->is('students/*') ? 'active' : '' }}" href="#" data-toggle="dropdown" role="button">Alumni</a>
                                         <ul class="dropdown-menu">
@@ -252,17 +263,23 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link {{ request()->routeIs('seminars') ? 'active' : '' }}" href="{{route('seminars')}}">Events</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link {{ request()->routeIs('jobs') ? 'active' : '' }}" href="{{route('jobs')}}">Career</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link {{ request()->routeIs('blogs') ? 'active' : '' }}" href="{{route('blogs')}}">News</a>
-                                    </li>
-                                    <li class="nav-item">
+
+
+                                    {{-- <li class="nav-item">
                                         <a class="nav-link {{ request()->routeIs('gallery') ? 'active' : '' }}" href="{{route('gallery')}}">Gallery</a>
+                                    </li> --}}
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle {{ request()->is('gallery/*') ? 'active' : '' }}" href="#" data-toggle="dropdown" role="button">Gallery</a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item">
+                                                <a class="nav-link {{ request()->is('gallery/stories') ? 'active' : '' }}" href="{{route('gallery')}}">Stories</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link {{ request()->is('gallery/downloads') ? 'active' : '' }}" href="{{route('downloads')}}">Downloads</a>
+                                            </li>
+
+                                        </ul>
                                     </li>
 
                                     <li class="nav-item">
