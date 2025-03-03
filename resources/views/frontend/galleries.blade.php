@@ -74,8 +74,8 @@
 
 
                             <div class="card-header">
-                                <h6>{{ $gallery->title }}</h6>
-                                <p>{{ $gallery->description }}</p>
+                                <h6>{{ Str::limit($gallery->title,35) }}</h6>
+                                <p>{{ Str::limit($gallery->subtitle,40) }}</p>
                             </div>
                             <div class="card-body">
                                 <img src="{{ $gallery_url }}" class="img-fluid" alt="Gallery Image">
