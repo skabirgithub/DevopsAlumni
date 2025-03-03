@@ -93,7 +93,8 @@ class UserController extends Controller
      */
     public function update(UserUpdateRequest $request, User $user)
     {
-        $imageName = FileHelper::uploadImage($request, $user->profile);
+        // $imageName = FileHelper::uploadImage($request, $user->profile);
+        $imageName = FileHelper::uploadImage($request, $user->profile, array(), 270, 360);
         $fileName = FileHelper::uploadFile($request, $user->profile);
         $user->fill($request->all())->save();
         $user->profile->fill(array_merge($request->all(), ['image' => $imageName, 'file' => $fileName]))->save();
