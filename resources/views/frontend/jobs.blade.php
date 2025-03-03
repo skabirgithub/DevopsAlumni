@@ -50,21 +50,22 @@
                         @foreach ($jobs as $job)
                         <!--== Single Job opportunity Start ==-->
                         <div class="col-lg-4 col-sm-6 text-center">
-                            <div class="single-job-opportunity">
-                                <div class="job-opportunity-text">
-                                    <div class="job-oppor-logo">
-                                        <div class="display-table">
-                                            <div class="display-table-cell">
-                                                <img src="{{asset('images/'.$job->image)}}" alt="Job">
-                                            </div>
-                                        </div>
+                            <div class="card">
+                                <dic class="container">
+                                    <div class="card-header">
+                                        <img height="200px" src="{{asset('images/'.$job->image)}}" alt="{{$job->title}}">
                                     </div>
-                                    <h3><a href="{{route('job',$job->id)}}">{{$job->title}}</a></h3>
-                                    <p>{!!Str::limit($job->details,100)!!}</p>
-                                </div>
-                                <a href="{{route('job',$job->id)}}" class="btn btn-job">Apply now</a>
+                                    <div class="card-body">
+                                        <h6><a href="{{route('job',$job->id)}}">{{Str::limit($job->title,50)}}</a></h6>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="{{route('job',$job->id)}}" class="btn btn-job">Apply now</a>
+                                    </div>
+                                </dic>
                             </div>
+                            <br>
                         </div>
+                        <br>
                         <!--== Single Job opportunity End ==-->
                         @endforeach
                     </div>
