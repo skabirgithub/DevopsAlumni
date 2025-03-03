@@ -33,7 +33,7 @@
 <!-- Seminar Date Field -->
 <div class="form-group ">
     {!! Form::label('seminar_time', 'Seminar Time:') !!}
-    {!! Form::time('seminar_time', null, ['class' => 'form-control','id'=>'seminar_time','required']) !!}
+    {!! Form::time('seminar_time', null, ['class' => 'form-control','id'=>'seminar_time','required','step' => 'any']) !!}
 </div>
 
 @isset($seminar)
@@ -51,7 +51,7 @@
 @endisset
 <div class="form-group ">
     {!! Form::label('seminar_close_time', 'Seminar Closing Time:') !!}
-    {!! Form::time('seminar_close_time', null, ['class' => 'form-control','id'=>'seminar_close_time','required']) !!}
+    {!! Form::time('seminar_close_time', null, ['class' => 'form-control','id'=>'seminar_close_time','required','step' => 'any']) !!}
 </div>
 
 
