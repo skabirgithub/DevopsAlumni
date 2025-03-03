@@ -79,6 +79,12 @@
                                                 @endif
                                             </strong>
                                             @endif
+
+                                            @if (Auth::check())
+                                            {{-- write here --}}
+                                            @else
+                                            <a class="btn btn btn-success" href="{{ route('login') }}">Login to Attend</a>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
