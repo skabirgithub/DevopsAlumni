@@ -433,7 +433,7 @@
                     </figure>
 
                     <div class="blog-content">
-                        <h3><a href="{{$blog->url()}}">{{Str::limit($blog->title,60)}}</a></h3>
+                        <h3><a href="{{$blog->url()}}">{{Str::limit($blog->title,50)}}</a></h3>
                         <p>{!!Str::limit($blog->details,100)!!}</p>
                         <a href="{{$blog->url()}}" class="btn btn-brand">Read More</a>
                     </div>
