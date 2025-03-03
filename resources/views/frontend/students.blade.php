@@ -35,7 +35,7 @@
 
                                 <!-- Submit Button -->
                                 <div class="col-md-3 text-center">
-                                    <button type="submit" class="btn btn-primary h-100 w-100">Filter</button>
+                                    <button type="submit" class="btn btn-brand h-100 w-100">Filter</button>
                                 </div>
                             </form>
                         </div>
