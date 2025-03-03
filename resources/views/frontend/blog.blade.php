@@ -26,7 +26,7 @@
                     <article class="single-blog-content-wrap">
                         <header class="article-head">
                             <div class="single-blog-thumb">
-                                <img src="{{asset('images/'.$blog->image)}}" class="img-fluid" alt="Blog">
+                                <img src="{{asset('images/'.$blog->image)}}" class="img-fluid w-100" alt="Blog">
                             </div>
                             <div class="single-blog-meta">
                                 <h2>{{$blog->title}}</h2>
