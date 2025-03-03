@@ -1,8 +1,8 @@
 @extends('layouts.frontend')
-@section('title', 'Gallery')
+@section('title', 'Downloads')
 @section('content')
 
-@include('includes.banner', ['title' => 'Gallery', 'details' => 'Explore our stories.'])
+@include('includes.banner', ['title' => 'Downloads', 'details' => ''])
 
 <div id="page-content-wrap">
     <div class="gallery-page-content-wrap section-padding">

@@ -29,6 +29,7 @@ Route::namespace('Frontend')->group(function () {
     Route::get('about', 'IndexController@about')->name('about');
     Route::get('galleries', 'IndexController@galleries')->name('galleries');
 
+    Route::get('/downloads', [GalleryController::class, 'downloads'])->name('downloads');
     Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
     Route::get('/gallery/category/{category}', [GalleryController::class, 'filterByCategory'])->name('gallery.category');
 
