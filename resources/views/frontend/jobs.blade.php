@@ -10,6 +10,54 @@
         <div class="career-page-content-wrap section-padding">
             <div class="container">
 
+                <h6>Important Links</h6>
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6 text-center">
+                        <div class="card">
+                            <div class="card-header">
+                                <img height="100px" src="{{asset('images/portal1_logo.png')}}" alt="Portal 1">
+                            </div>
+                            <div class="card-body">
+                                <h6><a href="https://portal1.com">Portal 1</a></h6>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 text-center">
+                        <div class="card">
+                            <div class="card-header">
+                                <img height="100px" src="{{asset('images/portal2_logo.png')}}" alt="Portal 2">
+                            </div>
+                            <div class="card-body">
+                                <h6><a href="https://portal2.com">Portal 2</a></h6>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 text-center">
+                        <div class="card">
+                            <div class="card-header">
+                                <img height="100px" src="{{asset('images/portal3_logo.png')}}" alt="Portal 3">
+                            </div>
+                            <div class="card-body">
+                                <h6><a href="https://portal3.com">Portal 3</a></h6>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 text-center">
+                        <div class="card">
+                            <div class="card-header">
+                                <img height="100px" src="{{asset('images/portal4_logo.png')}}" alt="Portal 4">
+                            </div>
+                            <div class="card-body">
+                                <h6><a href="https://portal4.com">Portal 4</a></h6>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <br>
                 {{-- <div class="row">
                     <div class="col-lg-12">
                         <div class="event-filter-area">
