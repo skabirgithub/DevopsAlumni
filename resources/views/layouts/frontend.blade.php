@@ -265,8 +265,9 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a class="nav-link {{ request()->routeIs('gallery/downloads') ? 'active' : '' }}" href="{{route('downloads')}}">Downloads</a>
+                                        <a class="nav-link {{ request()->routeIs('downloads') ? 'active' : '' }}" href="{{route('downloads')}}">Downloads</a>
                                     </li>
+                                    
 
                                     {{-- <li class="nav-item">
                                         <a class="nav-link {{ request()->routeIs('gallery') ? 'active' : '' }}" href="{{route('gallery')}}">Gallery</a>
