@@ -13,7 +13,7 @@
                     <div class="all-event-list">
 
                         <!-- Upcoming Events Section -->
-                        <h2 class="section-title">Upcoming Events</h2>
+                        <h2 class="section-title">Upcoming...</h2>
                         @foreach ($seminars->where('seminar_date', '>=', now()) as $seminar)
                         <div class="single-upcoming-event">
                             <div class="row">
@@ -41,7 +41,7 @@
                         @endforeach
 
                         <!-- Previous Events Section -->
-                        <h2 class="section-title mt-5">Previous Events</h2>
+                        <h2 class="section-title mt-5">Happenings...</h2>
                         @foreach ($seminars->where('seminar_date', '<', now()) as $seminar)
                         <div class="single-upcoming-event">
                             <div class="row">

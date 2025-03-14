@@ -264,12 +264,15 @@
                                         </ul>
                                     </li>
 
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ request()->routeIs('gallery/downloads') ? 'active' : '' }}" href="{{route('downloads')}}">Downloads</a>
+                                    </li>
 
                                     {{-- <li class="nav-item">
                                         <a class="nav-link {{ request()->routeIs('gallery') ? 'active' : '' }}" href="{{route('gallery')}}">Gallery</a>
                                     </li> --}}
 
-                                    <li class="nav-item dropdown">
+                                    {{-- <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle {{ request()->is('gallery/*') ? 'active' : '' }}" href="#" data-toggle="dropdown" role="button">Gallery</a>
                                         <ul class="dropdown-menu">
                                             <li class="nav-item">
@@ -280,10 +283,12 @@
                                             </li>
 
                                         </ul>
-                                    </li>
+                                    </li> --}}
+
+
 
                                     <li class="nav-item">
-                                        <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{route('contact')}}">Contact</a>
+                                        <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{route('contact')}}">Support</a>
                                     </li>
                                 </ul>
                             </div>
