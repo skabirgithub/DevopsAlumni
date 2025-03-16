@@ -11,7 +11,7 @@
         "php": "^7.2||^7.4||^8.1",
         "fideloper/proxy": "^4.0",
         "firebase/php-jwt": "^5.2",
-        "guzzlehttp/guzzle": "^7.2",
+        "guzzlehttp/guzzle": "^7.9",
         "infyomlabs/adminlte-templates": "6.0.x-dev",
         "infyomlabs/laravel-generator": "6.0.x-dev",
         "intervention/image": "^2.7",

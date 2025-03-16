@@ -13,7 +13,7 @@
             <div class="alert alert-warning">
                 Your account validity has expired or is new. Please make a payment of BDT 10 to renew your account.
             </div>
-            <form action="{{ route('user.payment') }}" method="POST">
+            <form action="{{ route('shurjopay.membership') }}" method="POST">
                 @csrf
                 <div class="form-group">
                     <input type="hidden" name="amount" id="amount" value="10" class="form-control" required>

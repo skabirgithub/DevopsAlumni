@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\User\SslCommerzPaymentController;
+use App\Http\Controllers\User\ShurjoPayController;
 use App\Models\JobDetails;
 use App\Models\Activity;
 use App\Models\Club;
@@ -88,6 +89,8 @@ class AllController extends Controller
 
         return view('frontend.seminar', compact('seminar','registered'));
     }
+
+
     public function seminarRegister($id, $user_id)
     {
         $user = User::findOrFail($user_id);
@@ -103,7 +106,23 @@ class AllController extends Controller
         } else {
             // return 99;
             // Redirect to the payment route with necessary data
-            $sslcommerzPaymentController = new SslCommerzPaymentController();
+
+            // ======================= SSLCommerz section Start ====================
+            // $sslcommerzPaymentController = new SslCommerzPaymentController();
+            // $request = new Request();
+            // $request->merge([
+            //     'event_id' => $event->id,
+            //     'user_id' => $user->id,
+            //     'amount' => $event->amount,
+            //     'type' => 'event',
+            //     'type_id' => $event->id,
+            // ]);
+            // return $sslcommerzPaymentController->pay_event($request);
+            // ========== XXX ========== SSLCommerz section End ======== XXX =========
+
+            // ========================= Shurjo Pay Controller Start ===============
+
+            $shurjoPayController = new ShurjoPayController();
             $request = new Request();
             $request->merge([
                 'event_id' => $event->id,
@@ -112,8 +131,7 @@ class AllController extends Controller
                 'type' => 'event',
                 'type_id' => $event->id,
             ]);
-            // return $request;
-            return $sslcommerzPaymentController->pay_event($request);
+            return $shurjoPayController->pay_event($request);
         }
     }
 

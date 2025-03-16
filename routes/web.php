@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\SeminarRegistrationController;
 use App\Http\Controllers\User\SslCommerzPaymentController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\User\ShurjoPayController;
 
 Route::namespace('Frontend')->group(function () {
     Route::get('/', 'IndexController@index')->name('index');
@@ -44,7 +45,7 @@ Route::namespace('Frontend')->group(function () {
     Route::get('seminar/{id}/{user_id}', 'AllController@seminarRegister')->name('seminar.register');
 
     Route::get('jobs', 'AllController@jobs')->name('jobs');
-    Route::get('job/{id}', 'AllController@job')->name('job');
+    Route::get('job/{id}', 'AllController@job')->name('job');   
 });
 
 Route::get('/home', 'Frontend\IndexController@index')->name('home');
@@ -198,6 +199,19 @@ Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 
 Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 // **********************************SSL COMMERZ PAYMENT**********************************
+
+//  ******************************** Shurjo Pay Start ****************************************
+
+// Route::get('payment-status', [ShurjoPayController::class, 'paymentStatus'])->name('shurjopay.callback');
+Route::post('/pay-now', [ShurjoPayController::class, 'initiatePayment'] )->name('shurjopay.pay');
+Route::post('/get-token', [ShurjoPayController::class, 'getToken'])->name('shurjopay.gettoken');
+Route::get('/payment-success', [ShurjoPayController::class, 'success'])->name('shurjopay.success');
+Route::get('/payment-cancel', [ShurjoPayController::class, 'cancel'])->name('shurjopay.cancel');
+Route::get('/verify-payment/{orderId}', [ShurjoPayController::class, 'verifyTransaction'])->name('shurjopay.verify');
+Route::get('/payment-callback', [ShurjoPayController::class, 'paymentCallback'])->name('shurjopay.callback');
+Route::post('/payment-membership', [ShurjoPayController::class, 'pay_membership'])->name('shurjopay.membership');
+
+// ********************************** Shurjo Pay End ********************************************
 
 Route::get('/send-email', [MailController::class, 'sendTestEmail']);
 
