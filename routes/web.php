@@ -54,8 +54,8 @@ Route::post('ckeditor/image-upload', 'Common\CKEditorController@imageUpload')->n
 
 // ********************************USER********************************
 
-Auth::routes();
-// Auth::routes(['verify' => true]);
+// Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::prefix('user')->group(function () {
     Route::name('user.')->group(function () {

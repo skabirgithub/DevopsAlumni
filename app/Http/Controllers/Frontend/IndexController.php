@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Frontend;
-
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\ContactFeedback;
@@ -92,6 +92,8 @@ class IndexController extends Controller
             'password' => bcrypt($request->password),
         ]);
         if ($register_user) {
+            Auth::login($register_user);
+            $register_user->sendEmailVerificationNotification();
             return redirect()->route('login')->with('success', 'Registration successful!');
         }
         // return redirect()->route('home')->with('success', 'Registration successful!');
