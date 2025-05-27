@@ -19,7 +19,7 @@
                             crucial historical milestone, the shared commitment among visionary individuals to preserve
                             the bonds formed during their university years was the driving force behind the
                             association's inception. From its early days, the BUPAA has been guided by founding
-                            principles emphasizing unity, mentorship, and service—a commitment to creating a platform
+                            principles emphasizing unity, mentorship, and service a commitment to creating a platform
                             that transcends graduation day.</p>
                         <p>As the association took its initial steps, it underwent a process of evolution and growth.
                             The establishment of foundational structures, the formulation of a clear mission and vision,
@@ -98,7 +98,7 @@
                             students not only for academic success but also for the realities of a rapidly changing
                             world. Transparent, collaborative, and strategic in their approach, they lead BUP as a
                             forward-thinking institution.
-                            The new generation at BUP signifies more than a demographic shift—it embodies a cultural and
+                            The new generation at BUP signifies more than a demographic shift it embodies a cultural and
                             intellectual evolution. The intergenerational exchange of ideas between seasoned educators
                             and the fresh perspectives of the younger generation creates a vibrant intellectual
                             community. As this cohort continues to shape the university's identity, they become
