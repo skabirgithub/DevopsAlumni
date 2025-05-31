@@ -224,30 +224,52 @@
                 // Group testimonials by type and sort by priority within each group
                 $groupedTestimonials = collect($testimonials)
                     ->sortBy('priority')
-                    ->groupBy('type');
+                    ->groupBy('type')
+                    ->map(function($group) {
+                        return $group->take(2);
+                    });
             @endphp
 
             @foreach($groupedTestimonials as $type => $group)
-                <div class="row mb-5">
-                    <div class="col-12">
-                        <h4 class="mb-4 text-start">{{ ucfirst($type) }}</h4>
-                    </div>
-                    @foreach($group as $testimonial)
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex">
-                            <div class="card w-100 shadow-sm border-0">
-                                <div class="card-body text-center">
-                                    <img src="{{ asset('images/'.$testimonial->image) }}" alt="{{ $testimonial->name }}" class="rounded-circle mb-3" style="width:80px;height:80px;object-fit:cover;">
-                                    <i class="quote-icon d-block mb-2"></i>
-                                    <strong>{{ $testimonial->message_subject }}</strong>
-                                    <p class="mt-2">{{ Str::limit($testimonial->details, 100) }}</p>
-                                    <h5 class="mt-3 mb-0">{{ $testimonial->name }}</h5>
-                                    <small class="text-muted d-block">{{ $testimonial->message_title }}</small>
-                                    <small class="text-muted d-block">{{ $testimonial->designation }}</small>
+                @if($type === 'VC')
+                    <div class="row mb-5">
+                        @foreach($group as $testimonial)
+                            <div class="col-12 mb-4 d-flex">
+                                <div class="card w-100 shadow-sm border-0">
+                                    <div class="card-body text-center">
+                                        <img src="{{ asset('images/'.$testimonial->image) }}" alt="{{ $testimonial->name }}" class="rounded-circle mb-3" style="width:300px;height:300px;object-fit:cover;">
+                                        <i class="quote-icon d-block mb-2"></i>
+                                        <strong>{{ $testimonial->message_subject }}</strong>
+                                        <p class="mt-2 text-justify">{{ Str::limit($testimonial->details, 10000) }}</p>  <h5 class="mt-3 mb-0">{{ $testimonial->name }}</h5>
+                                        <small class="text-muted d-block">{{ $testimonial->message_title }}</small>
+                                        <small class="text-muted d-block">{{ $testimonial->designation }}</small>
+                                    </div>
                                 </div>
                             </div>
+                        @endforeach
+                    </div>
+                @else
+                    <div class="row mb-5">
+                        <div class="col-12">
+                            <h4 class="mb-4 text-start">{{ ucfirst($type) }}</h4>
                         </div>
-                    @endforeach
-                </div>
+                        @foreach($group as $testimonial)
+                            <div class="col-lg-6 col-md-6 col-sm-6 mb-4 d-flex">
+                                <div class="card w-100 shadow-sm border-0">
+                                    <div class="card-body text-center">
+                                        <img src="{{ asset('images/'.$testimonial->image) }}" alt="{{ $testimonial->name }}" class="rounded-circle mb-3" style="width:180px;height:180px;object-fit:cover;">
+                                        <i class="quote-icon d-block mb-2"></i>
+                                        <strong>{{ $testimonial->message_subject }}</strong>
+                                        <p class="mt-2 text-justify">{{ Str::limit($testimonial->details, 500) }}</p>
+                                        <h5 class="mt-3 mb-0">{{ $testimonial->name }}</h5>
+                                        <small class="text-muted d-block">{{ $testimonial->message_title }}</small>
+                                        <small class="text-muted d-block">{{ $testimonial->designation }}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
             @endforeach
 
         </div>
